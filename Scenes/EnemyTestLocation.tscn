@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/EnemyTestLocation.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Enemy00.tscn" type="PackedScene" id=2]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -2.67348, -0.353752, 0, 0, 0, 0, 1019.75, -0.353752 )
+}
+
+[node name="EnemyTestLocation" type="Node2D"]
+script = ExtResource( 1 )
+Mob = ExtResource( 2 )
+
+[node name="EnemyPath" type="Path2D" parent="."]
+editor/display_folded = true
+curve = SubResource( 1 )
+
+[node name="EnemySpawnLocation" type="PathFollow2D" parent="EnemyPath"]
+position = Vector2( -2.67348, -0.353752 )
+
+[node name="EnemySpawnTimer" type="Timer" parent="."]
+wait_time = 2.0
+[connection signal="timeout" from="EnemySpawnTimer" to="." method="_on_EnemySpawnTimer_timeout"]
