@@ -2,7 +2,9 @@ extends Area2D
 
 const Bullet = preload("res://scenes/PlayerProjectile.tscn")
 
+var prevMousePos = null
 var health = 3 setget set_health
+var speed = 0.2
 
 func _physics_process(delta):
 	moving()
@@ -16,10 +18,16 @@ func _ready():
 	pass
 
 func moving():
-	var speed = 0.2;
-	var motion = (get_global_mouse_position().x - position.x) * speed
+	var currentMousePos = get_global_mouse_position()
+	var motion
 	if Input.is_action_pressed("player_move"):
-		translate(Vector2(motion, 0))
+		if prevMousePos == null:
+			prevMousePos = get_global_mouse_position()
+		motion = (currentMousePos - prevMousePos) * speed
+		translate(motion)
+		prevMousePos = prevMousePos + motion
+	elif Input.is_action_just_released("player_move"):
+		prevMousePos = null
 	pass
 
 func shooting():
