@@ -3,8 +3,8 @@ extends RigidBody2D
 const PrimaryAtack = preload("res://Scenes/PrimaryAtack.tscn")
 const AlternativeAtack = preload("res://Scenes/AlternativeAtack.tscn")
 
-export var min_speed = 150
-export var max_speed = 250
+export var min_speed = 100
+export var max_speed = 200
 
 func _ready():
 	$EnemyAtackTimer.start()
@@ -25,7 +25,6 @@ func _on_EnemyAtackTimer_timeout():
 	
 	$HealthBarEnemy.health_damaged(rand_range(1,100))
 	pass
-
 
 func _on_HealthBarEnemy_death():
 	queue_free()

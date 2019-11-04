@@ -13,6 +13,7 @@ script = ExtResource( 1 )
 position = Vector2( -0.0872555, -0.111475 )
 rotation = -0.523599
 scale = Vector2( 0.25, 0.25 )
+z_index = -1
 texture = ExtResource( 2 )
 offset = Vector2( 0.349022, 0.4459 )
 flip_v = true
