@@ -1,12 +1,9 @@
 extends Area2D
 
-func start(pos):
-	set_global_position(pos)
-	pass
+var speed setget setSpeed
 
 func _physics_process(delta):
-	var speed = 20
-	position.y -= speed
+	position += speed
 	pass
 
 func _on_Area2D_area_entered(other):
@@ -17,4 +14,8 @@ func _on_Area2D_area_entered(other):
 
 func _on_ProjectileVisibility_screen_exited():
 	queue_free()
+	pass
+	
+func setSpeed(pos):
+	speed = pos
 	pass
