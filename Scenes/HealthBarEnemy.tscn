@@ -19,3 +19,4 @@ texture_over = ExtResource( 3 )
 texture_progress = ExtResource( 4 )
 
 [node name="UpdateTween" type="Tween" parent="."]
+[connection signal="value_changed" from="HealthBar" to="." method="_on_HealthBar_value_changed"]

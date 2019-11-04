@@ -1,5 +1,7 @@
 extends Control
 
+signal death
+
 onready var HealthBar = $HealthBar
 onready var UpdateTween = $UpdateTween
 # Declare member variables here. Examples:
@@ -10,12 +12,15 @@ onready var UpdateTween = $UpdateTween
 func _ready():
 	HealthBar.value = 100
 	pass # Replace with function body.
-func health_updated(health, damage):
-	HealthBar.value = health - damage
-	health = HealthBar.value
+func health_damaged(damage):
+	HealthBar.value = HealthBar.value - damage
+	#health = HealthBar.value
 	
-	UpdateTween.interpolate_property(HealthBar, "value", HealthBar.value, health, 0.4, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
+	UpdateTween.interpolate_property(HealthBar, "value", HealthBar.value, HealthBar.value, 0.4, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
 	UpdateTween.start()
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+
+
+func _on_HealthBar_value_changed(value):
+	if (value==0):
+		emit_signal("death")
+	pass # Replace with function body.

@@ -36,3 +36,4 @@ margin_bottom = -22.6931
 rect_scale = Vector2( 0.2, 0.2 )
 [connection signal="screen_exited" from="Visible" to="." method="_on_Visible_screen_exited"]
 [connection signal="timeout" from="EnemyAtackTimer" to="." method="_on_EnemyAtackTimer_timeout"]
+[connection signal="death" from="HealthBarEnemy" to="." method="_on_HealthBarEnemy_death"]

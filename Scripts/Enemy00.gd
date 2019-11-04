@@ -18,5 +18,10 @@ func _on_EnemyAtackTimer_timeout():
 	add_child(atack)
 	atack.position = $EnemyPos.position
 	
-	$HealthBarEnemy.health_updated($HealthBarEnemy/HealthBar.value, 50)
+	$HealthBarEnemy.health_damaged(80)
 	pass
+
+
+func _on_HealthBarEnemy_death():
+	queue_free()
+	pass # Replace with function body.
