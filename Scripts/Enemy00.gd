@@ -17,4 +17,6 @@ func _on_EnemyAtackTimer_timeout():
 	var atack = PrimaryAtack.instance()
 	add_child(atack)
 	atack.position = $EnemyPos.position
+	
+	$HealthBarEnemy.health_updated($HealthBarEnemy/HealthBar.value, 50)
 	pass
