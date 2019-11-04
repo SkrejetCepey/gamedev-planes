@@ -18,7 +18,7 @@ func _on_EnemyAtackTimer_timeout():
 	add_child(atack)
 	atack.position = $EnemyPos.position
 	
-	$HealthBarEnemy.health_damaged(80)
+	$HealthBarEnemy.health_damaged(rand_range(1, 100))
 	pass
 
 

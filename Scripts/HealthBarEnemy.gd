@@ -11,8 +11,10 @@ onready var UpdateTween = $UpdateTween
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	HealthBar.value = 100
+	HealthBar.hide()
 	pass # Replace with function body.
 func health_damaged(damage):
+	HealthBar.show()
 	HealthBar.value = HealthBar.value - damage
 	#health = HealthBar.value
 	

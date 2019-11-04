@@ -29,11 +29,11 @@ shape = SubResource( 1 )
 [node name="EnemyPos" type="Position2D" parent="."]
 
 [node name="HealthBarEnemy" parent="." instance=ExtResource( 4 )]
-margin_left = -38.753
-margin_top = -22.6931
-margin_right = -38.753
-margin_bottom = -22.6931
-rect_scale = Vector2( 0.2, 0.2 )
+margin_left = -18.8879
+margin_top = -33.8799
+margin_right = -18.8879
+margin_bottom = -33.8799
+rect_scale = Vector2( 0.1, 0.1 )
 [connection signal="screen_exited" from="Visible" to="." method="_on_Visible_screen_exited"]
 [connection signal="timeout" from="EnemyAtackTimer" to="." method="_on_EnemyAtackTimer_timeout"]
 [connection signal="death" from="HealthBarEnemy" to="." method="_on_HealthBarEnemy_death"]
