@@ -5,7 +5,7 @@ func start(pos):
 	pass
 
 func _physics_process(delta):
-	var speed = 20
+	var speed = 10
 	position.y -= speed
 	pass
 
