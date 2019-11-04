@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/Enemy00.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Enemy.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/PrimaryAtack.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/HealthBarEnemy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/AlternativeAtack.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/PrimaryAtack.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/HealthBarEnemy.tscn" type="PackedScene" id=5]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 0, 48.54, -10.73, 22.72, -33.03, -13.46, -32.88, -23.08, -21.12, -46.59, 0, -48.82, 21.9, -46.25, 31.9, -22.3, 32.09, -12.94, 10.1, 23.51, 0, 48.49 )
@@ -24,11 +25,13 @@ shape = SubResource( 1 )
 
 [node name="EnemyAtackTimer" type="Timer" parent="."]
 
-[node name="PrimaryAtack" parent="." instance=ExtResource( 3 )]
+[node name="AlternativeAtack" parent="." instance=ExtResource( 3 )]
+
+[node name="PrimaryAtack" parent="." instance=ExtResource( 4 )]
 
 [node name="EnemyPos" type="Position2D" parent="."]
 
-[node name="HealthBarEnemy" parent="." instance=ExtResource( 4 )]
+[node name="HealthBarEnemy" parent="." instance=ExtResource( 5 )]
 margin_left = -18.8879
 margin_top = -33.8799
 margin_right = -18.8879
