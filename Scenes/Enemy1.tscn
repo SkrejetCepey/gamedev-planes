@@ -1,13 +1,26 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/Enemy1.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Enemy1.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/PrimaryAtack.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/AlternativeAtack.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/HealthBarEnemy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/HealthBarEnemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sprites/gun_flash.png" type="Texture" id=4]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 0, 90.6, -15.39, 4.81, -56.21, -10.8, -55.05, -42.32, -33.27, -78.07, 0, -86.66, 33.98, -77.81, 55.77, -41.11, 55.89, -10.68, 16.56, 5.34, 0, 90.14 )
+
+[sub_resource type="Curve" id=3]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=4]
+curve = SubResource( 3 )
+
+[sub_resource type="ParticlesMaterial" id=2]
+flag_disable_z = true
+gravity = Vector3( 0, 20, 0 )
+initial_velocity = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale_curve = SubResource( 4 )
 
 [node name="Enemy1" type="RigidBody2D"]
 script = ExtResource( 1 )
@@ -24,18 +37,51 @@ shape = SubResource( 1 )
 
 [node name="EnemyAtackTimer" type="Timer" parent="."]
 
-[node name="PrimaryAtack" parent="." instance=ExtResource( 3 )]
-
-[node name="AlternativeAtack" parent="." instance=ExtResource( 4 )]
-
 [node name="EnemyPos" type="Position2D" parent="."]
 
-[node name="HealthBarEnemy" parent="." instance=ExtResource( 5 )]
-margin_left = -18.3952
-margin_top = -41.4623
-margin_right = -18.3952
-margin_bottom = -41.4623
+[node name="HealthBarEnemy" parent="." instance=ExtResource( 3 )]
+margin_left = -19.9352
+margin_top = -40.949
+margin_right = -19.9352
+margin_bottom = -40.949
 rect_scale = Vector2( 0.1, 0.1 )
+
+[node name="GunFlash1" type="Sprite" parent="."]
+position = Vector2( -30.7913, 38.1982 )
+rotation = 0.523599
+scale = Vector2( 0.230144, 0.230144 )
+z_index = -1
+texture = ExtResource( 4 )
+flip_v = true
+
+[node name="GunFlash2" type="Sprite" parent="."]
+position = Vector2( -0.149971, 53.1133 )
+scale = Vector2( 0.237717, 0.237717 )
+z_index = -1
+texture = ExtResource( 4 )
+offset = Vector2( -0.124054, 0.741211 )
+flip_v = true
+
+[node name="GunFlash3" type="Sprite" parent="."]
+position = Vector2( 30.9857, 38.7269 )
+rotation = -0.523599
+scale = Vector2( 0.22762, 0.22762 )
+z_index = -1
+texture = ExtResource( 4 )
+flip_v = true
+
+[node name="GunFlashTimer" type="Timer" parent="."]
+wait_time = 0.15
+
+[node name="Trail" type="Particles2D" parent="."]
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+z_index = -1
+amount = 10
+speed_scale = 2.0
+process_material = SubResource( 2 )
+texture = ExtResource( 2 )
 [connection signal="screen_exited" from="Visible" to="." method="_on_Visible_screen_exited"]
 [connection signal="timeout" from="EnemyAtackTimer" to="." method="_on_EnemyAtackTimer_timeout"]
 [connection signal="death" from="HealthBarEnemy" to="." method="_on_HealthBarEnemy_death"]
+[connection signal="timeout" from="GunFlashTimer" to="." method="_on_GunFlashTimer_timeout"]
