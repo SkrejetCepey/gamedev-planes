@@ -54,9 +54,6 @@ margin_right = -20.182
 margin_bottom = -33.8799
 rect_scale = Vector2( 0.1, 0.1 )
 
-[node name="DeathPos" type="Position2D" parent="."]
-position = Vector2( 0, 33.32 )
-
 [node name="Trail" type="Particles2D" parent="."]
 show_behind_parent = true
 rotation = -3.14159
@@ -75,6 +72,9 @@ flip_v = true
 
 [node name="GunFlashTimer" type="Timer" parent="."]
 wait_time = 0.15
+
+[node name="DeathPos" type="Position2D" parent="."]
+position = Vector2( 0, 33.32 )
 [connection signal="screen_exited" from="Visible" to="." method="_on_Visible_screen_exited"]
 [connection signal="timeout" from="EnemyAtackTimer" to="." method="_on_EnemyAtackTimer_timeout"]
 [connection signal="death" from="HealthBarEnemy" to="." method="_on_HealthBarEnemy_death"]
