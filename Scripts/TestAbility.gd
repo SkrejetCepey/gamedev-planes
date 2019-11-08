@@ -4,13 +4,15 @@ export var speed = 100
 var velocity = Vector2()
 
 func _physics_process(delta):
-	#velocity.y = speed * delta
-	#translate(velocity)
+	global_position.x = clamp(global_position.x, 0, get_viewport_rect().size.x)
+	velocity.y = speed * delta
+	translate(velocity)
 	pass
 	
 func _ready():
 	pass
 
 func _on_Visible_screen_exited():
-	get_parent().get_parent().queue_free()
+	if (get_parent().get_parent()):
+		get_parent().get_parent().queue_free()
 	pass 

@@ -8,6 +8,7 @@ extents = Vector2( 15.6414, 15.5505 )
 
 [node name="TestAbility" type="Area2D"]
 script = ExtResource( 1 )
+speed = 120
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.5, 0.5 )

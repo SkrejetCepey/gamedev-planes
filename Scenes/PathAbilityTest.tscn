@@ -5,12 +5,13 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -1.00977, 0.33429, -42.7501, -128.25, 42.7501, 128.25, 98.2349, 244.528, 0, 0, 0, 0, 189.297, 604.505 )
+"points": PoolVector2Array( 0, 0, 0, 0, -1.00977, 0.33429, 0, 0, 0, 0, 5.43904, -24.2223, 0, 0, 0, 0, 11.5708, -47.2895 )
 }
 
 [node name="Path2D" type="Path2D"]
 curve = SubResource( 1 )
 script = ExtResource( 1 )
+speed = 200
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
 position = Vector2( -1.00977, 0.33429 )
