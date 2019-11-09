@@ -16,6 +16,7 @@ Mob = ExtResource( 2 )
 Mob1 = ExtResource( 3 )
 
 [node name="EnemyPath" type="Path2D" parent="."]
+editor/display_folded = true
 curve = SubResource( 1 )
 
 [node name="EnemySpawnLocation" type="PathFollow2D" parent="EnemyPath"]
