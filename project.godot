@@ -27,7 +27,6 @@ Global="*res://Scripts/Global.gd"
 
 window/size/width=710
 window/size/height=830
-window/handheld/orientation="portrait"
 
 [input]
 
