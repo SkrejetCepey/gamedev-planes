@@ -1,29 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Scripts/MainMenuScene.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/GUI/Header/1value.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/GUI/Header/2value.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/Global.gd" type="Script" id=1]
 
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.6, 0.6, 0.6, 0 )
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color( 0, 0, 0, 1 )
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-corner_detail = 24
-
-[sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 1, 1, 1, 0 )
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color( 0, 0, 0, 1 )
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.376471, 0.376471, 0.376471, 1 )
 corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
@@ -43,111 +23,29 @@ margin_right = -1.0
 margin_bottom = -1.0
 script = ExtResource( 1 )
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-editor/display_folded = true
-margin_right = 40.0
-margin_bottom = 40.0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_right = 40.0
-
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
-
-[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer/MarginContainer"]
-
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/MarginContainer/Panel"]
-margin_right = 103.0
-margin_bottom = 54.0
-
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/MarginContainer/Panel/HBoxContainer"]
-margin_right = 54.0
-margin_bottom = 54.0
-
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/MarginContainer/Panel/HBoxContainer/MarginContainer"]
-editor/display_folded = true
-margin_right = 54.0
-margin_bottom = 54.0
-
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/MarginContainer/Panel/HBoxContainer/MarginContainer/MarginContainer"]
-margin_right = 54.0
-margin_bottom = 54.0
-rect_min_size = Vector2( 54, 54 )
-texture = ExtResource( 2 )
-expand = true
-
-[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/HBoxContainer/MarginContainer/Panel/HBoxContainer/MarginContainer"]
-editor/display_folded = true
-margin_right = 54.0
-margin_bottom = 54.0
-
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/MarginContainer/Panel/HBoxContainer/MarginContainer/MarginContainer2"]
-margin_top = 20.0
-margin_right = 54.0
-margin_bottom = 34.0
-text = "123"
-
-[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/HBoxContainer/MarginContainer/Panel/HBoxContainer/MarginContainer"]
-editor/display_folded = true
-margin_right = 54.0
-margin_bottom = 54.0
-
-[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/MarginContainer/Panel/HBoxContainer/MarginContainer/MarginContainer3"]
-margin_right = 54.0
-margin_bottom = 54.0
-custom_styles/normal = SubResource( 1 )
-text = "+"
-
-[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/HBoxContainer/MarginContainer/Panel/HBoxContainer"]
-margin_left = 58.0
-margin_right = 103.0
-margin_bottom = 54.0
-
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/MarginContainer/Panel/HBoxContainer/MarginContainer2"]
-margin_right = 45.0
-margin_bottom = 54.0
-
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/MarginContainer/Panel/HBoxContainer/MarginContainer2/MarginContainer"]
-margin_right = 45.0
-margin_bottom = 54.0
-rect_min_size = Vector2( 45, 45 )
-texture = ExtResource( 3 )
-expand = true
-
-[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/HBoxContainer/MarginContainer/Panel/HBoxContainer/MarginContainer2"]
-margin_right = 45.0
-margin_bottom = 54.0
-
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/MarginContainer/Panel/HBoxContainer/MarginContainer2/MarginContainer2"]
-margin_top = 20.0
-margin_right = 45.0
-margin_bottom = 34.0
-text = "123"
-
-[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/HBoxContainer/MarginContainer/Panel/HBoxContainer/MarginContainer2"]
-margin_right = 45.0
-margin_bottom = 54.0
-rect_min_size = Vector2( 20, 20 )
-
-[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/MarginContainer/Panel/HBoxContainer/MarginContainer2/MarginContainer3"]
-margin_right = 45.0
-margin_bottom = 54.0
-rect_min_size = Vector2( 20, 10 )
-custom_styles/normal = SubResource( 2 )
-text = "+"
-
-[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
-margin_left = 4.0
-margin_right = 4.0
-
-[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer/MarginContainer2"]
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
-
 [node name="VBoxContainer3" type="VBoxContainer" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+editor/display_folded = true
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = -160.0
+margin_right = -20.0
+margin_bottom = -100.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer3"]
+editor/display_folded = true
+margin_right = 679.0
+margin_bottom = 60.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ButtonPlayerTest" type="Button" parent="VBoxContainer3/MarginContainer"]
+margin_right = 679.0
+margin_bottom = 60.0
+custom_styles/normal = SubResource( 4 )
+disabled = true
+text = "PLAY PLAYERTESTLOCATION"
 
 [node name="VBoxContainer4" type="VBoxContainer" parent="."]
 editor/display_folded = true
@@ -155,21 +53,23 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 20.0
-margin_top = -60.0
+margin_top = -80.0
 margin_right = -20.0
+margin_bottom = -20.0
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer4"]
-editor/display_folded = true
 margin_right = 679.0
 margin_bottom = 60.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button" type="Button" parent="VBoxContainer4/MarginContainer"]
+[node name="ButtonEnemyTest" type="Button" parent="VBoxContainer4/MarginContainer"]
 margin_right = 679.0
 margin_bottom = 60.0
 custom_styles/normal = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 shortcut_in_tooltip = false
 button_mask = 7
-text = "PLAY"
+text = "PLAY ENEMYTESTLOCATION"
+[connection signal="pressed" from="VBoxContainer3/MarginContainer/ButtonPlayerTest" to="." method="_on_ButtonPlayerTest_pressed"]
+[connection signal="pressed" from="VBoxContainer4/MarginContainer/ButtonEnemyTest" to="." method="_on_ButtonEnemyTest_pressed"]
