@@ -18,3 +18,9 @@ shape = SubResource( 1 )
 
 [node name="PlayerCannonPosition" type="Position2D" parent="."]
 position = Vector2( 0, -194 )
+
+[node name="PlayerRocketPositionRight" type="Position2D" parent="."]
+position = Vector2( 90, 0 )
+
+[node name="PlayerRocketPositionLeft" type="Position2D" parent="."]
+position = Vector2( -90, 0 )
