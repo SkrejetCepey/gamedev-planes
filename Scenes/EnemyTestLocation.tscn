@@ -21,7 +21,7 @@ curve = SubResource( 1 )
 
 [node name="EnemySpawnLocation" type="PathFollow2D" parent="EnemyPath"]
 position = Vector2( -2.67348, -0.353752 )
-rotation = 0.000365493
+rotation = 0.000365494
 
 [node name="EnemySpawnTimer" type="Timer" parent="."]
 wait_time = 2.0
