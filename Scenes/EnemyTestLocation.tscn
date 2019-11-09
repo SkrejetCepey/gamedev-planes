@@ -7,7 +7,7 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -2.67348, -0.353752, 0, 0, 0, 0, 720.1, -0.0895832 )
+"points": PoolVector2Array( 0, 0, 0, 0, -2.67348, -0.353752, 0, 0, 0, 0, 1440.05, -0.204896 )
 }
 
 [node name="EnemyTestLocation" type="Node2D"]
