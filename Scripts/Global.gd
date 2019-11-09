@@ -18,7 +18,7 @@ func _deferred_goto_scene(path):
 	get_tree().set_current_scene(current_scene)
 
 func _on_ButtonPlayerTest_pressed():
-	#next time maybe :C
+	Global.goto_scene("res://Scenes/PlayerTestScene.tscn")
 	pass 
 
 func _on_ButtonEnemyTest_pressed():
