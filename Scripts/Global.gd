@@ -24,3 +24,4 @@ func _on_ButtonPlayerTest_pressed():
 func _on_ButtonEnemyTest_pressed():
 	Global.goto_scene("res://Scenes/EnemyTestLocation.tscn")
 	pass 
+
