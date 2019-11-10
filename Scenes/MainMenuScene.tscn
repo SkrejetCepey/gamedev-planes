@@ -33,13 +33,13 @@ margin_right = -20.0
 margin_bottom = -100.0
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer1"]
-margin_right = 1399.0
+margin_right = 439.0
 margin_bottom = 60.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="ButtonPlayerTest" type="Button" parent="VBoxContainer1/MarginContainer"]
-margin_right = 1399.0
+margin_right = 439.0
 margin_bottom = 60.0
 custom_styles/normal = SubResource( 1 )
 text = "PLAY PLAYERTESTLOCATION"
@@ -54,13 +54,13 @@ margin_right = -20.0
 margin_bottom = -20.0
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer2"]
-margin_right = 1399.0
+margin_right = 439.0
 margin_bottom = 60.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="ButtonEnemyTest" type="Button" parent="VBoxContainer2/MarginContainer"]
-margin_right = 1399.0
+margin_right = 439.0
 margin_bottom = 60.0
 custom_styles/normal = SubResource( 2 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
