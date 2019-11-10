@@ -1,6 +1,6 @@
 extends Node2D
 
-const Player = preload("res://scenes/Player.tscn")
+const Player = preload("res://Scenes/Player.tscn")
 
 func _ready():
 	var player = Player.instance()

@@ -1,6 +1,6 @@
 extends Node2D
 
-const Bullet = preload("res://scenes/PlayerProjectileBullet.tscn")
+const Bullet = preload("res://Scenes/PlayerProjectileBullet.tscn")
 var projectileNumber setget projectileNumberSet
 var upgradeLvl setget upgradeLvlSet
 var firerate = 0.3

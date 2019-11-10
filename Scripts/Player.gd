@@ -1,6 +1,6 @@
 extends Area2D
 
-const Bullet = preload("res://scenes/PlayerProjectileBullet.tscn")
+const Bullet = preload("res://Scenes/PlayerProjectileBullet.tscn")
 const Rocket = preload("res://Scenes/PlayerProjectileRocket.tscn")
 const Canon = preload("res://Scenes/PlayerCannon.tscn")
 
@@ -17,8 +17,8 @@ func _physics_process(delta):
 
 func _ready():
 	add_to_group("player")
-	position.y = 550
-	position.x = 250
+	position.y = get_viewport().get_visible_rect().size.y/2
+	position.x = get_viewport().get_visible_rect().size.x/2
 	var canon = Canon.instance()
 	canon.position = $PlayerCannonPosition.position
 	canon.projectileNumberSet(1)
