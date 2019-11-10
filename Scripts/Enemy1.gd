@@ -38,7 +38,7 @@ func _on_EnemyAtackTimer_timeout():
 	#$GunFlash.hide()
 	yield($GunFlashTimer, "timeout")
 	
-	$HealthBarEnemy.health_damaged(rand_range(1,100))
+	#$HealthBarEnemy.health_damaged(rand_range(1,100))
 	pass
 
 func _on_HealthBarEnemy_death():
