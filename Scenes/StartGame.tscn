@@ -171,14 +171,12 @@ expand = true
 stretch_mode = 7
 
 [node name="HUD" type="VBoxContainer" parent="."]
-editor/display_folded = true
 anchor_right = 1.0
 margin_bottom = 50.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HUD"]
-editor/display_folded = true
 margin_left = 89.0
 margin_right = 390.0
 margin_bottom = 71.0

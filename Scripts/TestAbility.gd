@@ -1,15 +1,22 @@
-extends Area2D
+extends RigidBody2D
 
 export var speed = 100
 var velocity = Vector2()
 
 func _physics_process(delta):
-	global_position.x = clamp(global_position.x, 0, get_viewport_rect().size.x)
-	velocity.y = speed * delta
-	translate(velocity)
+	#global_position.x = clamp(global_position.x, 0, get_viewport_rect().size.x)
+	
+	#velocity.x = speed * delta * 2
+	#velocity.y = speed * delta
+	#translate(velocity)
 	pass
 	
 func _ready():
+	print(rand_range(0, 2))
+	if(rand_range(0, 2) < 1):
+		linear_velocity.x = 50
+	else:
+		linear_velocity.x= -50
 	pass
 
 func _on_Visible_screen_exited():

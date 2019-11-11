@@ -21,8 +21,8 @@ func _ready():
 	EnemyPath.add_child(EnemySpawnLocation)
 	#EnemyPath.curve
 	#print($Path2D.curve.add_point())
-	EnemyPath.curve.add_point(Vector2(50,0))
-	EnemyPath.curve.add_point(Vector2(get_viewport().get_visible_rect().size.x - 50,0))
+	EnemyPath.curve.add_point(Vector2(50,-10))
+	EnemyPath.curve.add_point(Vector2(get_viewport().get_visible_rect().size.x - 50,-10))
 	$EnemySpawnTimer.start()
 	pass 
 

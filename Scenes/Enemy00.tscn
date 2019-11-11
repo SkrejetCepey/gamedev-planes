@@ -44,6 +44,7 @@ shape = SubResource( 1 )
 [node name="Visible" type="VisibilityNotifier2D" parent="."]
 
 [node name="EnemyAtackTimer" type="Timer" parent="."]
+wait_time = 0.5
 
 [node name="EnemyPos" type="Position2D" parent="."]
 
@@ -71,7 +72,7 @@ texture = ExtResource( 4 )
 flip_v = true
 
 [node name="GunFlashTimer" type="Timer" parent="."]
-wait_time = 0.15
+wait_time = 0.14
 
 [node name="DeathPos" type="Position2D" parent="."]
 position = Vector2( 0, 33.32 )

@@ -4,8 +4,8 @@ export var speed = 500
 var velocity = Vector2()
 
 func _physics_process(delta):
-	velocity.x = speed * delta
-	velocity.y = speed * delta
+	velocity.x = speed * delta * 0.25
+	velocity.y = speed * delta 
 	translate(velocity)
 	pass
 	

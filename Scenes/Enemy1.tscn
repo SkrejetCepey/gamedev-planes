@@ -18,6 +18,7 @@ curve = SubResource( 2 )
 flag_disable_z = true
 gravity = Vector3( 0, 20, 0 )
 initial_velocity = 1.0
+angular_velocity = 0.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale_curve = SubResource( 3 )
@@ -36,6 +37,7 @@ shape = SubResource( 1 )
 [node name="Visible" type="VisibilityNotifier2D" parent="."]
 
 [node name="EnemyAtackTimer" type="Timer" parent="."]
+wait_time = 0.5
 
 [node name="EnemyPos" type="Position2D" parent="."]
 
@@ -47,15 +49,16 @@ margin_bottom = -40.949
 rect_scale = Vector2( 0.1, 0.1 )
 
 [node name="GunFlash1" type="Sprite" parent="."]
-position = Vector2( -30.7913, 38.1982 )
-rotation = 0.523599
-scale = Vector2( 0.230144, 0.230144 )
+position = Vector2( 19.3847, 29.6716 )
+rotation = 0.261799
+scale = Vector2( 0.181, 0.181 )
 z_index = -1
 texture = ExtResource( 4 )
+offset = Vector2( -180, 47.162 )
 flip_v = true
 
 [node name="GunFlash2" type="Sprite" parent="."]
-position = Vector2( -0.149971, 53.1133 )
+position = Vector2( -0.827767, 53.1133 )
 scale = Vector2( 0.237717, 0.237717 )
 z_index = -1
 texture = ExtResource( 4 )
@@ -63,15 +66,16 @@ offset = Vector2( -0.124054, 0.741211 )
 flip_v = true
 
 [node name="GunFlash3" type="Sprite" parent="."]
-position = Vector2( 30.9857, 38.7269 )
-rotation = -0.523599
-scale = Vector2( 0.22762, 0.22762 )
+position = Vector2( -18.0549, 34.4141 )
+rotation = -0.261799
+scale = Vector2( 0.180691, 0.180691 )
 z_index = -1
 texture = ExtResource( 4 )
+offset = Vector2( 180, 9.855 )
 flip_v = true
 
 [node name="GunFlashTimer" type="Timer" parent="."]
-wait_time = 0.15
+wait_time = 0.14
 
 [node name="Trail" type="Particles2D" parent="."]
 rotation = 3.14159
@@ -83,7 +87,7 @@ process_material = SubResource( 4 )
 texture = ExtResource( 2 )
 
 [node name="DeathPos" type="Position2D" parent="."]
-position = Vector2( 0, 34.61 )
+position = Vector2( 0, 2.723 )
 [connection signal="screen_exited" from="Visible" to="." method="_on_Visible_screen_exited"]
 [connection signal="timeout" from="EnemyAtackTimer" to="." method="_on_EnemyAtackTimer_timeout"]
 [connection signal="death" from="HealthBarEnemy" to="." method="_on_HealthBarEnemy_death"]
