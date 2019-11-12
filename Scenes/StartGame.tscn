@@ -256,6 +256,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_styles/normal = SubResource( 2 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+disabled = true
 text = "+"
 
 [node name="MarginContainer2" type="MarginContainer" parent="HUD/HBoxContainer/MarginContainer/Panel/HBoxContainer"]
@@ -310,6 +311,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_styles/normal = SubResource( 2 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+disabled = true
 text = "+"
 
 [node name="MarginContainer2" type="MarginContainer" parent="HUD/HBoxContainer"]
@@ -338,6 +340,7 @@ margin_top = 10.0
 margin_right = 75.0
 margin_bottom = 71.0
 custom_styles/normal = SubResource( 4 )
+disabled = true
 
 [node name="TextureRect" type="TextureRect" parent="HUD/HBoxContainer/MarginContainer2/Button_Setting"]
 anchor_left = 0.5
@@ -747,6 +750,7 @@ rect_min_size = Vector2( 77, 77 )
 margin_right = 77.0
 margin_bottom = 77.0
 custom_styles/normal = SubResource( 7 )
+disabled = true
 button_mask = 7
 
 [node name="TextureRect" type="TextureRect" parent="AnimatedСartoon_&_Button/HBoxContainer/MarginContainer_Button/CenterContainer/VBoxContainer/MarginContainer_Dron/Button_Dron"]
@@ -761,7 +765,6 @@ margin_bottom = 25.0
 expand = true
 
 [node name="TransformationObject" type="NinePatchRect" parent="AnimatedСartoon_&_Button/HBoxContainer/MarginContainer_Button/CenterContainer/VBoxContainer/MarginContainer_Dron/Button_Dron"]
-editor/display_folded = true
 margin_right = 77.0
 margin_bottom = 77.0
 
@@ -804,6 +807,7 @@ margin_right = 77.0
 margin_bottom = 77.0
 rect_min_size = Vector2( 77, 77 )
 custom_styles/normal = SubResource( 9 )
+disabled = true
 
 [node name="TransformationObject" type="NinePatchRect" parent="AnimatedСartoon_&_Button/HBoxContainer/MarginContainer_Button/CenterContainer/VBoxContainer/MarginContainer_Map/Button_Map"]
 editor/display_folded = true
@@ -855,6 +859,7 @@ rect_min_size = Vector2( 77, 77 )
 margin_right = 77.0
 margin_bottom = 77.0
 custom_styles/normal = SubResource( 10 )
+disabled = true
 
 [node name="TransformationObject" type="NinePatchRect" parent="AnimatedСartoon_&_Button/HBoxContainer/MarginContainer_Button/CenterContainer/VBoxContainer/MarginContainer_Hangar/Button_Hangar"]
 editor/display_folded = true

@@ -6,10 +6,7 @@ export (PackedScene) var Mob1
 var EnemyPath = Path2D.new()
 var EnemySpawnLocation = PathFollow2D.new()
 
-const TestAbility = preload("res://Scenes/TestAbility.tscn")
 const Player = preload("res://Scenes/Player.tscn")
-
-#EnemyPath.draw_line(Vector2(0,0), Vector2 (get_viewport().get_visible_rect().size.x - 100, 0), Color.black, 1.0)
 
 func _ready():
 	randomize()
