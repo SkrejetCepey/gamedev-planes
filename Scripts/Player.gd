@@ -1,15 +1,12 @@
-extends Area2D
+extends Node2D
 
-const Bullet = preload("res://Scenes/PlayerProjectileBullet.tscn")
-const Rocket = preload("res://Scenes/PlayerProjectileRocket.tscn")
-const Canon = preload("res://Scenes/PlayerCannon.tscn")
+const SU_57 = preload("res://Scenes/SU-57.tscn")
+const Maingun = preload("res://Scenes/PlayerCannon.tscn")
 
 var prevMousePos = null
+var plane
 var health = 3 setget set_health
 var speed = 0.2
-var gunFirerate = 0.2
-var bulletNumber = 2
-var rocketFirerate = 0.7
 
 func _physics_process(delta):
 	moving()
@@ -19,11 +16,19 @@ func _ready():
 	add_to_group("player")
 	position.y = get_viewport().get_visible_rect().size.y/2
 	position.x = get_viewport().get_visible_rect().size.x/2
-	var canon = Canon.instance()
-	canon.position = $PlayerCannonPosition.position
-	canon.projectileNumberSet(1)
-	canon.upgradeLvlSet(1)
-	add_child(canon)
+	ready_plane()
+	ready_guns()
+	pass
+
+func ready_plane():
+	plane = SU_57.instance()
+	add_child(plane)
+	pass
+	
+func ready_guns():
+	var maingun = Maingun.instance()
+	maingun.position = plane.get_node("MaingunPosition").position
+	add_child(maingun)
 	pass
 
 func moving():

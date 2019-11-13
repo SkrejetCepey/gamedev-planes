@@ -1,8 +1,8 @@
 extends Node2D
 
 const Bullet = preload("res://Scenes/PlayerProjectileBullet.tscn")
-var projectileNumber setget projectileNumberSet
-var upgradeLvl setget upgradeLvlSet
+var projectileNumber = 1 setget projectileNumberSet
+var upgradeLvl = 0 setget upgradeLvlSet
 var firerate = 0.3
 
 func _ready():
@@ -36,15 +36,15 @@ func createBulletArray(rot):
 
 func addBullet(pos, rot):
 	var bullet = Bullet.instance()
-	bullet.position = pos
+	bullet.global_position = global_position
 	bullet.setSpeed(rot)
-	get_node("../").add_child(bullet)
+	get_parent().get_parent().get_parent().add_child(bullet)
 	pass
 
 func projectileNumberSet(number):
 	projectileNumber = number
 	pass
-	
+
 func upgradeLvlSet(number):
 	upgradeLvl = number
 	pass
