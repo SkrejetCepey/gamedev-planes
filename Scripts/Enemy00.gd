@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 const PrimaryAtack = preload("res://Scenes/PrimaryAtack.tscn")
-const Ability = preload("res://Scenes/PathAbilityTest.tscn")
+const Ability = preload("res://Scenes/TestAbility.tscn")
 #const AlternativeAtack = preload("res://Scenes/AlternativeAtack.tscn")
 
 export var min_speed = 150
@@ -9,6 +9,7 @@ export var max_speed = 250
 
 func _ready():
 	randomize()
+	add_to_group("enemy")
 	$EnemyAtackTimer.start()
 	$GunFlashTimer.start()
 	$HealthBarEnemy.health_setup(100)
