@@ -24,7 +24,7 @@ func _on_Visible_screen_exited():
 
 func _on_EnemyAtackTimer_timeout():
 	var atack1 = AlternativeAtack.instance()
-	get_parent().add_child(atack1)
+	get_parent().get_parent().add_child(atack1)
 	atack1.position = $EnemyPos.global_position
 	print("atack1.position ", atack1.global_position)
 	
@@ -39,7 +39,7 @@ func _on_EnemyAtackTimer_timeout():
 func _on_HealthBarEnemy_death():
 	print("Dead!")
 	var ability = Ability.instance()
-	get_parent().add_child(ability)
+	get_parent().get_parent().add_child(ability)
 	ability.global_position = $DeathPos.global_position
 	queue_free()
 	pass
