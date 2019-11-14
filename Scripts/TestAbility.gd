@@ -4,6 +4,8 @@ export var speed = 100
 var velocity = Vector2()
 
 func _physics_process(delta):
+	if(position.y > get_viewport().get_visible_rect().size.y + 10):
+		queue_free()
 	#global_position.x = clamp(global_position.x, 0, get_viewport_rect().size.x)
 	#velocity.x = speed * delta * 2
 	#velocity.y = speed * delta

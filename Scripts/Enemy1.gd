@@ -1,14 +1,22 @@
-extends RigidBody2D
+extends KinematicBody2D
 
 const PrimaryAtack = preload("res://Scenes/PrimaryAtack.tscn")
-const AlternativeAtack = preload("res://Scenes/AlternativeAtack.tscn")
+
+#const AlternativeAtack = preload("res://Scenes/AlternativeAtack.tscn")
+const AlternativeAtackLeft = preload("res://Scenes/AlternativeAtackLeft.tscn")
+const AlternativeAtackRight = preload("res://Scenes/AlternativeAtackRight.tscn")
+
 const Ability = preload("res://Scenes/TestAbility.tscn")
 
 export var min_speed = 100
 export var max_speed = 200
 
+var Speed
+
 func _ready():
 	randomize()
+	Speed = rand_range(min_speed, max_speed)
+	
 	add_to_group("enemy")
 	$EnemyAtackTimer.start()
 	$GunFlashTimer.start()
@@ -23,10 +31,17 @@ func _on_Visible_screen_exited():
 	pass
 
 func _on_EnemyAtackTimer_timeout():
-	var atack1 = AlternativeAtack.instance()
-	get_parent().get_parent().add_child(atack1)
-	atack1.position = $EnemyPos.global_position
-	print("atack1.position ", atack1.global_position)
+	var atack_left = AlternativeAtackLeft.instance()
+	var atack_right = AlternativeAtackRight.instance()
+	var atack = PrimaryAtack.instance()
+	
+	get_parent().get_parent().add_child(atack_left)
+	get_parent().get_parent().add_child(atack_right)
+	get_parent().get_parent().add_child(atack)
+	atack.position = $EnemyPos.global_position
+	atack_left.position = $EnemyPos.global_position
+	atack_right.position = $EnemyPos.global_position
+	#print("atack1.position ", atack1.global_position)
 	
 	$GunFlash1.show()
 	$GunFlash2.show()
@@ -42,6 +57,10 @@ func _on_HealthBarEnemy_death():
 	get_parent().get_parent().add_child(ability)
 	ability.global_position = $DeathPos.global_position
 	queue_free()
+	pass
+
+func _physics_process(delta):
+	move_and_collide(Vector2 (0,Speed * delta))
 	pass
 
 func _on_GunFlashTimer_timeout():

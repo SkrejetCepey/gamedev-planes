@@ -29,7 +29,8 @@ orbit_velocity_random = 0.0
 scale_curve = SubResource( 5 )
 color_ramp = SubResource( 3 )
 
-[node name="RigidBody2D" type="RigidBody2D"]
+[node name="Enemy0" type="KinematicBody2D"]
+collision_layer = 2
 collision_mask = 0
 script = ExtResource( 1 )
 
@@ -75,7 +76,7 @@ flip_v = true
 wait_time = 0.14
 
 [node name="DeathPos" type="Position2D" parent="."]
-position = Vector2( 0, 33.32 )
+position = Vector2( 0, 33.47 )
 [connection signal="screen_exited" from="Visible" to="." method="_on_Visible_screen_exited"]
 [connection signal="timeout" from="EnemyAtackTimer" to="." method="_on_EnemyAtackTimer_timeout"]
 [connection signal="death" from="HealthBarEnemy" to="." method="_on_HealthBarEnemy_death"]
