@@ -76,3 +76,11 @@ func set_health(new_health):
 func _on_GunFlashTimer_timeout():
 	$GunFlash.hide()
 	pass
+
+
+func _on_Trigger_area_entered(someone):
+	if someone.is_in_group("player"):
+		#health -= 50
+		$HealthBarEnemy.health_damaged(50)
+		someone.queue_free()
+	pass # Replace with function body.

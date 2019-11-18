@@ -88,7 +88,14 @@ texture = ExtResource( 2 )
 
 [node name="DeathPos" type="Position2D" parent="."]
 position = Vector2( 0, 2.723 )
+
+[node name="Trigger" type="Area2D" parent="."]
+editor/display_folded = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Trigger"]
+shape = SubResource( 1 )
 [connection signal="screen_exited" from="Visible" to="." method="_on_Visible_screen_exited"]
 [connection signal="timeout" from="EnemyAtackTimer" to="." method="_on_EnemyAtackTimer_timeout"]
 [connection signal="death" from="HealthBarEnemy" to="." method="_on_HealthBarEnemy_death"]
 [connection signal="timeout" from="GunFlashTimer" to="." method="_on_GunFlashTimer_timeout"]
+[connection signal="area_entered" from="Trigger" to="." method="_on_Trigger_area_entered"]
