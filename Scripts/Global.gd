@@ -23,10 +23,6 @@ func _on_Button_PLAY_pressed():
 
 
 func _on_Button_Hangar_pressed():
-	Global.goto_scene("res://Scenes/Hangar.tscn")
+	get_tree().change_scene("res://Scenes/Hangar.tscn")
 	pass # Replace with function body.
 
-#Hangar.tscn
-func _on_Button_StartGame_pressed():
-	Global.goto_scene("res://Scenes/StartGame.tscn")
-	pass # Replace with function body.

@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scripts/Global.gd" type="Script" id=1]
-[ext_resource path="res://HUD.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=2]
 [ext_resource path="res://icon.png" type="Texture" id=3]
 [ext_resource path="res://Interface/icon/level_up.png" type="Texture" id=4]
 [ext_resource path="res://Interface/icon/Dron.png" type="Texture" id=5]
@@ -120,6 +120,8 @@ expand = true
 stretch_mode = 7
 
 [node name="HUD" parent="." instance=ExtResource( 2 )]
+margin_bottom = 599.0
+rect_clip_content = true
 
 [node name="StaticPerson" type="VBoxContainer" parent="."]
 editor/display_folded = true
@@ -424,6 +426,7 @@ margin_bottom = 13.7483
 text = "121"
 
 [node name="AnimatedСartoon_&_Button" type="VBoxContainer" parent="."]
+editor/display_folded = true
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
