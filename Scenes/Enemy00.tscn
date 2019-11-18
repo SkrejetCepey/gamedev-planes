@@ -44,9 +44,6 @@ shape = SubResource( 1 )
 
 [node name="Visible" type="VisibilityNotifier2D" parent="."]
 
-[node name="EnemyAtackTimer" type="Timer" parent="."]
-wait_time = 0.5
-
 [node name="EnemyPos" type="Position2D" parent="."]
 
 [node name="HealthBarEnemy" parent="." instance=ExtResource( 3 )]
@@ -78,6 +75,5 @@ wait_time = 0.14
 [node name="DeathPos" type="Position2D" parent="."]
 position = Vector2( 0, 33.47 )
 [connection signal="screen_exited" from="Visible" to="." method="_on_Visible_screen_exited"]
-[connection signal="timeout" from="EnemyAtackTimer" to="." method="_on_EnemyAtackTimer_timeout"]
 [connection signal="death" from="HealthBarEnemy" to="." method="_on_HealthBarEnemy_death"]
 [connection signal="timeout" from="GunFlashTimer" to="." method="_on_GunFlashTimer_timeout"]
