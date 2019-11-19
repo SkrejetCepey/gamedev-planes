@@ -2,6 +2,8 @@ extends Node2D
 
 const SU_57 = preload("res://Scenes/SU-57.tscn")
 const Maingun = preload("res://Scenes/PlayerCannon.tscn")
+const Subgun = preload("res://Scenes/SubgunRockets.tscn")
+const Drone = preload("res://Scenes/DroneTest.tscn")
 
 var prevMousePos = null
 var plane
@@ -18,6 +20,17 @@ func _ready():
 	position.x = get_viewport().get_visible_rect().size.x/2
 	ready_plane()
 	ready_guns()
+	ready_drones()
+	pass
+
+func ready_drones():
+	var droneL = Drone.instance()
+#	droneL.global_position = plane.get_node("DronePositionLeft").global_position
+	droneL.setTarget(plane.get_node("DronePositionLeft"))
+	add_child(droneL)
+#	var droneR = Drone.instance()
+#	droneR.position = plane.get_node("DronePositionRight").position
+#	plane.add_child(droneR)
 	pass
 
 func ready_plane():
@@ -29,6 +42,12 @@ func ready_guns():
 	var maingun = Maingun.instance()
 	maingun.position = plane.get_node("MaingunPosition").position
 	add_child(maingun)
+	var subgunL = Subgun.instance()
+	var subgunR = Subgun.instance()
+	subgunL.position = plane.get_node("SubgunPositionLeft").position
+	subgunR.position = plane.get_node("SubgunPositionRight").position
+	add_child(subgunL)
+	add_child(subgunR)
 	pass
 
 func moving():

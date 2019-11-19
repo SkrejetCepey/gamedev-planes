@@ -1,17 +1,16 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/PlayerProjectile.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scripts/PlayerProjectileRocket.gd" type="Script" id=2]
-[ext_resource path="res://Sprites/Rocket.jpg" type="Texture" id=3]
+[ext_resource path="res://Sprites/Rocket.jpg" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 21.4929 )
 
 [node name="Projectile" instance=ExtResource( 1 )]
-script = ExtResource( 2 )
+scale = Vector2( 0.5, 0.5 )
 
 [node name="ProjectileSprite" parent="." index="0"]
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 
 [node name="ProjectileShape" parent="." index="1"]
 position = Vector2( 0, 0 )

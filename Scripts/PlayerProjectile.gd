@@ -8,7 +8,6 @@ func _ready():
 
 func _physics_process(delta):
 	position += speed
-	print("spawned")
 	pass
 
 func _on_Area2D_area_entered(other):
@@ -18,7 +17,6 @@ func _on_Area2D_area_entered(other):
 	pass
 
 func _on_ProjectileVisibility_screen_exited():
-	print("gone")
 	queue_free()
 	pass
 

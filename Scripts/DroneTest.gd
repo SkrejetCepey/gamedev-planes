@@ -4,6 +4,17 @@ const Bullet = preload("res://Scenes/PlayerProjectileBullet.tscn")
 var projectileNumber = 1 setget projectileNumberSet
 var upgradeLvl = 0 setget upgradeLvlSet
 var firerate = 0.3
+var target
+
+func _physics_process(delta):
+	var motion
+	motion = (global_position - target.global_position) * 0.001
+	translate(motion)
+	pass
+
+func setTarget(pos):
+	target = pos
+	pass
 
 func _ready():
 	var fireTimer = Timer.new()
