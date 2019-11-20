@@ -7,7 +7,7 @@ const Ability = preload("res://Scenes/TestAbility.tscn")
 export var min_speed = 100
 export var max_speed = 200
 
-export var health = 500 setget set_health
+export var health = 300 setget set_health
 export var shoot_speed = 1
 
 var Speed

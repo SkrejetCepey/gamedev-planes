@@ -13,6 +13,7 @@ Mob = ExtResource( 2 )
 Mob1 = ExtResource( 3 )
 
 [node name="EnemySpawnTimer" type="Timer" parent="."]
+wait_time = 3.0
 
 [node name="EnemySpawner" type="Node2D" parent="."]
 

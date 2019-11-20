@@ -34,7 +34,7 @@ func _on_EnemySpawnTimer_timeout():
 		mob1.position = EnemySpawnLocation.position
 		#mob1.linear_velocity = Vector2(0,rand_range(mob1.min_speed, mob1.max_speed))
 		#mob1.global_position = Vector2(rand_range(50, get_viewport().get_visible_rect().size.x - 50), 0)
-	if (situation<=2):
+	elif (situation<=2):
 		EnemySpawnLocation.set_offset(randi())
 		var mob = Mob.instance()
 		get_node("EnemySpawner").add_child(mob)

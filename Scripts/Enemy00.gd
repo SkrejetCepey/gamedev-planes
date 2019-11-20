@@ -83,4 +83,4 @@ func _on_Trigger_area_entered(someone):
 		#health -= 50
 		$HealthBarEnemy.health_damaged(50)
 		someone.queue_free()
-	pass # Replace with function body.
+	pass

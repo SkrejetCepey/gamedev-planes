@@ -18,7 +18,7 @@ func _ready():
 
 func _on_Visible_screen_exited():
 	queue_free()
-	pass 
+	pass
 
 func set_speed(new_speed):
 	speed = new_speed

@@ -40,6 +40,7 @@ texture = ExtResource( 2 )
 flip_v = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2( 1.5, 1.5 )
 shape = SubResource( 1 )
 
 [node name="Visible" type="VisibilityNotifier2D" parent="."]
@@ -54,6 +55,7 @@ margin_bottom = -33.8799
 rect_scale = Vector2( 0.1, 0.1 )
 
 [node name="Trail" type="Particles2D" parent="."]
+visible = false
 show_behind_parent = true
 rotation = -3.14159
 scale = Vector2( 0.5, 0.5 )
@@ -63,7 +65,7 @@ process_material = SubResource( 6 )
 texture = ExtResource( 2 )
 
 [node name="GunFlash" type="Sprite" parent="."]
-position = Vector2( 0.467488, 51.2288 )
+position = Vector2( 0.467488, 60.944 )
 scale = Vector2( 0.131614, 0.131614 )
 z_index = -1
 texture = ExtResource( 4 )
@@ -76,9 +78,9 @@ wait_time = 0.14
 position = Vector2( 0, 33.47 )
 
 [node name="Trigger" type="Area2D" parent="."]
-editor/display_folded = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Trigger"]
+scale = Vector2( 1.5, 1.5 )
 shape = SubResource( 1 )
 [connection signal="screen_exited" from="Visible" to="." method="_on_Visible_screen_exited"]
 [connection signal="death" from="HealthBarEnemy" to="." method="_on_HealthBarEnemy_death"]
