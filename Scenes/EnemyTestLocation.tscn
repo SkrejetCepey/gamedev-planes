@@ -28,4 +28,7 @@ wait_time = 2.0
 
 [node name="BulletHelper" type="Node2D" parent="."]
 script = ExtResource( 4 )
+
+[node name="Enemy0" parent="." instance=ExtResource( 2 )]
+position = Vector2( 230.548, 340.81 )
 [connection signal="timeout" from="EnemySpawnTimer" to="." method="_on_EnemySpawnTimer_timeout"]

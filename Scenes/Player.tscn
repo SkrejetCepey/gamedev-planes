@@ -2,5 +2,11 @@
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 
-[node name="Player" type="Node2D"]
+[ext_resource path="res://Sprites/Player/Player.png" type="Texture" id=2]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+
+[node name="Player" type="Area2D"]
+scale = Vector2( 0.5, 0.5 )
+
 script = ExtResource( 1 )
