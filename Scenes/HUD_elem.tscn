@@ -9,31 +9,14 @@
 [ext_resource path="res://Interface/HUD/Setting.png" type="Texture" id=7]
 [ext_resource path="res://Music/SoundMain/gameover.wav" type="AudioStream" id=8]
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=8]
-font_data = ExtResource( 2 )
-
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.192157, 0.247059, 0.34902, 1 )
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color( 0, 0, 0, 1 )
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 16
 
 [sub_resource type="DynamicFont" id=2]
-size = 12
 font_data = ExtResource( 2 )
 
 [sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0.803922, 0.117647, 0.117647, 0 )
+bg_color = Color( 0.192157, 0.247059, 0.34902, 1 )
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
@@ -46,10 +29,11 @@ corner_radius_bottom_left = 3
 corner_detail = 16
 
 [sub_resource type="DynamicFont" id=4]
+size = 12
 font_data = ExtResource( 2 )
 
 [sub_resource type="StyleBoxFlat" id=5]
-bg_color = Color( 0.192157, 0.247059, 0.34902, 1 )
+bg_color = Color( 0.803922, 0.117647, 0.117647, 0 )
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
@@ -62,6 +46,22 @@ corner_radius_bottom_left = 3
 corner_detail = 16
 
 [sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.192157, 0.247059, 0.34902, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 16
+
+[sub_resource type="DynamicFont" id=8]
 size = 14
 font_data = ExtResource( 2 )
 
@@ -84,7 +84,7 @@ margin_right = 150.0
 margin_bottom = 290.0
 size_flags_horizontal = 3
 size_flags_vertical = 8
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 1 )
 button_mask = 7
 text = "ОК"
 
@@ -114,7 +114,7 @@ margin_right = 460.0
 margin_bottom = 19.0
 size_flags_horizontal = 7
 size_flags_vertical = 6
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 2 )
 text = "Настройка звука"
 align = 1
 
@@ -168,7 +168,7 @@ margin_right = 460.0
 margin_bottom = 138.0
 size_flags_horizontal = 7
 size_flags_vertical = 6
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 2 )
 text = "Настройка Музыки"
 align = 1
 
@@ -292,7 +292,7 @@ custom_constants/separation = 30
 margin_right = 100.0
 margin_bottom = 30.0
 rect_min_size = Vector2( 100, 30 )
-custom_styles/panel = SubResource( 1 )
+custom_styles/panel = SubResource( 3 )
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/Panel_Dollar"]
 editor/display_folded = true
@@ -325,7 +325,7 @@ margin_left = 23.0
 margin_top = 3.0
 margin_right = 65.0
 margin_bottom = 17.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 4 )
 text = "999999"
 valign = 1
 uppercase = true
@@ -337,8 +337,8 @@ margin_bottom = 21.0
 rect_min_size = Vector2( 20, 20 )
 size_flags_horizontal = 9
 size_flags_vertical = 0
-custom_styles/normal = SubResource( 3 )
-custom_fonts/font = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 text = "+"
 
 [node name="Panel_Emerald" type="Panel" parent="MarginContainer/HBoxContainer"]
@@ -347,7 +347,7 @@ margin_left = 130.0
 margin_right = 230.0
 margin_bottom = 30.0
 rect_min_size = Vector2( 100, 30 )
-custom_styles/panel = SubResource( 1 )
+custom_styles/panel = SubResource( 3 )
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/Panel_Emerald"]
 editor/display_folded = true
@@ -380,7 +380,7 @@ margin_left = 23.0
 margin_top = 3.0
 margin_right = 65.0
 margin_bottom = 17.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 4 )
 text = "999999"
 valign = 1
 uppercase = true
@@ -392,8 +392,8 @@ margin_bottom = 21.0
 rect_min_size = Vector2( 20, 20 )
 size_flags_horizontal = 9
 size_flags_vertical = 0
-custom_styles/normal = SubResource( 3 )
-custom_fonts/font = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 text = "+"
 
 [node name="Button_Setting" type="Button" parent="MarginContainer/HBoxContainer"]
@@ -403,7 +403,7 @@ margin_bottom = 30.0
 rect_min_size = Vector2( 100, 30 )
 size_flags_horizontal = 10
 size_flags_vertical = 0
-custom_styles/normal = SubResource( 5 )
+custom_styles/normal = SubResource( 7 )
 button_mask = 7
 
 [node name="TextureRect_setting" type="TextureRect" parent="MarginContainer/HBoxContainer/Button_Setting"]
@@ -426,7 +426,7 @@ margin_left = -71.9199
 margin_top = -8.0
 margin_right = -2.91992
 margin_bottom = 9.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 8 )
 text = "Настройки"
 align = 1
 

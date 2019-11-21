@@ -25,60 +25,13 @@ corner_radius_bottom_left = 10
 
 [sub_resource type="Theme" id=2]
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=3]
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=10]
+[sub_resource type="DynamicFont" id=4]
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=11]
-font_data = ExtResource( 4 )
-
-[sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0.376471, 0.376471, 0.376471, 1 )
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color( 0, 0, 0, 1 )
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-corner_detail = 16
-
-[sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 1, 1, 1, 1 )
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color( 0.772549, 0.101961, 0.101961, 1 )
-corner_radius_top_left = 66
-corner_radius_top_right = 66
-corner_radius_bottom_right = 66
-corner_radius_bottom_left = 66
-corner_detail = 16
-
-[sub_resource type="DynamicFont" id=12]
-size = 12
-font_data = ExtResource( 4 )
-
-[sub_resource type="StyleBoxFlat" id=5]
-bg_color = Color( 0.376471, 0.376471, 0.376471, 1 )
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color( 0, 0, 0, 1 )
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-corner_detail = 16
-
-[sub_resource type="DynamicFont" id=13]
-size = 12
+[sub_resource type="DynamicFont" id=5]
 font_data = ExtResource( 4 )
 
 [sub_resource type="StyleBoxFlat" id=6]
@@ -92,12 +45,59 @@ corner_radius_top_left = 2
 corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
+corner_detail = 16
 
-[sub_resource type="DynamicFont" id=14]
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 1, 1, 1, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.772549, 0.101961, 0.101961, 1 )
+corner_radius_top_left = 66
+corner_radius_top_right = 66
+corner_radius_bottom_right = 66
+corner_radius_bottom_left = 66
+corner_detail = 16
+
+[sub_resource type="DynamicFont" id=8]
 size = 12
 font_data = ExtResource( 4 )
 
-[sub_resource type="StyleBoxFlat" id=7]
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.376471, 0.376471, 0.376471, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+corner_detail = 16
+
+[sub_resource type="DynamicFont" id=10]
+size = 12
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.376471, 0.376471, 0.376471, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="DynamicFont" id=12]
+size = 12
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=13]
 bg_color = Color( 0.301961, 0.301961, 0.301961, 1 )
 border_width_left = 2
 border_width_top = 2
@@ -109,7 +109,7 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
-[sub_resource type="StyleBoxFlat" id=8]
+[sub_resource type="StyleBoxFlat" id=14]
 content_margin_left = 1.0
 bg_color = Color( 0.376471, 0.376471, 0.376471, 1 )
 border_width_left = 2
@@ -454,41 +454,6 @@ size_flags_vertical = 0
 texture = ExtResource( 3 )
 expand = true
 
-[node name="StaticPerson" type="VBoxContainer" parent="."]
-editor/display_folded = true
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -559.0
-margin_bottom = -411.0
-
-[node name="MarginContainer" type="MarginContainer" parent="StaticPerson"]
-margin_right = 480.0
-margin_bottom = 148.0
-size_flags_vertical = 3
-custom_constants/margin_right = 10
-custom_constants/margin_left = 10
-custom_constants/margin_bottom = 38
-
-[node name="Panel" type="Panel" parent="StaticPerson/MarginContainer"]
-margin_left = 10.0
-margin_right = 470.0
-margin_bottom = 110.0
-custom_styles/panel = SubResource( 5 )
-
-[node name="ScrollContainer" type="ScrollContainer" parent="StaticPerson/MarginContainer/Panel"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 10.0
-scroll_horizontal_enabled = false
-
-[node name="Label_Counter" type="Label" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/3/MarginContainer_Right/TransformationObject"]
-margin_left = -31.7937
-margin_top = -0.251724
-margin_right = -7.7937
-margin_bottom = 13.7483
-text = "121"
-
 [node name="4" type="HBoxContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer"]
 editor/display_folded = true
 margin_top = 96.0
@@ -788,7 +753,7 @@ custom_constants/separation = 0
 [node name="Label2" type="Label" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer2/HBoxContainer/VBoxContainer"]
 margin_right = 300.0
 margin_bottom = 19.0
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 3 )
 text = "PLAYER"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer2/HBoxContainer/VBoxContainer"]
@@ -803,7 +768,7 @@ margin_right = 191.0
 margin_bottom = 41.0
 size_flags_horizontal = 4
 size_flags_vertical = 0
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 4 )
 text = "Очки Уважения
 "
 align = 1
@@ -815,7 +780,7 @@ margin_right = 222.0
 margin_bottom = 19.0
 size_flags_horizontal = 4
 size_flags_vertical = 0
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 5 )
 text = "123"
 align = 1
 valign = 1
@@ -851,7 +816,7 @@ rect_min_size = Vector2( 77, 77 )
 [node name="Button_Dron" type="Button" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer2/HBoxContainer/VBoxContainer2/MarginContainer_Dron"]
 margin_right = 77.0
 margin_bottom = 77.0
-custom_styles/normal = SubResource( 3 )
+custom_styles/normal = SubResource( 6 )
 disabled = true
 button_mask = 7
 
@@ -878,7 +843,7 @@ margin_top = -7.55286
 margin_right = 8.26111
 margin_bottom = 13.4471
 rect_pivot_offset = Vector2( 12.9481, 8 )
-custom_styles/panel = SubResource( 4 )
+custom_styles/panel = SubResource( 7 )
 
 [node name="counter_availability" type="Label" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer2/HBoxContainer/VBoxContainer2/MarginContainer_Dron/Button_Dron/TransformationObject"]
 anchor_left = 0.5
@@ -889,7 +854,7 @@ margin_left = 27.7611
 margin_top = -42.0529
 margin_right = 43.7611
 margin_bottom = -28.0529
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "12"
 align = 1
@@ -909,7 +874,7 @@ margin_bottom = 218.0
 margin_right = 77.0
 margin_bottom = 77.0
 rect_min_size = Vector2( 77, 77 )
-custom_styles/normal = SubResource( 5 )
+custom_styles/normal = SubResource( 9 )
 disabled = true
 
 [node name="TransformationObject" type="NinePatchRect" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer2/HBoxContainer/VBoxContainer2/MarginContainer_Map/Button_Map"]
@@ -924,7 +889,7 @@ margin_top = -7.72424
 margin_right = 9.81268
 margin_bottom = 13.2758
 rect_pivot_offset = Vector2( 12.9481, 8 )
-custom_styles/panel = SubResource( 4 )
+custom_styles/panel = SubResource( 7 )
 
 [node name="counter_availability" type="Label" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer2/HBoxContainer/VBoxContainer2/MarginContainer_Map/Button_Map/TransformationObject"]
 anchor_left = 1.0
@@ -935,7 +900,7 @@ margin_left = -9.0
 margin_top = -42.5
 margin_right = 7.0
 margin_bottom = -28.5
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "12"
 align = 1
@@ -961,7 +926,7 @@ rect_min_size = Vector2( 77, 77 )
 [node name="Button_Hangar" type="Button" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer2/HBoxContainer/VBoxContainer2/MarginContainer_Hangar"]
 margin_right = 77.0
 margin_bottom = 77.0
-custom_styles/normal = SubResource( 6 )
+custom_styles/normal = SubResource( 11 )
 
 [node name="TransformationObject" type="NinePatchRect" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer2/HBoxContainer/VBoxContainer2/MarginContainer_Hangar/Button_Hangar"]
 margin_right = 77.0
@@ -975,7 +940,7 @@ margin_top = -7.94427
 margin_right = 10.3432
 margin_bottom = 13.0557
 rect_pivot_offset = Vector2( 12.9481, 8 )
-custom_styles/panel = SubResource( 4 )
+custom_styles/panel = SubResource( 7 )
 
 [node name="counter_availability" type="Label" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer2/HBoxContainer/VBoxContainer2/MarginContainer_Hangar/Button_Hangar/TransformationObject"]
 anchor_left = 1.0
@@ -984,7 +949,7 @@ margin_left = -8.6568
 margin_top = -4.48522
 margin_right = 7.3432
 margin_bottom = 9.51478
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 12 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "12"
 align = 1
@@ -1002,6 +967,34 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 texture = ExtResource( 8 )
 expand = true
+
+[node name="StaticPerson" type="VBoxContainer" parent="."]
+editor/display_folded = true
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -559.0
+margin_bottom = -411.0
+
+[node name="MarginContainer" type="MarginContainer" parent="StaticPerson"]
+margin_right = 480.0
+margin_bottom = 148.0
+size_flags_vertical = 3
+custom_constants/margin_right = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 38
+
+[node name="Panel" type="Panel" parent="StaticPerson/MarginContainer"]
+margin_left = 10.0
+margin_right = 470.0
+margin_bottom = 110.0
+custom_styles/panel = SubResource( 9 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="StaticPerson/MarginContainer/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 10.0
+scroll_horizontal_enabled = false
 
 [node name="ButtonPlay" type="VBoxContainer" parent="."]
 editor/display_folded = true
@@ -1027,8 +1020,8 @@ margin_right = 464.0
 margin_bottom = 60.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 7 )
-custom_styles/normal = SubResource( 8 )
+custom_styles/hover = SubResource( 13 )
+custom_styles/normal = SubResource( 14 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 shortcut_in_tooltip = false
 button_mask = 7
