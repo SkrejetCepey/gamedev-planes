@@ -8,12 +8,8 @@ var target
 
 func _physics_process(delta):
 	var motion
-	motion = (global_position - target.global_position) * 0.001
+	motion = (target.global_position - global_position) * 0.35
 	translate(motion)
-	pass
-
-func setTarget(pos):
-	target = pos
 	pass
 
 func _ready():
@@ -58,4 +54,8 @@ func projectileNumberSet(number):
 
 func upgradeLvlSet(number):
 	upgradeLvl = number
+	pass
+
+func setTarget(pos):
+	target = pos
 	pass

@@ -25,12 +25,11 @@ func _ready():
 
 func ready_drones():
 	var droneL = Drone.instance()
-#	droneL.global_position = plane.get_node("DronePositionLeft").global_position
 	droneL.setTarget(plane.get_node("DronePositionLeft"))
-	add_child(droneL)
-#	var droneR = Drone.instance()
-#	droneR.position = plane.get_node("DronePositionRight").position
-#	plane.add_child(droneR)
+	get_parent().add_child(droneL)
+	var droneR = Drone.instance()
+	droneR.setTarget(plane.get_node("DronePositionRight"))
+	get_parent().add_child(droneR)
 	pass
 
 func ready_plane():
@@ -61,6 +60,11 @@ func moving():
 		prevMousePos = prevMousePos + motion
 	elif Input.is_action_just_released("player_move"):
 		prevMousePos = null
+		
+	var pos = position
+	pos.x = clamp(position.x, 100, get_viewport().get_size().x - 100)
+	pos.y = clamp(position.y, 100, get_viewport().get_size().y - 100)
+	position = pos
 	pass
 
 func set_health(new_value):
