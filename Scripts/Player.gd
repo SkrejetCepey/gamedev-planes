@@ -1,15 +1,14 @@
-extends Area2D
+extends Node2D
 
-const Bullet = preload("res://Scenes/PlayerProjectileBullet.tscn")
-const Rocket = preload("res://Scenes/PlayerProjectileRocket.tscn")
-const Canon = preload("res://Scenes/PlayerCannon.tscn")
+const SU_57 = preload("res://Scenes/SU-57.tscn")
+const Maingun = preload("res://Scenes/PlayerCannon.tscn")
+const Subgun = preload("res://Scenes/SubgunRockets.tscn")
+const Drone = preload("res://Scenes/DroneTest.tscn")
 
 var prevMousePos = null
+var plane
 var health = 3 setget set_health
 var speed = 0.2
-var gunFirerate = 0.2
-var bulletNumber = 2
-var rocketFirerate = 0.7
 
 func _physics_process(delta):
 	moving()
@@ -19,11 +18,35 @@ func _ready():
 	add_to_group("player")
 	position.y = get_viewport().get_visible_rect().size.y/2
 	position.x = get_viewport().get_visible_rect().size.x/2
-	var canon = Canon.instance()
-	canon.position = $PlayerCannonPosition.position
-	canon.projectileNumberSet(1)
-	canon.upgradeLvlSet(1)
-	add_child(canon)
+	ready_plane()
+	ready_guns()
+	ready_drones()
+	pass
+
+func ready_drones():
+	var droneL = Drone.instance()
+	droneL.setTarget(plane.get_node("DronePositionLeft"))
+	get_parent().add_child(droneL)
+	var droneR = Drone.instance()
+	droneR.setTarget(plane.get_node("DronePositionRight"))
+	get_parent().add_child(droneR)
+	pass
+
+func ready_plane():
+	plane = SU_57.instance()
+	add_child(plane)
+	pass
+	
+func ready_guns():
+	var maingun = Maingun.instance()
+	maingun.position = plane.get_node("MaingunPosition").position
+	add_child(maingun)
+	var subgunL = Subgun.instance()
+	var subgunR = Subgun.instance()
+	subgunL.position = plane.get_node("SubgunPositionLeft").position
+	subgunR.position = plane.get_node("SubgunPositionRight").position
+	add_child(subgunL)
+	add_child(subgunR)
 	pass
 
 func moving():
@@ -37,6 +60,11 @@ func moving():
 		prevMousePos = prevMousePos + motion
 	elif Input.is_action_just_released("player_move"):
 		prevMousePos = null
+		
+	var pos = position
+	pos.x = clamp(position.x, 100, get_viewport().get_size().x - 100)
+	pos.y = clamp(position.y, 100, get_viewport().get_size().y - 100)
+	position = pos
 	pass
 
 func set_health(new_value):

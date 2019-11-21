@@ -1,9 +1,9 @@
 extends Node2D
 
-const Bullet = preload("res://Scenes/PlayerProjectileBullet.tscn")
-var projectileNumber setget projectileNumberSet
-var upgradeLvl setget upgradeLvlSet
-var firerate = 0.3
+const Rocket = preload("res://Scenes/PlayerProjectileRocket.tscn")
+var projectileNumber = 1 setget projectileNumberSet
+var upgradeLvl = 0 setget upgradeLvlSet
+var firerate = 1 setget firerateSet
 
 func _ready():
 	var fireTimer = Timer.new()
@@ -15,11 +15,11 @@ func _ready():
 
 func shoot():
 	if upgradeLvl == 0:
-		createBulletArray(Vector2(0, -20))
+		createBulletArray(Vector2(0, -10))
 	else:
-		createBulletArray(Vector2(-10, -20))
-		createBulletArray(Vector2(0, -20))
-		createBulletArray(Vector2(10, -20))
+		createBulletArray(Vector2(-10, -10))
+		createBulletArray(Vector2(0, -10))
+		createBulletArray(Vector2(10, -10))
 	pass
 
 func createBulletArray(rot):
@@ -35,16 +35,20 @@ func createBulletArray(rot):
 	pass
 
 func addBullet(pos, rot):
-	var bullet = Bullet.instance()
-	bullet.position = pos
-	bullet.setSpeed(rot)
-	get_node("../").add_child(bullet)
+	var rocket = Rocket.instance()
+	rocket.global_position = global_position
+	rocket.setSpeed(rot)
+	get_tree().get_root().get_node("ArcadeScene").add_child(rocket)
 	pass
 
 func projectileNumberSet(number):
 	projectileNumber = number
 	pass
-	
+
 func upgradeLvlSet(number):
 	upgradeLvl = number
+	pass
+	
+func firerateSet(number):
+	firerate = number
 	pass

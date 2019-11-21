@@ -2,6 +2,10 @@ extends Area2D
 
 var speed setget setSpeed
 
+func _ready():
+	z_index = -1
+	pass
+
 func _physics_process(delta):
 	position += speed
 	pass
@@ -15,7 +19,7 @@ func _on_Area2D_area_entered(other):
 func _on_ProjectileVisibility_screen_exited():
 	queue_free()
 	pass
-	
+
 func setSpeed(pos):
 	speed = pos
 	pass
