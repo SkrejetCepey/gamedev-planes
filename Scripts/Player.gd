@@ -15,7 +15,7 @@ func _physics_process(delta):
 	pass
 
 func _ready():
-
+	add_to_group("player")
 	position.y = get_viewport().get_visible_rect().size.y/2
 	position.x = get_viewport().get_visible_rect().size.x/2
 	ready_plane()
@@ -67,7 +67,7 @@ func moving():
 	position = pos
 	pass
 
-func set_health(new_value):
-	health = new_value
+func set_health(damage_value):
+	health -= damage_value
 	if health <= 0: queue_free()
 	pass
