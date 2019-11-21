@@ -143,7 +143,6 @@ expand = true
 stretch_mode = 7
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -158,7 +157,6 @@ custom_constants/margin_left = 11
 custom_constants/margin_bottom = 11
 
 [node name="AnimatedСartoon_&_Button" type="VBoxContainer" parent="MarginContainer"]
-editor/display_folded = true
 margin_left = 11.0
 margin_top = 11.0
 margin_right = 469.0
@@ -758,7 +756,6 @@ size_flags_vertical = 3
 custom_constants/separation = 50
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer2/HBoxContainer"]
-editor/display_folded = true
 margin_right = 300.0
 margin_bottom = 360.0
 size_flags_horizontal = 3
