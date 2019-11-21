@@ -6,7 +6,8 @@ export var speed = 100
 onready var follow = get_node("PathFollow2D")
 
 func _process(delta):
-	follow.set_offset(follow.get_offset() + speed * delta)
+	#follow.set_offset(follow.get_offset() + speed * delta)
+	
 	#follow.move_local_x = clamp(follow.move_local_x, 0, screen_size.x)
 	#follow.x = clamp(position.x, 0, screen_size.x)
 	#position.y = clamp(position.y, 0, screen_size.y)

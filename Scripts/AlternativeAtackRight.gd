@@ -4,8 +4,10 @@ export var speed = 500
 var velocity = Vector2()
 
 func _physics_process(delta):
-	velocity.x = speed * delta
-	velocity.y = speed * delta
+	if(position.y > get_viewport().get_visible_rect().size.y + 10):
+		queue_free()
+	velocity.x = speed * delta * 0.25
+	velocity.y = speed * delta 
 	translate(velocity)
 	pass
 	
