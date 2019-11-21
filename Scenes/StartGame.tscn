@@ -1,63 +1,12 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scripts/Global.gd" type="Script" id=1]
-[ext_resource path="res://Interface/icon/Dollar.png" type="Texture" id=2]
-[ext_resource path="res://Interface/icon/SecretData.png" type="Texture" id=3]
-[ext_resource path="res://Interface/icon/Setting.png" type="Texture" id=4]
-[ext_resource path="res://icon.png" type="Texture" id=5]
-[ext_resource path="res://Interface/icon/level_up.png" type="Texture" id=6]
-[ext_resource path="res://Interface/icon/Dron.png" type="Texture" id=7]
-[ext_resource path="res://Interface/icon/map.png" type="Texture" id=8]
-[ext_resource path="res://Interface/icon/Hangar_air_two.png" type="Texture" id=9]
-
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.376471, 0.376471, 0.376471, 1 )
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color( 0, 0, 0, 1 )
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-
-[sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.6, 0.6, 0.6, 0 )
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color( 0.839216, 0.109804, 0.109804, 1 )
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-corner_detail = 24
-
-[sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0.376471, 0.376471, 0.376471, 1 )
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_color = Color( 0, 0, 0, 1 )
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-corner_detail = 16
-
-[sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0.376471, 0.376471, 0.376471, 1 )
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color( 0, 0, 0, 1 )
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
+[ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://Interface/icon/level_up.png" type="Texture" id=4]
+[ext_resource path="res://Interface/icon/Dron.png" type="Texture" id=5]
+[ext_resource path="res://Interface/icon/map.png" type="Texture" id=6]
+[ext_resource path="res://Interface/icon/Hangar_air_two.png" type="Texture" id=7]
 
 [sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.376471, 0.376471, 0.376471, 1 )
@@ -170,194 +119,10 @@ margin_bottom = -1.98389
 expand = true
 stretch_mode = 7
 
-[node name="HUD" type="VBoxContainer" parent="."]
-anchor_right = 1.0
-margin_bottom = 50.0
-size_flags_horizontal = 0
-size_flags_vertical = 0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="HUD"]
-margin_left = 89.0
-margin_right = 390.0
-margin_bottom = 71.0
-size_flags_horizontal = 4
-size_flags_vertical = 0
-
-[node name="MarginContainer" type="MarginContainer" parent="HUD/HBoxContainer"]
-margin_right = 211.0
-margin_bottom = 71.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_constants/margin_top = 11
-custom_constants/margin_left = 11
-
-[node name="Panel" type="Panel" parent="HUD/HBoxContainer/MarginContainer"]
-margin_left = 11.0
-margin_top = 11.0
-margin_right = 211.0
-margin_bottom = 71.0
-rect_min_size = Vector2( 200, 60 )
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_styles/panel = SubResource( 1 )
-
-[node name="HBoxContainer" type="HBoxContainer" parent="HUD/HBoxContainer/MarginContainer/Panel"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-size_flags_horizontal = 0
-size_flags_vertical = 0
-
-[node name="MarginContainer" type="MarginContainer" parent="HUD/HBoxContainer/MarginContainer/Panel/HBoxContainer"]
-margin_right = 94.0
-margin_bottom = 60.0
-
-[node name="MarginContainer4" type="MarginContainer" parent="HUD/HBoxContainer/MarginContainer/Panel/HBoxContainer/MarginContainer"]
-margin_top = 3.0
-margin_right = 54.0
-margin_bottom = 57.0
-size_flags_horizontal = 0
-size_flags_vertical = 4
-
-[node name="TextureRect_Dollar" type="TextureRect" parent="HUD/HBoxContainer/MarginContainer/Panel/HBoxContainer/MarginContainer/MarginContainer4"]
-margin_right = 54.0
-margin_bottom = 54.0
-rect_min_size = Vector2( 54, 54 )
-texture = ExtResource( 2 )
-expand = true
-
-[node name="MarginContainer5" type="MarginContainer" parent="HUD/HBoxContainer/MarginContainer/Panel/HBoxContainer/MarginContainer"]
-margin_top = 23.0
-margin_right = 69.0
-margin_bottom = 37.0
-size_flags_horizontal = 0
-size_flags_vertical = 4
-custom_constants/margin_left = 45
-
-[node name="Counter_dollar" type="Label" parent="HUD/HBoxContainer/MarginContainer/Panel/HBoxContainer/MarginContainer/MarginContainer5"]
-margin_left = 45.0
-margin_right = 69.0
-margin_bottom = 14.0
-text = "123"
-
-[node name="MarginContainer6" type="MarginContainer" parent="HUD/HBoxContainer/MarginContainer/Panel/HBoxContainer/MarginContainer"]
-margin_top = 18.0
-margin_right = 94.0
-margin_bottom = 42.0
-size_flags_horizontal = 0
-size_flags_vertical = 4
-custom_constants/margin_left = 70
-
-[node name="Button_Counter_dollar_buy" type="Button" parent="HUD/HBoxContainer/MarginContainer/Panel/HBoxContainer/MarginContainer/MarginContainer6"]
-margin_left = 70.0
-margin_right = 94.0
-margin_bottom = 24.0
-rect_min_size = Vector2( 24, 24 )
-size_flags_horizontal = 0
-size_flags_vertical = 0
-custom_styles/normal = SubResource( 2 )
-custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
-disabled = true
-text = "+"
-
-[node name="MarginContainer2" type="MarginContainer" parent="HUD/HBoxContainer/MarginContainer/Panel/HBoxContainer"]
-margin_left = 98.0
-margin_right = 192.0
-margin_bottom = 60.0
-
-[node name="MarginContainer4" type="MarginContainer" parent="HUD/HBoxContainer/MarginContainer/Panel/HBoxContainer/MarginContainer2"]
-margin_top = 7.0
-margin_right = 45.0
-margin_bottom = 52.0
-size_flags_horizontal = 0
-size_flags_vertical = 4
-
-[node name="TextureRect_Secret" type="TextureRect" parent="HUD/HBoxContainer/MarginContainer/Panel/HBoxContainer/MarginContainer2/MarginContainer4"]
-margin_right = 45.0
-margin_bottom = 45.0
-rect_min_size = Vector2( 45, 45 )
-size_flags_horizontal = 0
-size_flags_vertical = 0
-texture = ExtResource( 3 )
-expand = true
-
-[node name="MarginContainer5" type="MarginContainer" parent="HUD/HBoxContainer/MarginContainer/Panel/HBoxContainer/MarginContainer2"]
-margin_top = 23.0
-margin_right = 69.0
-margin_bottom = 37.0
-size_flags_horizontal = 0
-size_flags_vertical = 4
-custom_constants/margin_left = 45
-
-[node name="Counter_Secret" type="Label" parent="HUD/HBoxContainer/MarginContainer/Panel/HBoxContainer/MarginContainer2/MarginContainer5"]
-margin_left = 45.0
-margin_right = 69.0
-margin_bottom = 14.0
-text = "123"
-
-[node name="MarginContainer6" type="MarginContainer" parent="HUD/HBoxContainer/MarginContainer/Panel/HBoxContainer/MarginContainer2"]
-margin_top = 18.0
-margin_right = 94.0
-margin_bottom = 42.0
-size_flags_horizontal = 0
-size_flags_vertical = 4
-custom_constants/margin_left = 70
-
-[node name="Button_Counter_secret_buy" type="Button" parent="HUD/HBoxContainer/MarginContainer/Panel/HBoxContainer/MarginContainer2/MarginContainer6"]
-margin_left = 70.0
-margin_right = 94.0
-margin_bottom = 24.0
-rect_min_size = Vector2( 24, 24 )
-size_flags_horizontal = 0
-size_flags_vertical = 0
-custom_styles/normal = SubResource( 2 )
-custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
-disabled = true
-text = "+"
-
-[node name="MarginContainer2" type="MarginContainer" parent="HUD/HBoxContainer"]
-margin_left = 215.0
-margin_right = 301.0
-margin_bottom = 71.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_constants/margin_right = 11
-custom_constants/margin_top = 10
-custom_constants/margin_left = 15
-
-[node name="Panel2" type="Panel" parent="HUD/HBoxContainer/MarginContainer2"]
-margin_left = 15.0
-margin_top = 10.0
-margin_right = 75.0
-margin_bottom = 71.0
-rect_min_size = Vector2( 60, 60 )
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_styles/panel = SubResource( 3 )
-
-[node name="Button_Setting" type="Button" parent="HUD/HBoxContainer/MarginContainer2"]
-margin_left = 15.0
-margin_top = 10.0
-margin_right = 75.0
-margin_bottom = 71.0
-custom_styles/normal = SubResource( 4 )
-disabled = true
-
-[node name="TextureRect" type="TextureRect" parent="HUD/HBoxContainer/MarginContainer2/Button_Setting"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -15.5
-margin_top = -15.5
-margin_right = 15.5
-margin_bottom = 15.5
-rect_min_size = Vector2( 31, 31 )
-size_flags_horizontal = 0
-size_flags_vertical = 0
-texture = ExtResource( 4 )
-expand = true
+[node name="HUD" parent="." instance=ExtResource( 2 )]
 
 [node name="StaticPerson" type="VBoxContainer" parent="."]
+editor/display_folded = true
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -428,7 +193,7 @@ margin_top = 4.0
 margin_right = 24.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 20, 20 )
-texture = ExtResource( 5 )
+texture = ExtResource( 3 )
 expand = true
 
 [node name="MarginContainer_NamePerson" type="MarginContainer" parent="StaticPerson/MarginContainer/Panel/ScrollContainer/VBoxContainer/1"]
@@ -466,7 +231,7 @@ margin_bottom = 13.0
 rect_min_size = Vector2( 13, 13 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource( 6 )
+texture = ExtResource( 4 )
 expand = true
 
 [node name="TransformationObject" type="NinePatchRect" parent="StaticPerson/MarginContainer/Panel/ScrollContainer/VBoxContainer/1/MarginContainer_Right"]
@@ -518,7 +283,7 @@ margin_top = 4.0
 margin_right = 24.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 20, 20 )
-texture = ExtResource( 5 )
+texture = ExtResource( 3 )
 expand = true
 
 [node name="MarginContainer_NamePerson" type="MarginContainer" parent="StaticPerson/MarginContainer/Panel/ScrollContainer/VBoxContainer/2"]
@@ -555,7 +320,7 @@ margin_bottom = 13.0
 rect_min_size = Vector2( 13, 13 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource( 6 )
+texture = ExtResource( 4 )
 expand = true
 
 [node name="TransformationObject" type="NinePatchRect" parent="StaticPerson/MarginContainer/Panel/ScrollContainer/VBoxContainer/2/MarginContainer_Right"]
@@ -607,7 +372,7 @@ margin_top = 4.0
 margin_right = 24.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 20, 20 )
-texture = ExtResource( 5 )
+texture = ExtResource( 3 )
 expand = true
 
 [node name="MarginContainer_NamePerson" type="MarginContainer" parent="StaticPerson/MarginContainer/Panel/ScrollContainer/VBoxContainer/3"]
@@ -644,7 +409,7 @@ margin_bottom = 13.0
 rect_min_size = Vector2( 13, 13 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource( 6 )
+texture = ExtResource( 4 )
 expand = true
 
 [node name="TransformationObject" type="NinePatchRect" parent="StaticPerson/MarginContainer/Panel/ScrollContainer/VBoxContainer/3/MarginContainer_Right"]
@@ -659,6 +424,7 @@ margin_bottom = 13.7483
 text = "121"
 
 [node name="AnimatedСartoon_&_Button" type="VBoxContainer" parent="."]
+editor/display_folded = true
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -794,7 +560,7 @@ align = 1
 [node name="TextureRect_Dron" type="TextureRect" parent="AnimatedСartoon_&_Button/HBoxContainer/MarginContainer_Button/CenterContainer/VBoxContainer/MarginContainer_Dron/Button_Dron"]
 margin_right = 77.0
 margin_bottom = 77.0
-texture = ExtResource( 7 )
+texture = ExtResource( 5 )
 expand = true
 
 [node name="MarginContainer_Map" type="MarginContainer" parent="AnimatedСartoon_&_Button/HBoxContainer/MarginContainer_Button/CenterContainer/VBoxContainer"]
@@ -846,7 +612,7 @@ margin_left = -25.5
 margin_top = -24.0
 margin_right = 25.5
 margin_bottom = 24.0
-texture = ExtResource( 8 )
+texture = ExtResource( 6 )
 expand = true
 
 [node name="MarginContainer_Hangar" type="MarginContainer" parent="AnimatedСartoon_&_Button/HBoxContainer/MarginContainer_Button/CenterContainer/VBoxContainer"]
@@ -898,10 +664,11 @@ margin_right = 30.0
 margin_bottom = 19.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource( 9 )
+texture = ExtResource( 7 )
 expand = true
 
 [node name="ButtonPlay" type="VBoxContainer" parent="."]
+editor/display_folded = true
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
