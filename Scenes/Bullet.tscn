@@ -2,13 +2,14 @@
 
 [ext_resource path="res://Sprites/bullet.png" type="Texture" id=1]
 
-[sub_resource type="GDScript" id=3]
+[sub_resource type="GDScript" id=1]
 script/source = "extends Area2D
 
 var speed = null setget speed_setter
 var direction = null setget direction_setter
 var damage = null setget damage_setter
 var velocity = Vector2(0,0)
+var enemy = \"enemy\"
 
 func speed_setter(_speed):
 	if (_speed == null):
@@ -30,8 +31,15 @@ func damage_setter(_damage):
 		return
 	damage = _damage
 	pass
+	
+func enemy_setter(_enemy):
+	if(_enemy == null):
+		enemy = \"enemy\"
+		return
+	enemy = _enemy
+	pass
 
-func initialize(_position,_direction,_rot,_speed, _damage):
+func initialize(_position,_direction,_rot,_speed,_damage, _enemy):
 	if(_position == null):
 		global_position = Vector2(0,0)
 	else:
@@ -45,6 +53,7 @@ func initialize(_position,_direction,_rot,_speed, _damage):
 	direction_setter(_direction)
 	speed_setter(_speed)
 	damage_setter(_damage)
+	enemy_setter(_enemy)
 	pass
 	
 func _ready():
@@ -60,12 +69,12 @@ func _physics_process(delta):
 	pass
 
 func _on_Bullet_body_entered(body):
-	if body is KinematicBody2D or body is Area2D:
-		if body.is_in_group(\"enemy\") == true:
+	match enemy:
+		\"enemy\":
 			body.get_node(\"HealthBarEnemy\").health_damaged(damage)
 			queue_free()
-		elif body.is_in_group(\"player\") == true:
-			body.health -= 1 #maybe work
+		\"player\":
+			body.health -= damage #maybe work
 			queue_free()
 	pass # Replace with function body.
 "
@@ -77,7 +86,7 @@ height = 98.8474
 [node name="Bullet" type="Area2D"]
 position = Vector2( 235.229, 264.633 )
 scale = Vector2( 0.5, 0.5 )
-script = SubResource( 3 )
+script = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
