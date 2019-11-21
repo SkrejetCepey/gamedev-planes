@@ -16,6 +16,7 @@ func _ready():
 	
 	add_to_group("enemy")
 	Speed = rand_range(min_speed, max_speed)
+	
 	var atack = EnemyAtack.instance()
 	atack.set_enemy_atack_type(0)
 	atack.set_enemy_shoot_speed(shoot_speed)
