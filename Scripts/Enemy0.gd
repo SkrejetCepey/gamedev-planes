@@ -13,9 +13,11 @@ var Speed
 
 func _ready():
 	randomize()
+	$HealthBarEnemy/HealthBar.max_value = health
 	
 	add_to_group("enemy")
 	Speed = rand_range(min_speed, max_speed)
+	
 	var atack = EnemyAtack.instance()
 	atack.set_enemy_atack_type(0)
 	atack.set_enemy_shoot_speed(shoot_speed)
@@ -82,5 +84,6 @@ func _on_Trigger_area_entered(someone):
 	if someone.is_in_group("player"):
 		#health -= 50
 		$HealthBarEnemy.health_damaged(50)
-		someone.queue_free()
+		#someone.queue_free()
+		someone.health -= 50
 	pass
