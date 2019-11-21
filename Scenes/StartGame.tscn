@@ -1,65 +1,16 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Scripts/Global.gd" type="Script" id=1]
-[ext_resource path="res://Interface/icon/Dollar.png" type="Texture" id=2]
-[ext_resource path="res://Interface/icon/SecretData.png" type="Texture" id=3]
-[ext_resource path="res://Interface/icon/Setting.png" type="Texture" id=4]
-[ext_resource path="res://icon.png" type="Texture" id=5]
-[ext_resource path="res://Interface/icon/level_up.png" type="Texture" id=6]
-[ext_resource path="res://Interface/icon/Dron.png" type="Texture" id=7]
-[ext_resource path="res://Interface/icon/map.png" type="Texture" id=8]
-[ext_resource path="res://Interface/icon/Hangar_air_two.png" type="Texture" id=9]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Interface/icon/level_up.png" type="Texture" id=3]
+[ext_resource path="res://Interface/fonts/18097.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Interface/Main/Test/Silviabig.png" type="Texture" id=5]
+[ext_resource path="res://Interface/icon/Dron.png" type="Texture" id=6]
+[ext_resource path="res://Interface/icon/map.png" type="Texture" id=7]
+[ext_resource path="res://Interface/icon/Hangar_air_two.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/HUD_elem.tscn" type="PackedScene" id=9]
 
 [sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.376471, 0.376471, 0.376471, 1 )
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color( 0, 0, 0, 1 )
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-
-[sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.6, 0.6, 0.6, 0 )
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color( 0.839216, 0.109804, 0.109804, 1 )
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-corner_detail = 24
-
-[sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0.376471, 0.376471, 0.376471, 1 )
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_color = Color( 0, 0, 0, 1 )
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-corner_detail = 16
-
-[sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0.376471, 0.376471, 0.376471, 1 )
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color( 0, 0, 0, 1 )
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-
-[sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.376471, 0.376471, 0.376471, 1 )
 border_width_left = 1
 border_width_top = 1
@@ -72,9 +23,18 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="Theme" id=6]
+[sub_resource type="Theme" id=2]
 
-[sub_resource type="StyleBoxFlat" id=7]
+[sub_resource type="DynamicFont" id=9]
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=10]
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=11]
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.376471, 0.376471, 0.376471, 1 )
 border_width_left = 1
 border_width_top = 1
@@ -87,7 +47,7 @@ corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 corner_detail = 16
 
-[sub_resource type="StyleBoxFlat" id=8]
+[sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 1, 1, 1, 1 )
 border_width_left = 1
 border_width_top = 1
@@ -100,7 +60,11 @@ corner_radius_bottom_right = 66
 corner_radius_bottom_left = 66
 corner_detail = 16
 
-[sub_resource type="StyleBoxFlat" id=9]
+[sub_resource type="DynamicFont" id=12]
+size = 12
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.376471, 0.376471, 0.376471, 1 )
 border_width_left = 1
 border_width_top = 1
@@ -113,7 +77,11 @@ corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 corner_detail = 16
 
-[sub_resource type="StyleBoxFlat" id=10]
+[sub_resource type="DynamicFont" id=13]
+size = 12
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0.376471, 0.376471, 0.376471, 1 )
 border_width_left = 1
 border_width_top = 1
@@ -125,7 +93,11 @@ corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
-[sub_resource type="StyleBoxFlat" id=11]
+[sub_resource type="DynamicFont" id=14]
+size = 12
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0.301961, 0.301961, 0.301961, 1 )
 border_width_left = 2
 border_width_top = 2
@@ -137,7 +109,7 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
-[sub_resource type="StyleBoxFlat" id=12]
+[sub_resource type="StyleBoxFlat" id=8]
 content_margin_left = 1.0
 bg_color = Color( 0.376471, 0.376471, 0.376471, 1 )
 border_width_left = 2
@@ -170,191 +142,316 @@ margin_bottom = -1.98389
 expand = true
 stretch_mode = 7
 
-[node name="HUD" type="VBoxContainer" parent="."]
-anchor_right = 1.0
-margin_bottom = 50.0
-size_flags_horizontal = 0
-size_flags_vertical = 0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="HUD"]
-margin_left = 89.0
-margin_right = 390.0
-margin_bottom = 71.0
-size_flags_horizontal = 4
-size_flags_vertical = 0
-
-[node name="MarginContainer" type="MarginContainer" parent="HUD/HBoxContainer"]
-margin_right = 211.0
-margin_bottom = 71.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -240.0
+margin_top = -278.0
+margin_right = 240.0
+margin_bottom = 310.0
+custom_constants/margin_right = 11
 custom_constants/margin_top = 11
 custom_constants/margin_left = 11
+custom_constants/margin_bottom = 11
 
-[node name="Panel" type="Panel" parent="HUD/HBoxContainer/MarginContainer"]
+[node name="AnimatedСartoon_&_Button" type="VBoxContainer" parent="MarginContainer"]
 margin_left = 11.0
 margin_top = 11.0
-margin_right = 211.0
-margin_bottom = 71.0
-rect_min_size = Vector2( 200, 60 )
-size_flags_horizontal = 3
+margin_right = 469.0
+margin_bottom = 577.0
+rect_min_size = Vector2( 300, 0 )
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/AnimatedСartoon_&_Button"]
+editor/display_folded = true
+margin_right = 458.0
+margin_bottom = 182.0
 size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer"]
+editor/display_folded = true
+margin_right = 458.0
+margin_bottom = 182.0
 custom_styles/panel = SubResource( 1 )
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HUD/HBoxContainer/MarginContainer/Panel"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel"]
+editor/display_folded = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -229.0
+margin_top = -86.0
+margin_right = 229.0
+margin_bottom = 86.0
+scroll_horizontal_enabled = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer"]
+editor/display_folded = true
+margin_right = 446.0
+margin_bottom = 188.0
+size_flags_horizontal = 3
+
+[node name="1" type="HBoxContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer"]
+editor/display_folded = true
+margin_right = 446.0
+margin_bottom = 28.0
+theme = SubResource( 2 )
+
+[node name="MarginContainer_Counter" type="MarginContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/1"]
+margin_right = 30.0
+margin_bottom = 28.0
+custom_constants/margin_right = 11
+custom_constants/margin_top = 6
+custom_constants/margin_left = 11
+custom_constants/margin_bottom = 6
+
+[node name="PersonCounter" type="Label" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/1/MarginContainer_Counter"]
+margin_left = 11.0
+margin_top = 7.0
+margin_right = 19.0
+margin_bottom = 21.0
 size_flags_horizontal = 0
-size_flags_vertical = 0
+text = "1"
+align = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="HUD/HBoxContainer/MarginContainer/Panel/HBoxContainer"]
-margin_right = 94.0
-margin_bottom = 60.0
+[node name="MarginContainer_img" type="MarginContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/1"]
+editor/display_folded = true
+margin_left = 34.0
+margin_right = 62.0
+margin_bottom = 28.0
+custom_constants/margin_right = 4
+custom_constants/margin_top = 4
+custom_constants/margin_left = 4
+custom_constants/margin_bottom = 4
 
-[node name="MarginContainer4" type="MarginContainer" parent="HUD/HBoxContainer/MarginContainer/Panel/HBoxContainer/MarginContainer"]
-margin_top = 3.0
-margin_right = 54.0
-margin_bottom = 57.0
-size_flags_horizontal = 0
-size_flags_vertical = 4
-
-[node name="TextureRect_Dollar" type="TextureRect" parent="HUD/HBoxContainer/MarginContainer/Panel/HBoxContainer/MarginContainer/MarginContainer4"]
-margin_right = 54.0
-margin_bottom = 54.0
-rect_min_size = Vector2( 54, 54 )
+[node name="Nameimg" type="TextureRect" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/1/MarginContainer_img"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 24.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 20, 20 )
 texture = ExtResource( 2 )
 expand = true
 
-[node name="MarginContainer5" type="MarginContainer" parent="HUD/HBoxContainer/MarginContainer/Panel/HBoxContainer/MarginContainer"]
-margin_top = 23.0
-margin_right = 69.0
-margin_bottom = 37.0
-size_flags_horizontal = 0
-size_flags_vertical = 4
-custom_constants/margin_left = 45
+[node name="MarginContainer_NamePerson" type="MarginContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/1"]
+editor/display_folded = true
+margin_left = 66.0
+margin_right = 127.0
+margin_bottom = 28.0
+custom_constants/margin_top = 7
+custom_constants/margin_left = 7
+custom_constants/margin_bottom = 7
 
-[node name="Counter_dollar" type="Label" parent="HUD/HBoxContainer/MarginContainer/Panel/HBoxContainer/MarginContainer/MarginContainer5"]
-margin_left = 45.0
-margin_right = 69.0
-margin_bottom = 14.0
-text = "123"
-
-[node name="MarginContainer6" type="MarginContainer" parent="HUD/HBoxContainer/MarginContainer/Panel/HBoxContainer/MarginContainer"]
-margin_top = 18.0
-margin_right = 94.0
-margin_bottom = 42.0
-size_flags_horizontal = 0
-size_flags_vertical = 4
-custom_constants/margin_left = 70
-
-[node name="Button_Counter_dollar_buy" type="Button" parent="HUD/HBoxContainer/MarginContainer/Panel/HBoxContainer/MarginContainer/MarginContainer6"]
-margin_left = 70.0
-margin_right = 94.0
-margin_bottom = 24.0
-rect_min_size = Vector2( 24, 24 )
-size_flags_horizontal = 0
-size_flags_vertical = 0
-custom_styles/normal = SubResource( 2 )
-custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
-disabled = true
-text = "+"
-
-[node name="MarginContainer2" type="MarginContainer" parent="HUD/HBoxContainer/MarginContainer/Panel/HBoxContainer"]
-margin_left = 98.0
-margin_right = 192.0
-margin_bottom = 60.0
-
-[node name="MarginContainer4" type="MarginContainer" parent="HUD/HBoxContainer/MarginContainer/Panel/HBoxContainer/MarginContainer2"]
+[node name="NamePerson" type="Label" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/1/MarginContainer_NamePerson"]
+margin_left = 7.0
 margin_top = 7.0
-margin_right = 45.0
-margin_bottom = 52.0
-size_flags_horizontal = 0
-size_flags_vertical = 4
+margin_right = 61.0
+margin_bottom = 21.0
+text = "PLAYER1"
 
-[node name="TextureRect_Secret" type="TextureRect" parent="HUD/HBoxContainer/MarginContainer/Panel/HBoxContainer/MarginContainer2/MarginContainer4"]
-margin_right = 45.0
-margin_bottom = 45.0
-rect_min_size = Vector2( 45, 45 )
+[node name="MarginContainer_Right" type="MarginContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/1"]
+editor/display_folded = true
+margin_left = 446.0
+margin_right = 446.0
+margin_bottom = 28.0
+size_flags_horizontal = 10
+custom_constants/margin_top = 6
+custom_constants/margin_bottom = 6
+
+[node name="TransformationObject2" type="NinePatchRect" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/1/MarginContainer_Right"]
+margin_top = 6.0
+margin_bottom = 22.0
+
+[node name="Icon_Person" type="TextureRect" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/1/MarginContainer_Right/TransformationObject2"]
+margin_left = -45.7992
+margin_right = -32.7992
+margin_bottom = 13.0
+rect_min_size = Vector2( 13, 13 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
 texture = ExtResource( 3 )
 expand = true
 
-[node name="MarginContainer5" type="MarginContainer" parent="HUD/HBoxContainer/MarginContainer/Panel/HBoxContainer/MarginContainer2"]
-margin_top = 23.0
-margin_right = 69.0
-margin_bottom = 37.0
-size_flags_horizontal = 0
-size_flags_vertical = 4
-custom_constants/margin_left = 45
+[node name="TransformationObject" type="NinePatchRect" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/1/MarginContainer_Right"]
+margin_top = 6.0
+margin_bottom = 22.0
 
-[node name="Counter_Secret" type="Label" parent="HUD/HBoxContainer/MarginContainer/Panel/HBoxContainer/MarginContainer2/MarginContainer5"]
-margin_left = 45.0
-margin_right = 69.0
-margin_bottom = 14.0
-text = "123"
+[node name="Label_Counter" type="Label" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/1/MarginContainer_Right/TransformationObject"]
+margin_left = -31.7937
+margin_top = -0.251724
+margin_right = -7.7937
+margin_bottom = 13.7483
+text = "121"
 
-[node name="MarginContainer6" type="MarginContainer" parent="HUD/HBoxContainer/MarginContainer/Panel/HBoxContainer/MarginContainer2"]
-margin_top = 18.0
-margin_right = 94.0
-margin_bottom = 42.0
-size_flags_horizontal = 0
-size_flags_vertical = 4
-custom_constants/margin_left = 70
+[node name="2" type="HBoxContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer"]
+editor/display_folded = true
+margin_top = 32.0
+margin_right = 446.0
+margin_bottom = 60.0
+theme = SubResource( 2 )
 
-[node name="Button_Counter_secret_buy" type="Button" parent="HUD/HBoxContainer/MarginContainer/Panel/HBoxContainer/MarginContainer2/MarginContainer6"]
-margin_left = 70.0
-margin_right = 94.0
-margin_bottom = 24.0
-rect_min_size = Vector2( 24, 24 )
-size_flags_horizontal = 0
-size_flags_vertical = 0
-custom_styles/normal = SubResource( 2 )
-custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
-disabled = true
-text = "+"
-
-[node name="MarginContainer2" type="MarginContainer" parent="HUD/HBoxContainer"]
-margin_left = 215.0
-margin_right = 301.0
-margin_bottom = 71.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+[node name="MarginContainer_Counter" type="MarginContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/2"]
+margin_right = 30.0
+margin_bottom = 28.0
 custom_constants/margin_right = 11
-custom_constants/margin_top = 10
-custom_constants/margin_left = 15
+custom_constants/margin_top = 6
+custom_constants/margin_left = 11
+custom_constants/margin_bottom = 6
 
-[node name="Panel2" type="Panel" parent="HUD/HBoxContainer/MarginContainer2"]
-margin_left = 15.0
-margin_top = 10.0
-margin_right = 75.0
-margin_bottom = 71.0
-rect_min_size = Vector2( 60, 60 )
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_styles/panel = SubResource( 3 )
+[node name="PersonCounter" type="Label" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/2/MarginContainer_Counter"]
+margin_left = 11.0
+margin_top = 7.0
+margin_right = 19.0
+margin_bottom = 21.0
+size_flags_horizontal = 0
+text = "2"
+align = 1
 
-[node name="Button_Setting" type="Button" parent="HUD/HBoxContainer/MarginContainer2"]
-margin_left = 15.0
-margin_top = 10.0
-margin_right = 75.0
-margin_bottom = 71.0
-custom_styles/normal = SubResource( 4 )
-disabled = true
+[node name="MarginContainer_img" type="MarginContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/2"]
+margin_left = 34.0
+margin_right = 62.0
+margin_bottom = 28.0
+custom_constants/margin_right = 4
+custom_constants/margin_top = 4
+custom_constants/margin_left = 4
+custom_constants/margin_bottom = 4
 
-[node name="TextureRect" type="TextureRect" parent="HUD/HBoxContainer/MarginContainer2/Button_Setting"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -15.5
-margin_top = -15.5
-margin_right = 15.5
-margin_bottom = 15.5
-rect_min_size = Vector2( 31, 31 )
+[node name="Nameimg" type="TextureRect" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/2/MarginContainer_img"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 24.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 20, 20 )
+texture = ExtResource( 2 )
+expand = true
+
+[node name="MarginContainer_NamePerson" type="MarginContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/2"]
+margin_left = 66.0
+margin_right = 127.0
+margin_bottom = 28.0
+custom_constants/margin_top = 7
+custom_constants/margin_left = 7
+custom_constants/margin_bottom = 7
+
+[node name="NamePerson" type="Label" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/2/MarginContainer_NamePerson"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 61.0
+margin_bottom = 21.0
+text = "PLAYER2"
+
+[node name="MarginContainer_Right" type="MarginContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/2"]
+margin_left = 446.0
+margin_right = 446.0
+margin_bottom = 28.0
+size_flags_horizontal = 10
+custom_constants/margin_top = 6
+custom_constants/margin_bottom = 6
+
+[node name="TransformationObject2" type="NinePatchRect" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/2/MarginContainer_Right"]
+margin_top = 6.0
+margin_bottom = 22.0
+
+[node name="Icon_Person" type="TextureRect" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/2/MarginContainer_Right/TransformationObject2"]
+margin_left = -45.7992
+margin_right = -32.7992
+margin_bottom = 13.0
+rect_min_size = Vector2( 13, 13 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource( 4 )
+texture = ExtResource( 3 )
+expand = true
+
+[node name="TransformationObject" type="NinePatchRect" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/2/MarginContainer_Right"]
+margin_top = 6.0
+margin_bottom = 22.0
+
+[node name="Label_Counter" type="Label" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/2/MarginContainer_Right/TransformationObject"]
+margin_left = -31.7937
+margin_top = -0.251724
+margin_right = -7.7937
+margin_bottom = 13.7483
+text = "121"
+
+[node name="3" type="HBoxContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer"]
+editor/display_folded = true
+margin_top = 64.0
+margin_right = 446.0
+margin_bottom = 92.0
+theme = SubResource( 2 )
+
+[node name="MarginContainer_Counter" type="MarginContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/3"]
+margin_right = 30.0
+margin_bottom = 28.0
+custom_constants/margin_right = 11
+custom_constants/margin_top = 6
+custom_constants/margin_left = 11
+custom_constants/margin_bottom = 6
+
+[node name="PersonCounter" type="Label" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/3/MarginContainer_Counter"]
+margin_left = 11.0
+margin_top = 7.0
+margin_right = 19.0
+margin_bottom = 21.0
+size_flags_horizontal = 0
+text = "3"
+align = 1
+
+[node name="MarginContainer_img" type="MarginContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/3"]
+margin_left = 34.0
+margin_right = 62.0
+margin_bottom = 28.0
+custom_constants/margin_right = 4
+custom_constants/margin_top = 4
+custom_constants/margin_left = 4
+custom_constants/margin_bottom = 4
+
+[node name="Nameimg" type="TextureRect" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/3/MarginContainer_img"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 24.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 20, 20 )
+texture = ExtResource( 2 )
+expand = true
+
+[node name="MarginContainer_NamePerson" type="MarginContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/3"]
+margin_left = 66.0
+margin_right = 127.0
+margin_bottom = 28.0
+custom_constants/margin_top = 7
+custom_constants/margin_left = 7
+custom_constants/margin_bottom = 7
+
+[node name="NamePerson" type="Label" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/3/MarginContainer_NamePerson"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 61.0
+margin_bottom = 21.0
+text = "PLAYER3"
+
+[node name="MarginContainer_Right" type="MarginContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/3"]
+margin_left = 446.0
+margin_right = 446.0
+margin_bottom = 28.0
+size_flags_horizontal = 10
+custom_constants/margin_top = 6
+custom_constants/margin_bottom = 6
+
+[node name="TransformationObject2" type="NinePatchRect" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/3/MarginContainer_Right"]
+margin_top = 6.0
+margin_bottom = 22.0
+
+[node name="Icon_Person" type="TextureRect" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/3/MarginContainer_Right/TransformationObject2"]
+margin_left = -45.7992
+margin_right = -32.7992
+margin_bottom = 13.0
+rect_min_size = Vector2( 13, 13 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource( 3 )
 expand = true
 
 [node name="StaticPerson" type="VBoxContainer" parent="."]
@@ -385,18 +482,21 @@ anchor_bottom = 1.0
 margin_top = 10.0
 scroll_horizontal_enabled = false
 
-[node name="VBoxContainer" type="VBoxContainer" parent="StaticPerson/MarginContainer/Panel/ScrollContainer"]
-margin_right = 460.0
-margin_bottom = 92.0
-size_flags_horizontal = 3
+[node name="Label_Counter" type="Label" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/3/MarginContainer_Right/TransformationObject"]
+margin_left = -31.7937
+margin_top = -0.251724
+margin_right = -7.7937
+margin_bottom = 13.7483
+text = "121"
 
-[node name="1" type="HBoxContainer" parent="StaticPerson/MarginContainer/Panel/ScrollContainer/VBoxContainer"]
+[node name="4" type="HBoxContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer"]
 editor/display_folded = true
-margin_right = 460.0
-margin_bottom = 28.0
-theme = SubResource( 6 )
+margin_top = 96.0
+margin_right = 446.0
+margin_bottom = 124.0
+theme = SubResource( 2 )
 
-[node name="MarginContainer_Counter" type="MarginContainer" parent="StaticPerson/MarginContainer/Panel/ScrollContainer/VBoxContainer/1"]
+[node name="MarginContainer_Counter" type="MarginContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/4"]
 editor/display_folded = true
 margin_right = 30.0
 margin_bottom = 28.0
@@ -405,16 +505,17 @@ custom_constants/margin_top = 6
 custom_constants/margin_left = 11
 custom_constants/margin_bottom = 6
 
-[node name="PersonCounter" type="Label" parent="StaticPerson/MarginContainer/Panel/ScrollContainer/VBoxContainer/1/MarginContainer_Counter"]
+[node name="PersonCounter" type="Label" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/4/MarginContainer_Counter"]
 margin_left = 11.0
 margin_top = 7.0
 margin_right = 19.0
 margin_bottom = 21.0
 size_flags_horizontal = 0
-text = "1"
+text = "4"
 align = 1
 
-[node name="MarginContainer_img" type="MarginContainer" parent="StaticPerson/MarginContainer/Panel/ScrollContainer/VBoxContainer/1"]
+[node name="MarginContainer_img" type="MarginContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/4"]
+editor/display_folded = true
 margin_left = 34.0
 margin_right = 62.0
 margin_bottom = 28.0
@@ -423,16 +524,16 @@ custom_constants/margin_top = 4
 custom_constants/margin_left = 4
 custom_constants/margin_bottom = 4
 
-[node name="Nameimg" type="TextureRect" parent="StaticPerson/MarginContainer/Panel/ScrollContainer/VBoxContainer/1/MarginContainer_img"]
+[node name="Nameimg" type="TextureRect" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/4/MarginContainer_img"]
 margin_left = 4.0
 margin_top = 4.0
 margin_right = 24.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 20, 20 )
-texture = ExtResource( 5 )
+texture = ExtResource( 2 )
 expand = true
 
-[node name="MarginContainer_NamePerson" type="MarginContainer" parent="StaticPerson/MarginContainer/Panel/ScrollContainer/VBoxContainer/1"]
+[node name="MarginContainer_NamePerson" type="MarginContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/4"]
 editor/display_folded = true
 margin_left = 66.0
 margin_right = 127.0
@@ -441,53 +542,55 @@ custom_constants/margin_top = 7
 custom_constants/margin_left = 7
 custom_constants/margin_bottom = 7
 
-[node name="NamePerson" type="Label" parent="StaticPerson/MarginContainer/Panel/ScrollContainer/VBoxContainer/1/MarginContainer_NamePerson"]
+[node name="NamePerson" type="Label" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/4/MarginContainer_NamePerson"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 61.0
 margin_bottom = 21.0
-text = "PLAYER1"
+text = "PLAYER4"
 
-[node name="MarginContainer_Right" type="MarginContainer" parent="StaticPerson/MarginContainer/Panel/ScrollContainer/VBoxContainer/1"]
-margin_left = 460.0
-margin_right = 460.0
+[node name="MarginContainer_Right" type="MarginContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/4"]
+editor/display_folded = true
+margin_left = 446.0
+margin_right = 446.0
 margin_bottom = 28.0
 size_flags_horizontal = 10
 custom_constants/margin_top = 6
 custom_constants/margin_bottom = 6
 
-[node name="TransformationObject2" type="NinePatchRect" parent="StaticPerson/MarginContainer/Panel/ScrollContainer/VBoxContainer/1/MarginContainer_Right"]
+[node name="TransformationObject2" type="NinePatchRect" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/4/MarginContainer_Right"]
 margin_top = 6.0
 margin_bottom = 22.0
 
-[node name="Icon_Person" type="TextureRect" parent="StaticPerson/MarginContainer/Panel/ScrollContainer/VBoxContainer/1/MarginContainer_Right/TransformationObject2"]
+[node name="Icon_Person" type="TextureRect" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/4/MarginContainer_Right/TransformationObject2"]
 margin_left = -45.7992
 margin_right = -32.7992
 margin_bottom = 13.0
 rect_min_size = Vector2( 13, 13 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource( 6 )
+texture = ExtResource( 3 )
 expand = true
 
-[node name="TransformationObject" type="NinePatchRect" parent="StaticPerson/MarginContainer/Panel/ScrollContainer/VBoxContainer/1/MarginContainer_Right"]
+[node name="TransformationObject" type="NinePatchRect" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/4/MarginContainer_Right"]
 margin_top = 6.0
 margin_bottom = 22.0
 
-[node name="Label_Counter" type="Label" parent="StaticPerson/MarginContainer/Panel/ScrollContainer/VBoxContainer/1/MarginContainer_Right/TransformationObject"]
+[node name="Label_Counter" type="Label" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/4/MarginContainer_Right/TransformationObject"]
 margin_left = -31.7937
 margin_top = -0.251724
 margin_right = -7.7937
 margin_bottom = 13.7483
 text = "121"
 
-[node name="2" type="HBoxContainer" parent="StaticPerson/MarginContainer/Panel/ScrollContainer/VBoxContainer"]
-margin_top = 32.0
-margin_right = 460.0
-margin_bottom = 60.0
-theme = SubResource( 6 )
+[node name="5" type="HBoxContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer"]
+editor/display_folded = true
+margin_top = 128.0
+margin_right = 446.0
+margin_bottom = 156.0
+theme = SubResource( 2 )
 
-[node name="MarginContainer_Counter" type="MarginContainer" parent="StaticPerson/MarginContainer/Panel/ScrollContainer/VBoxContainer/2"]
+[node name="MarginContainer_Counter" type="MarginContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/5"]
 margin_right = 30.0
 margin_bottom = 28.0
 custom_constants/margin_right = 11
@@ -495,16 +598,16 @@ custom_constants/margin_top = 6
 custom_constants/margin_left = 11
 custom_constants/margin_bottom = 6
 
-[node name="PersonCounter" type="Label" parent="StaticPerson/MarginContainer/Panel/ScrollContainer/VBoxContainer/2/MarginContainer_Counter"]
+[node name="PersonCounter" type="Label" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/5/MarginContainer_Counter"]
 margin_left = 11.0
 margin_top = 7.0
 margin_right = 19.0
 margin_bottom = 21.0
 size_flags_horizontal = 0
-text = "2"
+text = "5"
 align = 1
 
-[node name="MarginContainer_img" type="MarginContainer" parent="StaticPerson/MarginContainer/Panel/ScrollContainer/VBoxContainer/2"]
+[node name="MarginContainer_img" type="MarginContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/5"]
 margin_left = 34.0
 margin_right = 62.0
 margin_bottom = 28.0
@@ -513,16 +616,16 @@ custom_constants/margin_top = 4
 custom_constants/margin_left = 4
 custom_constants/margin_bottom = 4
 
-[node name="Nameimg" type="TextureRect" parent="StaticPerson/MarginContainer/Panel/ScrollContainer/VBoxContainer/2/MarginContainer_img"]
+[node name="Nameimg" type="TextureRect" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/5/MarginContainer_img"]
 margin_left = 4.0
 margin_top = 4.0
 margin_right = 24.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 20, 20 )
-texture = ExtResource( 5 )
+texture = ExtResource( 2 )
 expand = true
 
-[node name="MarginContainer_NamePerson" type="MarginContainer" parent="StaticPerson/MarginContainer/Panel/ScrollContainer/VBoxContainer/2"]
+[node name="MarginContainer_NamePerson" type="MarginContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/5"]
 margin_left = 66.0
 margin_right = 127.0
 margin_bottom = 28.0
@@ -530,53 +633,54 @@ custom_constants/margin_top = 7
 custom_constants/margin_left = 7
 custom_constants/margin_bottom = 7
 
-[node name="NamePerson" type="Label" parent="StaticPerson/MarginContainer/Panel/ScrollContainer/VBoxContainer/2/MarginContainer_NamePerson"]
+[node name="NamePerson" type="Label" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/5/MarginContainer_NamePerson"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 61.0
 margin_bottom = 21.0
-text = "PLAYER2"
+text = "PLAYER5"
 
-[node name="MarginContainer_Right" type="MarginContainer" parent="StaticPerson/MarginContainer/Panel/ScrollContainer/VBoxContainer/2"]
-margin_left = 460.0
-margin_right = 460.0
+[node name="MarginContainer_Right" type="MarginContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/5"]
+margin_left = 446.0
+margin_right = 446.0
 margin_bottom = 28.0
 size_flags_horizontal = 10
 custom_constants/margin_top = 6
 custom_constants/margin_bottom = 6
 
-[node name="TransformationObject2" type="NinePatchRect" parent="StaticPerson/MarginContainer/Panel/ScrollContainer/VBoxContainer/2/MarginContainer_Right"]
+[node name="TransformationObject2" type="NinePatchRect" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/5/MarginContainer_Right"]
 margin_top = 6.0
 margin_bottom = 22.0
 
-[node name="Icon_Person" type="TextureRect" parent="StaticPerson/MarginContainer/Panel/ScrollContainer/VBoxContainer/2/MarginContainer_Right/TransformationObject2"]
+[node name="Icon_Person" type="TextureRect" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/5/MarginContainer_Right/TransformationObject2"]
 margin_left = -45.7992
 margin_right = -32.7992
 margin_bottom = 13.0
 rect_min_size = Vector2( 13, 13 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource( 6 )
+texture = ExtResource( 3 )
 expand = true
 
-[node name="TransformationObject" type="NinePatchRect" parent="StaticPerson/MarginContainer/Panel/ScrollContainer/VBoxContainer/2/MarginContainer_Right"]
+[node name="TransformationObject" type="NinePatchRect" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/5/MarginContainer_Right"]
 margin_top = 6.0
 margin_bottom = 22.0
 
-[node name="Label_Counter" type="Label" parent="StaticPerson/MarginContainer/Panel/ScrollContainer/VBoxContainer/2/MarginContainer_Right/TransformationObject"]
+[node name="Label_Counter" type="Label" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/5/MarginContainer_Right/TransformationObject"]
 margin_left = -31.7937
 margin_top = -0.251724
 margin_right = -7.7937
 margin_bottom = 13.7483
 text = "121"
 
-[node name="3" type="HBoxContainer" parent="StaticPerson/MarginContainer/Panel/ScrollContainer/VBoxContainer"]
-margin_top = 64.0
-margin_right = 460.0
-margin_bottom = 92.0
-theme = SubResource( 6 )
+[node name="6" type="HBoxContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer"]
+editor/display_folded = true
+margin_top = 160.0
+margin_right = 446.0
+margin_bottom = 188.0
+theme = SubResource( 2 )
 
-[node name="MarginContainer_Counter" type="MarginContainer" parent="StaticPerson/MarginContainer/Panel/ScrollContainer/VBoxContainer/3"]
+[node name="MarginContainer_Counter" type="MarginContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/6"]
 margin_right = 30.0
 margin_bottom = 28.0
 custom_constants/margin_right = 11
@@ -584,16 +688,16 @@ custom_constants/margin_top = 6
 custom_constants/margin_left = 11
 custom_constants/margin_bottom = 6
 
-[node name="PersonCounter" type="Label" parent="StaticPerson/MarginContainer/Panel/ScrollContainer/VBoxContainer/3/MarginContainer_Counter"]
+[node name="PersonCounter" type="Label" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/6/MarginContainer_Counter"]
 margin_left = 11.0
 margin_top = 7.0
 margin_right = 19.0
 margin_bottom = 21.0
 size_flags_horizontal = 0
-text = "3"
+text = "6"
 align = 1
 
-[node name="MarginContainer_img" type="MarginContainer" parent="StaticPerson/MarginContainer/Panel/ScrollContainer/VBoxContainer/3"]
+[node name="MarginContainer_img" type="MarginContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/6"]
 margin_left = 34.0
 margin_right = 62.0
 margin_bottom = 28.0
@@ -602,16 +706,16 @@ custom_constants/margin_top = 4
 custom_constants/margin_left = 4
 custom_constants/margin_bottom = 4
 
-[node name="Nameimg" type="TextureRect" parent="StaticPerson/MarginContainer/Panel/ScrollContainer/VBoxContainer/3/MarginContainer_img"]
+[node name="Nameimg" type="TextureRect" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/6/MarginContainer_img"]
 margin_left = 4.0
 margin_top = 4.0
 margin_right = 24.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 20, 20 )
-texture = ExtResource( 5 )
+texture = ExtResource( 2 )
 expand = true
 
-[node name="MarginContainer_NamePerson" type="MarginContainer" parent="StaticPerson/MarginContainer/Panel/ScrollContainer/VBoxContainer/3"]
+[node name="MarginContainer_NamePerson" type="MarginContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/6"]
 margin_left = 66.0
 margin_right = 127.0
 margin_bottom = 28.0
@@ -619,142 +723,139 @@ custom_constants/margin_top = 7
 custom_constants/margin_left = 7
 custom_constants/margin_bottom = 7
 
-[node name="NamePerson" type="Label" parent="StaticPerson/MarginContainer/Panel/ScrollContainer/VBoxContainer/3/MarginContainer_NamePerson"]
+[node name="NamePerson" type="Label" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/6/MarginContainer_NamePerson"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 61.0
 margin_bottom = 21.0
-text = "PLAYER3"
+text = "PLAYER6"
 
-[node name="MarginContainer_Right" type="MarginContainer" parent="StaticPerson/MarginContainer/Panel/ScrollContainer/VBoxContainer/3"]
-margin_left = 460.0
-margin_right = 460.0
+[node name="MarginContainer_Right" type="MarginContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/6"]
+margin_left = 446.0
+margin_right = 446.0
 margin_bottom = 28.0
 size_flags_horizontal = 10
 custom_constants/margin_top = 6
 custom_constants/margin_bottom = 6
 
-[node name="TransformationObject2" type="NinePatchRect" parent="StaticPerson/MarginContainer/Panel/ScrollContainer/VBoxContainer/3/MarginContainer_Right"]
+[node name="TransformationObject2" type="NinePatchRect" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/6/MarginContainer_Right"]
 margin_top = 6.0
 margin_bottom = 22.0
 
-[node name="Icon_Person" type="TextureRect" parent="StaticPerson/MarginContainer/Panel/ScrollContainer/VBoxContainer/3/MarginContainer_Right/TransformationObject2"]
+[node name="Icon_Person" type="TextureRect" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/6/MarginContainer_Right/TransformationObject2"]
 margin_left = -45.7992
 margin_right = -32.7992
 margin_bottom = 13.0
 rect_min_size = Vector2( 13, 13 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource( 6 )
+texture = ExtResource( 3 )
 expand = true
 
-[node name="TransformationObject" type="NinePatchRect" parent="StaticPerson/MarginContainer/Panel/ScrollContainer/VBoxContainer/3/MarginContainer_Right"]
+[node name="TransformationObject" type="NinePatchRect" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/6/MarginContainer_Right"]
 margin_top = 6.0
 margin_bottom = 22.0
 
-[node name="Label_Counter" type="Label" parent="StaticPerson/MarginContainer/Panel/ScrollContainer/VBoxContainer/3/MarginContainer_Right/TransformationObject"]
+[node name="Label_Counter" type="Label" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/6/MarginContainer_Right/TransformationObject"]
 margin_left = -31.7937
 margin_top = -0.251724
 margin_right = -7.7937
 margin_bottom = 13.7483
 text = "121"
 
-[node name="AnimatedСartoon_&_Button" type="VBoxContainer" parent="."]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -432.0
-rect_min_size = Vector2( 300, 0 )
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/AnimatedСartoon_&_Button"]
+margin_top = 186.0
+margin_right = 458.0
+margin_bottom = 566.0
+custom_constants/margin_top = 10
+custom_constants/margin_bottom = 10
 
-[node name="HBoxContainer" type="HBoxContainer" parent="AnimatedСartoon_&_Button"]
-margin_right = 480.0
-margin_bottom = 432.0
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer2"]
+margin_top = 10.0
+margin_right = 458.0
+margin_bottom = 370.0
 rect_min_size = Vector2( 300, 0 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_constants/separation = 50
 
-[node name="MarginContainer_AnimatedСartoon" type="MarginContainer" parent="AnimatedСartoon_&_Button/HBoxContainer"]
-margin_right = 354.0
-margin_bottom = 432.0
-size_flags_horizontal = 11
-size_flags_vertical = 7
-custom_constants/margin_right = 25
-custom_constants/margin_left = 15
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer2/HBoxContainer"]
+margin_right = 300.0
+margin_bottom = 360.0
+size_flags_horizontal = 3
+custom_constants/separation = 0
 
-[node name="Person" type="NinePatchRect" parent="AnimatedСartoon_&_Button/HBoxContainer/MarginContainer_AnimatedСartoon"]
-margin_left = 15.0
-margin_right = 329.0
-margin_bottom = 432.0
+[node name="Label2" type="Label" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer2/HBoxContainer/VBoxContainer"]
+margin_right = 300.0
+margin_bottom = 19.0
+custom_fonts/font = SubResource( 9 )
+text = "PLAYER"
 
-[node name="Person_img" type="TextureRect" parent="AnimatedСartoon_&_Button/HBoxContainer/MarginContainer_AnimatedСartoon/Person"]
-margin_top = 119.0
-margin_right = 178.0
-margin_bottom = 432.0
-rect_min_size = Vector2( 140.4, 100.8 )
-rect_pivot_offset = Vector2( -3.07755, -0.148743 )
-size_flags_horizontal = 0
-size_flags_stretch_ratio = 0.0
-expand = true
-stretch_mode = 5
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer2/HBoxContainer/VBoxContainer"]
+margin_top = 19.0
+margin_right = 300.0
+margin_bottom = 60.0
+alignment = 1
 
-[node name="NinePatchRect" type="NinePatchRect" parent="AnimatedСartoon_&_Button/HBoxContainer/MarginContainer_AnimatedСartoon"]
-margin_left = 15.0
-margin_right = 329.0
-margin_bottom = 432.0
-
-[node name="Label" type="Label" parent="AnimatedСartoon_&_Button/HBoxContainer/MarginContainer_AnimatedСartoon/NinePatchRect"]
-margin_left = -4.59796
-margin_top = 24.2561
-margin_right = 113.402
-margin_bottom = 42.2561
+[node name="Label" type="Label" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer2/HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 78.0
+margin_right = 191.0
+margin_bottom = 41.0
 size_flags_horizontal = 4
 size_flags_vertical = 0
-text = "
+custom_fonts/font = SubResource( 10 )
+text = "Очки Уважения
 "
 align = 1
 valign = 1
 
-[node name="Label2" type="Label" parent="AnimatedСartoon_&_Button/HBoxContainer/MarginContainer_AnimatedСartoon/NinePatchRect"]
-margin_left = -0.0710449
-margin_top = 56.6508
-margin_right = 49.929
-margin_bottom = 70.6508
+[node name="Label2" type="Label" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer2/HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 195.0
+margin_right = 222.0
+margin_bottom = 19.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 11 )
+text = "123"
+align = 1
+valign = 1
 
-[node name="MarginContainer_Button" type="MarginContainer" parent="AnimatedСartoon_&_Button/HBoxContainer"]
-margin_left = 358.0
-margin_right = 480.0
-margin_bottom = 432.0
-custom_constants/margin_right = 20
-custom_constants/margin_top = 35
-custom_constants/margin_left = 25
-custom_constants/margin_bottom = 35
+[node name="Person_img" type="TextureRect" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer2/HBoxContainer/VBoxContainer"]
+margin_top = 60.0
+margin_right = 300.0
+margin_bottom = 360.0
+rect_min_size = Vector2( 300, 300 )
+rect_pivot_offset = Vector2( -3.07755, -0.148743 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.0
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 6
 
-[node name="CenterContainer" type="CenterContainer" parent="AnimatedСartoon_&_Button/HBoxContainer/MarginContainer_Button"]
-margin_left = 25.0
-margin_top = 90.0
-margin_right = 102.0
-margin_bottom = 341.0
-size_flags_horizontal = 8
-size_flags_vertical = 4
-
-[node name="VBoxContainer" type="VBoxContainer" parent="AnimatedСartoon_&_Button/HBoxContainer/MarginContainer_Button/CenterContainer"]
-margin_right = 77.0
-margin_bottom = 251.0
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer2/HBoxContainer"]
+editor/display_folded = true
+margin_left = 381.0
+margin_right = 458.0
+margin_bottom = 360.0
+size_flags_horizontal = 10
 custom_constants/separation = 10
+alignment = 1
 
-[node name="MarginContainer_Dron" type="MarginContainer" parent="AnimatedСartoon_&_Button/HBoxContainer/MarginContainer_Button/CenterContainer/VBoxContainer"]
+[node name="MarginContainer_Dron" type="MarginContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer2/HBoxContainer/VBoxContainer2"]
+margin_top = 54.0
 margin_right = 77.0
-margin_bottom = 77.0
+margin_bottom = 131.0
 rect_min_size = Vector2( 77, 77 )
 
-[node name="Button_Dron" type="Button" parent="AnimatedСartoon_&_Button/HBoxContainer/MarginContainer_Button/CenterContainer/VBoxContainer/MarginContainer_Dron"]
+[node name="Button_Dron" type="Button" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer2/HBoxContainer/VBoxContainer2/MarginContainer_Dron"]
 margin_right = 77.0
 margin_bottom = 77.0
-custom_styles/normal = SubResource( 7 )
+custom_styles/normal = SubResource( 3 )
 disabled = true
 button_mask = 7
 
-[node name="TextureRect" type="TextureRect" parent="AnimatedСartoon_&_Button/HBoxContainer/MarginContainer_Button/CenterContainer/VBoxContainer/MarginContainer_Dron/Button_Dron"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer2/HBoxContainer/VBoxContainer2/MarginContainer_Dron/Button_Dron"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -765,11 +866,11 @@ margin_right = 25.0
 margin_bottom = 25.0
 expand = true
 
-[node name="TransformationObject" type="NinePatchRect" parent="AnimatedСartoon_&_Button/HBoxContainer/MarginContainer_Button/CenterContainer/VBoxContainer/MarginContainer_Dron/Button_Dron"]
+[node name="TransformationObject" type="NinePatchRect" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer2/HBoxContainer/VBoxContainer2/MarginContainer_Dron/Button_Dron"]
 margin_right = 77.0
 margin_bottom = 77.0
 
-[node name="background" type="Panel" parent="AnimatedСartoon_&_Button/HBoxContainer/MarginContainer_Button/CenterContainer/VBoxContainer/MarginContainer_Dron/Button_Dron/TransformationObject"]
+[node name="background" type="Panel" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer2/HBoxContainer/VBoxContainer2/MarginContainer_Dron/Button_Dron/TransformationObject"]
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -12.7389
@@ -777,9 +878,9 @@ margin_top = -7.55286
 margin_right = 8.26111
 margin_bottom = 13.4471
 rect_pivot_offset = Vector2( 12.9481, 8 )
-custom_styles/panel = SubResource( 8 )
+custom_styles/panel = SubResource( 4 )
 
-[node name="counter_availability" type="Label" parent="AnimatedСartoon_&_Button/HBoxContainer/MarginContainer_Button/CenterContainer/VBoxContainer/MarginContainer_Dron/Button_Dron/TransformationObject"]
+[node name="counter_availability" type="Label" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer2/HBoxContainer/VBoxContainer2/MarginContainer_Dron/Button_Dron/TransformationObject"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -788,34 +889,34 @@ margin_left = 27.7611
 margin_top = -42.0529
 margin_right = 43.7611
 margin_bottom = -28.0529
+custom_fonts/font = SubResource( 12 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "12"
 align = 1
 
-[node name="TextureRect_Dron" type="TextureRect" parent="AnimatedСartoon_&_Button/HBoxContainer/MarginContainer_Button/CenterContainer/VBoxContainer/MarginContainer_Dron/Button_Dron"]
+[node name="TextureRect_Dron" type="TextureRect" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer2/HBoxContainer/VBoxContainer2/MarginContainer_Dron/Button_Dron"]
 margin_right = 77.0
 margin_bottom = 77.0
-texture = ExtResource( 7 )
+texture = ExtResource( 6 )
 expand = true
 
-[node name="MarginContainer_Map" type="MarginContainer" parent="AnimatedСartoon_&_Button/HBoxContainer/MarginContainer_Button/CenterContainer/VBoxContainer"]
-margin_top = 87.0
+[node name="MarginContainer_Map" type="MarginContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer2/HBoxContainer/VBoxContainer2"]
+margin_top = 141.0
 margin_right = 77.0
-margin_bottom = 164.0
+margin_bottom = 218.0
 
-[node name="Button_Map" type="Button" parent="AnimatedСartoon_&_Button/HBoxContainer/MarginContainer_Button/CenterContainer/VBoxContainer/MarginContainer_Map"]
+[node name="Button_Map" type="Button" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer2/HBoxContainer/VBoxContainer2/MarginContainer_Map"]
 margin_right = 77.0
 margin_bottom = 77.0
 rect_min_size = Vector2( 77, 77 )
-custom_styles/normal = SubResource( 9 )
+custom_styles/normal = SubResource( 5 )
 disabled = true
 
-[node name="TransformationObject" type="NinePatchRect" parent="AnimatedСartoon_&_Button/HBoxContainer/MarginContainer_Button/CenterContainer/VBoxContainer/MarginContainer_Map/Button_Map"]
-editor/display_folded = true
+[node name="TransformationObject" type="NinePatchRect" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer2/HBoxContainer/VBoxContainer2/MarginContainer_Map/Button_Map"]
 margin_right = 77.0
 margin_bottom = 77.0
 
-[node name="background" type="Panel" parent="AnimatedСartoon_&_Button/HBoxContainer/MarginContainer_Button/CenterContainer/VBoxContainer/MarginContainer_Map/Button_Map/TransformationObject"]
+[node name="background" type="Panel" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer2/HBoxContainer/VBoxContainer2/MarginContainer_Map/Button_Map/TransformationObject"]
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -11.1873
@@ -823,22 +924,23 @@ margin_top = -7.72424
 margin_right = 9.81268
 margin_bottom = 13.2758
 rect_pivot_offset = Vector2( 12.9481, 8 )
-custom_styles/panel = SubResource( 8 )
+custom_styles/panel = SubResource( 4 )
 
-[node name="counter_availability" type="Label" parent="AnimatedСartoon_&_Button/HBoxContainer/MarginContainer_Button/CenterContainer/VBoxContainer/MarginContainer_Map/Button_Map/TransformationObject"]
+[node name="counter_availability" type="Label" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer2/HBoxContainer/VBoxContainer2/MarginContainer_Map/Button_Map/TransformationObject"]
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -9.18732
-margin_top = -42.2242
-margin_right = 6.81268
-margin_bottom = -28.2242
+margin_left = -9.0
+margin_top = -42.5
+margin_right = 7.0
+margin_bottom = -28.5
+custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "12"
 align = 1
 
-[node name="TextureRect" type="TextureRect" parent="AnimatedСartoon_&_Button/HBoxContainer/MarginContainer_Button/CenterContainer/VBoxContainer/MarginContainer_Map/Button_Map"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer2/HBoxContainer/VBoxContainer2/MarginContainer_Map/Button_Map"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -847,27 +949,25 @@ margin_left = -25.5
 margin_top = -24.0
 margin_right = 25.5
 margin_bottom = 24.0
-texture = ExtResource( 8 )
+texture = ExtResource( 7 )
 expand = true
 
-[node name="MarginContainer_Hangar" type="MarginContainer" parent="AnimatedСartoon_&_Button/HBoxContainer/MarginContainer_Button/CenterContainer/VBoxContainer"]
-margin_top = 174.0
+[node name="MarginContainer_Hangar" type="MarginContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer2/HBoxContainer/VBoxContainer2"]
+margin_top = 228.0
 margin_right = 77.0
-margin_bottom = 251.0
+margin_bottom = 305.0
 rect_min_size = Vector2( 77, 77 )
 
-[node name="Button_Hangar" type="Button" parent="AnimatedСartoon_&_Button/HBoxContainer/MarginContainer_Button/CenterContainer/VBoxContainer/MarginContainer_Hangar"]
+[node name="Button_Hangar" type="Button" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer2/HBoxContainer/VBoxContainer2/MarginContainer_Hangar"]
 margin_right = 77.0
 margin_bottom = 77.0
-custom_styles/normal = SubResource( 10 )
-disabled = true
+custom_styles/normal = SubResource( 6 )
 
-[node name="TransformationObject" type="NinePatchRect" parent="AnimatedСartoon_&_Button/HBoxContainer/MarginContainer_Button/CenterContainer/VBoxContainer/MarginContainer_Hangar/Button_Hangar"]
-editor/display_folded = true
+[node name="TransformationObject" type="NinePatchRect" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer2/HBoxContainer/VBoxContainer2/MarginContainer_Hangar/Button_Hangar"]
 margin_right = 77.0
 margin_bottom = 77.0
 
-[node name="background" type="Panel" parent="AnimatedСartoon_&_Button/HBoxContainer/MarginContainer_Button/CenterContainer/VBoxContainer/MarginContainer_Hangar/Button_Hangar/TransformationObject"]
+[node name="background" type="Panel" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer2/HBoxContainer/VBoxContainer2/MarginContainer_Hangar/Button_Hangar/TransformationObject"]
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -10.6568
@@ -875,20 +975,21 @@ margin_top = -7.94427
 margin_right = 10.3432
 margin_bottom = 13.0557
 rect_pivot_offset = Vector2( 12.9481, 8 )
-custom_styles/panel = SubResource( 8 )
+custom_styles/panel = SubResource( 4 )
 
-[node name="counter_availability" type="Label" parent="AnimatedСartoon_&_Button/HBoxContainer/MarginContainer_Button/CenterContainer/VBoxContainer/MarginContainer_Hangar/Button_Hangar/TransformationObject"]
+[node name="counter_availability" type="Label" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer2/HBoxContainer/VBoxContainer2/MarginContainer_Hangar/Button_Hangar/TransformationObject"]
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -8.6568
-margin_top = -4.20782
+margin_top = -4.48522
 margin_right = 7.3432
-margin_bottom = 9.79218
+margin_bottom = 9.51478
+custom_fonts/font = SubResource( 14 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "12"
 align = 1
 
-[node name="TextureRect_Hangar" type="TextureRect" parent="AnimatedСartoon_&_Button/HBoxContainer/MarginContainer_Button/CenterContainer/VBoxContainer/MarginContainer_Hangar/Button_Hangar"]
+[node name="TextureRect_Hangar" type="TextureRect" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer2/HBoxContainer/VBoxContainer2/MarginContainer_Hangar/Button_Hangar"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -899,16 +1000,19 @@ margin_right = 30.0
 margin_bottom = 19.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource( 9 )
+texture = ExtResource( 8 )
 expand = true
 
 [node name="ButtonPlay" type="VBoxContainer" parent="."]
+editor/display_folded = true
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -70.0
+size_flags_horizontal = 6
 
 [node name="MarginContainer" type="MarginContainer" parent="ButtonPlay"]
+editor/display_folded = true
 margin_right = 480.0
 margin_bottom = 70.0
 size_flags_horizontal = 3
@@ -923,10 +1027,13 @@ margin_right = 464.0
 margin_bottom = 60.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 11 )
-custom_styles/normal = SubResource( 12 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 shortcut_in_tooltip = false
 button_mask = 7
 text = "PLAY"
+
+[node name="HUD_elem" parent="." instance=ExtResource( 9 )]
+[connection signal="pressed" from="MarginContainer/AnimatedСartoon_&_Button/MarginContainer2/HBoxContainer/VBoxContainer2/MarginContainer_Hangar/Button_Hangar" to="." method="_on_Button_Hangar_pressed"]
 [connection signal="pressed" from="ButtonPlay/MarginContainer/Button_PLAY" to="." method="_on_Button_PLAY_pressed"]
