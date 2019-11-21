@@ -1,0 +1,44 @@
+[gd_scene format=2]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 1, 1, 1, 0 )
+
+[node name="Panel" type="Panel" parent="ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -210.0
+margin_top = -250.0
+margin_right = 210.0
+margin_bottom = 270.0
+rect_min_size = Vector2( 420, 500 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Button" type="Button" parent="ColorRect/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -100.0
+margin_top = 159.097
+margin_right = 100.0
+margin_bottom = 219.097
+rect_min_size = Vector2( 200, 60 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "OK"
+
+[node name="Label" type="Label" parent="ColorRect/Panel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -21.5
+margin_top = 22.2917
+margin_right = 21.5
+margin_bottom = 36.2917
+text = "STATIC"

@@ -1,0 +1,327 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Scripts/Hangar.gd" type="Script" id=1]
+[ext_resource path="res://Interface/Hangar/Air/Air_1.png" type="Texture" id=2]
+[ext_resource path="res://Interface/Hangar/Dron/dron_1 (2).png" type="Texture" id=3]
+[ext_resource path="res://Interface/Hangar/Dron/dron_1.png" type="Texture" id=4]
+[ext_resource path="res://Interface/Hangar/Armor.png" type="Texture" id=5]
+[ext_resource path="res://Interface/Hangar/Two_Weapon.png" type="Texture" id=6]
+[ext_resource path="res://Interface/Hangar/Weapon.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/HUD_elem.tscn" type="PackedScene" id=8]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.360784, 0.360784, 0.360784, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.494141, 0.48835, 0.476768, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[node name="Hangar" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -240.0
+margin_top = -320.0
+margin_right = 240.0
+margin_bottom = 338.0
+script = ExtResource( 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -240.0
+margin_top = -324.5
+margin_right = 240.0
+margin_bottom = 324.5
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 11
+custom_constants/margin_top = 11
+custom_constants/margin_left = 11
+custom_constants/margin_bottom = 11
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_left = 11.0
+margin_top = 11.0
+margin_right = 469.0
+margin_bottom = 638.0
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+margin_right = 458.0
+margin_bottom = 449.0
+custom_constants/margin_bottom = 10
+
+[node name="Border" type="Panel" parent="MarginContainer/VBoxContainer/MarginContainer2"]
+margin_right = 458.0
+margin_bottom = 439.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer2"]
+margin_right = 458.0
+margin_bottom = 439.0
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer"]
+margin_right = 458.0
+margin_bottom = 245.0
+custom_constants/margin_top = 15
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer/MarginContainer"]
+margin_top = 15.0
+margin_right = 458.0
+margin_bottom = 245.0
+
+[node name="Button_Air" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer/MarginContainer/CenterContainer"]
+margin_left = 114.0
+margin_right = 344.0
+margin_bottom = 230.0
+rect_min_size = Vector2( 230, 230 )
+custom_styles/normal = SubResource( 2 )
+
+[node name="TextureRect_Air" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer/MarginContainer/CenterContainer/Button_Air"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -79.5
+margin_top = -111.5
+margin_right = 79.5
+margin_bottom = 111.5
+texture = ExtResource( 2 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer"]
+margin_top = 249.0
+margin_right = 458.0
+margin_bottom = 439.0
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer"]
+margin_left = 42.0
+margin_right = 227.0
+margin_bottom = 190.0
+custom_constants/margin_right = 15
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="Button_Dron_one" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer/MarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 170.0
+margin_bottom = 170.0
+rect_min_size = Vector2( 150, 150 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_styles/normal = SubResource( 3 )
+
+[node name="TextureRect_Dron_one" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer/MarginContainer/Button_Dron_one"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -49.5
+margin_top = -66.5
+margin_right = 49.5
+margin_bottom = 66.5
+texture = ExtResource( 3 )
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer"]
+margin_left = 231.0
+margin_right = 416.0
+margin_bottom = 190.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 15
+custom_constants/margin_bottom = 20
+
+[node name="Button_Dron_two" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer/MarginContainer2"]
+margin_left = 15.0
+margin_top = 20.0
+margin_right = 165.0
+margin_bottom = 170.0
+rect_min_size = Vector2( 150, 150 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_styles/normal = SubResource( 4 )
+
+[node name="TextureRect_Dron_two" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer/MarginContainer2/Button_Dron_two"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -68.0
+margin_top = -51.0
+margin_right = 68.0
+margin_bottom = 51.0
+texture = ExtResource( 4 )
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 453.0
+margin_right = 458.0
+margin_bottom = 563.0
+custom_constants/margin_bottom = 10
+
+[node name="Border" type="Panel" parent="MarginContainer/VBoxContainer/MarginContainer"]
+margin_right = 458.0
+margin_bottom = 100.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/MarginContainer"]
+margin_right = 458.0
+margin_bottom = 100.0
+custom_constants/margin_top = 10
+custom_constants/margin_bottom = 10
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer"]
+margin_top = 10.0
+margin_right = 458.0
+margin_bottom = 90.0
+custom_constants/separation = 24
+alignment = 1
+
+[node name="Button_Armor" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer2"]
+margin_left = 85.0
+margin_right = 165.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 80, 80 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_styles/normal = SubResource( 5 )
+button_mask = 7
+
+[node name="TextureRect_Armor" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer2/Button_Armor"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -31.0
+margin_top = -38.5
+margin_right = 31.0
+margin_bottom = 38.5
+texture = ExtResource( 5 )
+
+[node name="Button2_Weapon" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer2"]
+margin_left = 189.0
+margin_right = 269.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 80, 80 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_styles/normal = SubResource( 5 )
+
+[node name="TextureRect_Weapon" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer2/Button2_Weapon"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -36.5
+margin_top = -38.5
+margin_right = 36.5
+margin_bottom = 38.5
+texture = ExtResource( 6 )
+
+[node name="Button3_Two_Weapon" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer2"]
+margin_left = 293.0
+margin_right = 373.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 80, 80 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_styles/normal = SubResource( 5 )
+
+[node name="TextureRect_Two_Weapon" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer2/Button3_Two_Weapon"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -33.5
+margin_top = -38.5
+margin_right = 33.5
+margin_bottom = 38.5
+texture = ExtResource( 7 )
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 567.0
+margin_right = 458.0
+margin_bottom = 627.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button_StartGame" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer3"]
+margin_right = 458.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 0, 60 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/normal = SubResource( 6 )
+text = "OK"
+
+[node name="HUD_elem" parent="." instance=ExtResource( 8 )]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer3/Button_StartGame" to="." method="_on_Button_StartGame_pressed"]

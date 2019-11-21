@@ -3,7 +3,7 @@
 [ext_resource path="res://Scripts/ArcadeScene.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Enemy00.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Enemy1.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/HUD_elem.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 368.89 )
@@ -30,5 +30,5 @@ shape = SubResource( 1 )
 position = Vector2( 480, 365.459 )
 shape = SubResource( 1 )
 
-[node name="HUD" parent="." instance=ExtResource( 4 )]
+[node name="HUD_elem" parent="." instance=ExtResource( 4 )]
 [connection signal="timeout" from="EnemySpawnTimer" to="." method="_on_EnemySpawnTimer_timeout"]

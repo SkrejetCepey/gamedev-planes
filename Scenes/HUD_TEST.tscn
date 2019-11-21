@@ -77,7 +77,6 @@ custom_constants/margin_top = 11
 custom_constants/margin_left = 11
 
 [node name="Panel" type="Panel" parent="CanvasLayer/HBoxContainer/MarginContainer"]
-editor/display_folded = true
 margin_left = 11.0
 margin_top = 11.0
 margin_right = 211.0
