@@ -7,7 +7,8 @@ const Drone = preload("res://Scenes/DroneTest.tscn")
 
 var prevMousePos = null
 var plane
-var health = 3 setget set_health
+var droneL
+var droneR
 var speed = 0.2
 
 func _physics_process(delta):
@@ -24,10 +25,10 @@ func _ready():
 	pass
 
 func ready_drones():
-	var droneL = Drone.instance()
+	droneL = Drone.instance()
 	droneL.setTarget(plane.get_node("DronePositionLeft"))
 	get_parent().add_child(droneL)
-	var droneR = Drone.instance()
+	droneR = Drone.instance()
 	droneR.setTarget(plane.get_node("DronePositionRight"))
 	get_parent().add_child(droneR)
 	pass
@@ -67,7 +68,8 @@ func moving():
 	position = pos
 	pass
 
-func set_health(new_value):
-	health = new_value
-	if health <= 0: queue_free()
+func self_destruct():
+	droneL.queue_free()
+	droneR.queue_free()
+	queue_free()
 	pass
