@@ -17,3 +17,7 @@ func _ready():
 func initialize(_ability_type):
 	ability_type=_ability_type
 	pass
+	
+func destroy():
+	queue_free()
+	pass

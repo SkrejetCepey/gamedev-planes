@@ -6,7 +6,7 @@ var ability_type
 
 func _physics_process(delta):
 	if(position.y > get_viewport().get_visible_rect().size.y + 10):
-		get_parent().queue_free()
+		get_parent().destroy()
 	pass
 	
 func _ready():
@@ -32,5 +32,5 @@ func _on_Trigger_area_entered(someone):
 	if (someone.is_in_group("player")==true):
 		if (ability_type=="repairkit"):
 			someone.health+=50
-		get_parent().queue_free()
+		get_parent().destroy()
 	pass
