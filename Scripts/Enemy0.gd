@@ -69,16 +69,20 @@ func _process(delta):
 	move_and_collide(Vector2 (0,Speed * delta))
 	pass
 
+func set_damage(damage):
+	health -= damage
+	pass
+
 func set_health(new_health):
 	#$HealthBarEnemy.health_damaged(rand_range(1,100))
 	health = new_health
+	$HealthBarEnemy/HealthBar.value = health
 	if health <= 0: queue_free()
 	pass
 
 func _on_GunFlashTimer_timeout():
 	$GunFlash.hide()
 	pass
-
 
 func _on_Trigger_area_entered(someone):
 	if someone.is_in_group("player"):

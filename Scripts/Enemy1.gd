@@ -75,8 +75,13 @@ func _on_GunFlashTimer_timeout():
 	$GunFlash3.hide()
 	pass
 
+func set_damage(damage):
+	health -= damage
+	pass
+
 func set_health(new_health):
 	health = new_health
+	$HealthBarEnemy/HealthBar.value = health
 	if health <= 0: queue_free()
 	pass
 
