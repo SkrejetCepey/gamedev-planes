@@ -87,8 +87,7 @@ radius = 21.229
 height = 98.8474
 
 [node name="Bullet" type="Area2D"]
-position = Vector2( 235.229, 264.633 )
-scale = Vector2( 0.25, 0.25 )
+scale = Vector2( 0.2, 0.2 )
 script = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]

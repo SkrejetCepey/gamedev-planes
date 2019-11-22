@@ -90,7 +90,13 @@ process_material = SubResource( 4 )
 texture = ExtResource( 5 )
 
 [node name="DeathPos" type="Position2D" parent="."]
-position = Vector2( 0, 2.723 )
+position = Vector2( 0, 36.903 )
+
+[node name="LeftCannon" type="Position2D" parent="."]
+position = Vector2( -22.35, -9.737 )
+
+[node name="RightCannon" type="Position2D" parent="."]
+position = Vector2( 22.35, -9.737 )
 
 [node name="Trigger" type="Area2D" parent="."]
 
