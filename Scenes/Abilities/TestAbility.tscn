@@ -21,10 +21,15 @@ speed = 120
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.5, 0.5 )
+z_index = -1
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
 
-[node name="Visible" type="VisibilityNotifier2D" parent="."]
-[connection signal="screen_exited" from="Visible" to="." method="_on_Visible_screen_exited"]
+[node name="Trigger" type="Area2D" parent="."]
+editor/display_folded = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Trigger"]
+shape = SubResource( 2 )
+[connection signal="area_entered" from="Trigger" to="." method="_on_Trigger_area_entered"]

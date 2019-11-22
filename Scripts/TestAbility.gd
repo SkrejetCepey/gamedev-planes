@@ -2,14 +2,11 @@ extends RigidBody2D
 
 export var speed = 100
 var velocity = Vector2()
+var ability_type
 
 func _physics_process(delta):
 	if(position.y > get_viewport().get_visible_rect().size.y + 10):
-		queue_free()
-	#global_position.x = clamp(global_position.x, 0, get_viewport_rect().size.x)
-	#velocity.x = speed * delta * 2
-	#velocity.y = speed * delta
-	#translate(velocity)
+		get_parent().queue_free()
 	pass
 	
 func _ready():
@@ -21,9 +18,19 @@ func _ready():
 		linear_velocity.x= -100
 	pass
 
-func _on_Visible_screen_exited():
-	#if (get_parent().get_parent()):
-	#get_parent().get_parent().queue_free()
-	queue_free()
-	print("CLEAR ABILITY")
-	pass 
+func initialize(_ability_type):
+	ability_type = _ability_type
+	if(ability_type=="repairkit"):
+		$Sprite.texture = load("res://Sprites/Repairkit.png")
+	elif(ability_type=="speedboost"):
+		$Sprite.texture = load("res://Sprites/Speed.png")
+	elif(ability_type=="shield"):
+		$Sprite.texture = load("res://Sprites/Shield.png")
+	pass
+
+func _on_Trigger_area_entered(someone):
+	if (someone.is_in_group("player")==true):
+		if (ability_type=="repairkit"):
+			someone.health+=50
+		get_parent().queue_free()
+	pass

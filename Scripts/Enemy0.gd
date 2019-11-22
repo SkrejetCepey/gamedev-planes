@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const Ability = preload("res://Scenes/TestAbility.tscn")
+const Ability = preload("res://Scenes/AbilitySystem.tscn")
 const EnemyAtack = preload("res://Scenes/EnemyAtack.tscn")
 
 export var health = 100 setget set_health
@@ -28,8 +28,10 @@ func _on_Visible_screen_exited():
 
 func _on_HealthBarEnemy_death():
 	var ability = Ability.instance()
-	get_parent().get_parent().add_child(ability)
+	var dictionary = ["repairkit", "speedboost", "shield"]
+	ability.initialize(dictionary)
 	ability.global_position = $DeathPos.global_position
+	get_parent().get_parent().add_child(ability)
 	queue_free()
 	pass
 
