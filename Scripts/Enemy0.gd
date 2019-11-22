@@ -72,6 +72,7 @@ func _process(delta):
 func set_health(new_health):
 	#$HealthBarEnemy.health_damaged(rand_range(1,100))
 	health = new_health
+	$HealthBarEnemy/HealthBar.value = health
 	if health <= 0: queue_free()
 	pass
 

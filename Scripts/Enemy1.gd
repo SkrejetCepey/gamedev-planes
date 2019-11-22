@@ -77,6 +77,7 @@ func _on_GunFlashTimer_timeout():
 
 func set_health(new_health):
 	health = new_health
+	$HealthBarEnemy/HealthBar.value = health
 	if health <= 0: queue_free()
 	pass
 
