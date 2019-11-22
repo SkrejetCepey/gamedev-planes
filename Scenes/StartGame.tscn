@@ -458,7 +458,6 @@ margin_bottom = 13.7483
 text = "121"
 
 [node name="5" type="HBoxContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer"]
-
 editor/display_folded = true
 margin_top = 96.0
 margin_right = 415.0
@@ -1239,33 +1238,6 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 texture = ExtResource( 8 )
 expand = true
-
-[node name="StaticPerson" type="VBoxContainer" parent="."]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -559.0
-margin_bottom = -411.0
-
-[node name="MarginContainer" type="MarginContainer" parent="StaticPerson"]
-margin_right = 480.0
-margin_bottom = 148.0
-size_flags_vertical = 3
-custom_constants/margin_right = 10
-custom_constants/margin_left = 10
-custom_constants/margin_bottom = 38
-
-[node name="Panel" type="Panel" parent="StaticPerson/MarginContainer"]
-margin_left = 10.0
-margin_right = 470.0
-margin_bottom = 110.0
-custom_styles/panel = SubResource( 9 )
-
-[node name="ScrollContainer" type="ScrollContainer" parent="StaticPerson/MarginContainer/Panel"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 10.0
-scroll_horizontal_enabled = false
 
 [node name="ButtonPlay" type="VBoxContainer" parent="."]
 editor/display_folded = true
