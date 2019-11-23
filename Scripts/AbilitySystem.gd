@@ -3,19 +3,29 @@ extends Node2D
 const Ability = preload("res://Scenes/Abilities/TestAbility.tscn")
 
 var ability_type
+var drop_chance = 0
+var chance = [null,null,null]
 
 func _ready():
 	randomize()
 	add_to_group("ability")
-	var temp = rand_range(0, 3)
-	if (temp <= 2):
-		var ability = Ability.instance()
-		ability.initialize(ability_type[temp])
-		add_child(ability)
+	if (drop_chance >= rand_range(0, 1)):
+		var temp = rand_range(0, drop_chance)
+		var summ = 0
+		for i in range(chance.size()):
+			if(chance[i]+summ>=temp):
+				var ability = Ability.instance()
+				ability.initialize(ability_type[i])
+				add_child(ability)
+				return
+			summ += chance[i]
 	pass
 
-func initialize(_ability_type):
+func initialize(_ability_type, _drop_chance):
 	ability_type=_ability_type
+	for i in range(_drop_chance.size()):
+		drop_chance = drop_chance + _drop_chance[i]
+		chance[i]=_drop_chance[i]
 	pass
 	
 func destroy():

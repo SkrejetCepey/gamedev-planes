@@ -9,7 +9,7 @@ func _ready():
 	pass 
 
 func _physics_process(delta):
-	print(health)
+	#print(health)
 	if health <= 0:
 		get_parent().self_destruct()
 	pass
