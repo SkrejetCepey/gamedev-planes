@@ -43,12 +43,12 @@ func _on_HealthBarEnemy_death():
 	ability.global_position = $DeathPos.global_position
 	get_parent().get_parent().add_child(ability)
 	
-	var cash = Ability.instance()
-	var dictionary_cash = ["low_cash", "medium_cash", "large_cash"]
-	var dic_chance_cash = [0.5, 0.4, 0.1]
-	cash.initialize(dictionary_cash, dic_chance_cash, "cash")
-	cash.global_position = $DeathPos.global_position
-	get_parent().get_parent().add_child(cash)
+	#var cash = Ability.instance()
+	#var dictionary_cash = ["low_cash", "medium_cash", "large_cash"]
+	#var dic_chance_cash = [0.5, 0.4, 0.1]
+	#cash.initialize(dictionary_cash, dic_chance_cash, "cash")
+	#cash.global_position = $DeathPos.global_position
+	#get_parent().get_parent().add_child(cash)
 	
 	queue_free()
 	pass

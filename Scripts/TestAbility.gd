@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+const Ability = preload("res://Sprites/Materials/Abilities.tres")
+
 export var speed = 100
 var velocity = Vector2()
 var ability_type
@@ -26,12 +28,20 @@ func _ready():
 		linear_velocity.x = 100
 	else:
 		linear_velocity.x= -100
+	$AnimationPlayer.play("AnimationSprite")
 	pass
 
 func initialize(_ability_type, _ability_group):
 	ability_type = _ability_type
 	ability_group = _ability_group
 	if (ability_type!=null):
+		#if(ability_type=="Repairkit"):
+		#	Ability.color = Color.green
+		#elif(ability_type=="Speedboost"):
+		#	Ability.color = Color.orange
+		#elif(ability_type=="Shield"):
+		#	Ability.color = Color.blue
+		#$Whoo.process_material = Ability
 		$Sprite.texture = load("res://Sprites/"+ability_type+".png")
 
 func _on_Trigger_area_entered(someone):

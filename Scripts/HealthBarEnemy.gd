@@ -19,14 +19,14 @@ func health_damaged(damage):
 	HealthBar.show()
 	HealthBar.value = HealthBar.value - damage
 	#health = HealthBar.value
-	print("Took damage:", damage)
+	#print("Took damage:", damage)
 	UpdateTween.interpolate_property(HealthBar, "value", HealthBar.value, HealthBar.value, 0.4, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
 	UpdateTween.start()
 	
 func health_setup(MaxHealth):
 	HealthBar.value=MaxHealth
 	HealthBar.hide()
-	print("Health setted:", MaxHealth)
+	#print("Health setted:", MaxHealth)
 	pass
 
 func _on_HealthBar_value_changed(value):
