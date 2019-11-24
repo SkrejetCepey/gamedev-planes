@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Speed.png-31ed6b0dc4a57bcf2efa30ad0db36cd6.stex"
+path="res://.import/medium_cash.png-b05c66b6ea21ab4e9d6bb71a9d3bbf27.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Speed.png"
-dest_files=[ "res://.import/Speed.png-31ed6b0dc4a57bcf2efa30ad0db36cd6.stex" ]
+source_file="res://Sprites/medium_cash.png"
+dest_files=[ "res://.import/medium_cash.png-b05c66b6ea21ab4e9d6bb71a9d3bbf27.stex" ]
 
 [params]
 

@@ -10,7 +10,6 @@ const Player = preload("res://Scenes/Player.tscn")
 
 func _ready():
 	randomize()
-	
 	var player = Player.instance()
 	add_child(player)
 	

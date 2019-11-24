@@ -3,6 +3,7 @@ extends RigidBody2D
 export var speed = 100
 var velocity = Vector2()
 var ability_type
+var ability_group
 
 func _physics_process(delta):
 	if(position.y > get_viewport().get_visible_rect().size.y + 10):
@@ -11,22 +12,27 @@ func _physics_process(delta):
 	
 func _ready():
 	add_to_group("ability")
-	print(rand_range(0, 2))
+	if (ability_group=="cash"):
+		mass=10
+		gravity_scale=1
+		collision_layer=8
+		collision_mask=8
+	elif (ability_group=="ability"):
+		mass=5.1
+		gravity_scale=0.5
+		collision_layer=4
+		collision_mask=4
 	if(rand_range(0, 2) < 1):
 		linear_velocity.x = 100
 	else:
 		linear_velocity.x= -100
 	pass
 
-func initialize(_ability_type):
+func initialize(_ability_type, _ability_group):
 	ability_type = _ability_type
-	if(ability_type=="repairkit"):
-		$Sprite.texture = load("res://Sprites/Repairkit.png")
-	elif(ability_type=="speedboost"):
-		$Sprite.texture = load("res://Sprites/Speed.png")
-	elif(ability_type=="shield"):
-		$Sprite.texture = load("res://Sprites/Shield.png")
-	pass
+	ability_group = _ability_group
+	if (ability_type!=null):
+		$Sprite.texture = load("res://Sprites/"+ability_type+".png")
 
 func _on_Trigger_area_entered(someone):
 	if (someone.is_in_group("player")==true):
