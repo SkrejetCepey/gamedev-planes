@@ -8,8 +8,7 @@ var ability_type
 var ability_group
 
 func _physics_process(delta):
-	if(position.y > get_viewport().get_visible_rect().size.y + 10):
-		get_parent().destroy()
+	if(position.y > get_viewport().get_visible_rect().size.y + 10): get_parent().destroy()
 	pass
 	
 func _ready():
@@ -24,17 +23,15 @@ func _ready():
 		gravity_scale=0.5
 		collision_layer=4
 		collision_mask=4
-	if(rand_range(0, 2) < 1):
-		linear_velocity.x = 100
-	else:
-		linear_velocity.x= -100
+	if(rand_range(0, 2) < 1): linear_velocity.x = 100
+	else: linear_velocity.x= -100
 	$AnimationPlayer.play("AnimationSprite")
 	pass
 
 func initialize(_ability_type, _ability_group):
 	ability_type = _ability_type
 	ability_group = _ability_group
-	if (ability_type!=null):
+	if (ability_type!=null): $Sprite.texture = load("res://Sprites/"+ability_type+".png")
 		#if(ability_type=="Repairkit"):
 		#	Ability.color = Color.green
 		#elif(ability_type=="Speedboost"):
@@ -42,11 +39,9 @@ func initialize(_ability_type, _ability_group):
 		#elif(ability_type=="Shield"):
 		#	Ability.color = Color.blue
 		#$Whoo.process_material = Ability
-		$Sprite.texture = load("res://Sprites/"+ability_type+".png")
 
 func _on_Trigger_area_entered(someone):
 	if (someone.is_in_group("player")==true):
-		if (ability_type=="repairkit"):
-			someone.health+=50
+		if (ability_type=="repairkit"): someone.health+=50
 		get_parent().destroy()
 	pass

@@ -1,9 +1,8 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/Enemy0.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Enemy.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/HealthBarEnemy.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Sprites/gun_flash.png" type="Texture" id=4]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 0, 48.54, -10.73, 22.72, -33.03, -13.46, -32.88, -23.08, -21.12, -46.59, 0, -48.82, 21.9, -46.25, 31.9, -22.3, 32.09, -12.94, 10.1, 23.51, 0, 48.49 )
@@ -63,25 +62,15 @@ speed_scale = 2.0
 process_material = SubResource( 6 )
 texture = ExtResource( 2 )
 
-[node name="GunFlash" type="Sprite" parent="."]
-position = Vector2( 0.467488, 60.944 )
-scale = Vector2( 0.131614, 0.131614 )
-z_index = -1
-texture = ExtResource( 4 )
-flip_v = true
-
-[node name="GunFlashTimer" type="Timer" parent="."]
-wait_time = 0.14
-
 [node name="DeathPos" type="Position2D" parent="."]
-position = Vector2( 0, 33.47 )
+position = Vector2( 0, 39.35 )
 
 [node name="Trigger" type="Area2D" parent="."]
+editor/display_folded = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Trigger"]
 scale = Vector2( 1.5, 1.5 )
 shape = SubResource( 1 )
 [connection signal="screen_exited" from="Visible" to="." method="_on_Visible_screen_exited"]
 [connection signal="death" from="HealthBarEnemy" to="." method="_on_HealthBarEnemy_death"]
-[connection signal="timeout" from="GunFlashTimer" to="." method="_on_GunFlashTimer_timeout"]
 [connection signal="area_entered" from="Trigger" to="." method="_on_Trigger_area_entered"]

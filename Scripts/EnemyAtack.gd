@@ -7,6 +7,7 @@ var EnemyShootSpeed setget set_enemy_shoot_speed
 
 func _ready():
 	add_to_group("enemy")
+	$GunFlash.hide()
 	
 	var fireTimer = Timer.new()
 	fireTimer.set_wait_time(EnemyShootSpeed)
@@ -16,6 +17,7 @@ func _ready():
 	pass
 
 func shoot():
+	$GunFlash.show()
 	if EnemyAtackType == 0:
 		var bullet = Bullet.instance()
 		bullet.initialize(global_position,Vector2(0,1),180,800,50,"player")
@@ -28,6 +30,8 @@ func shoot():
 		var bullet_right = Bullet.instance()
 		bullet_right.initialize(Vector2(global_position.x,global_position.y),Vector2(0.35,1),150,800,50,"player")
 		get_parent().get_parent().get_parent().add_child(bullet_right)
+	yield(get_tree().create_timer(0.14), "timeout")
+	$GunFlash.hide()
 	pass
 
 func set_enemy_atack_type(atack_type):

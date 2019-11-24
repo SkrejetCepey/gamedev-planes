@@ -25,9 +25,6 @@ func _ready():
 	$DeathPos.add_child(atack)
 	
 	$HealthBarEnemy.health_setup(health)
-	$GunFlash1.hide()
-	$GunFlash2.hide()
-	$GunFlash3.hide()
 	pass 
 
 func _on_Visible_screen_exited():
@@ -55,12 +52,6 @@ func _on_HealthBarEnemy_death():
 
 func _physics_process(delta):
 	move_and_collide(Vector2 (0,speed * delta))
-	pass
-
-func _on_GunFlashTimer_timeout():
-	$GunFlash1.hide()
-	$GunFlash2.hide()
-	$GunFlash3.hide()
 	pass
 
 func set_damage(damage):
