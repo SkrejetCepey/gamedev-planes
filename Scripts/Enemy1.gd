@@ -8,20 +8,18 @@ export var shoot_speed = 1
 export var speed = 200
 
 func _ready():
-	randomize()
-	$HealthBarEnemy/HealthBar.max_value = health
 	add_to_group("enemy")
 	
 	var atack_left = EnemyAtack.instance()
-	atack_left.initialize(1, shoot_speed)
+	atack_left.initialize(1, shoot_speed, null)
 	$LeftCannon.add_child(atack_left)
 	
 	var atack_right = EnemyAtack.instance()
-	atack_right.initialize(2, shoot_speed)
+	atack_right.initialize(2, shoot_speed, null)
 	$RightCannon.add_child(atack_right)
 	
 	var atack = EnemyAtack.instance()
-	atack.initialize(0, shoot_speed)
+	atack.initialize(0, shoot_speed, null)
 	$DeathPos.add_child(atack)
 	
 	$HealthBarEnemy.health_setup(health)
@@ -56,16 +54,16 @@ func _physics_process(delta):
 
 func set_damage(damage):
 	health -= damage
+	$HealthBarEnemy.health_damaged(damage)
 	pass
 
 func set_health(new_health):
 	health = new_health
-	$HealthBarEnemy/HealthBar.value = health
-	if health <= 0: queue_free()
+	$HealthBarEnemy.health_setup(health)
 	pass
 
 func _on_Trigger_area_entered(someone):
 	if someone.is_in_group("player"):
-		$HealthBarEnemy.health_damaged(300)
+		set_damage(300)
 		someone.health -= 100
 	pass

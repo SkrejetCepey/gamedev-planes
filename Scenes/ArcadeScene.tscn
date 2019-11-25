@@ -1,17 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/ArcadeScene.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/Enemy0.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Enemy1.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/HUD_elem.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/HUD_elem.tscn" type="PackedScene" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 368.89 )
 
 [node name="ArcadeScene" type="Node2D"]
 script = ExtResource( 1 )
-Mob = ExtResource( 2 )
-Mob1 = ExtResource( 3 )
 
 [node name="EnemySpawnTimer" type="Timer" parent="."]
 wait_time = 3.0
@@ -30,5 +26,5 @@ shape = SubResource( 1 )
 position = Vector2( 480, 365.459 )
 shape = SubResource( 1 )
 
-[node name="HUD_elem" parent="." instance=ExtResource( 4 )]
+[node name="HUD_elem" parent="." instance=ExtResource( 2 )]
 [connection signal="timeout" from="EnemySpawnTimer" to="." method="_on_EnemySpawnTimer_timeout"]

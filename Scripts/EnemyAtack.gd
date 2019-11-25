@@ -4,6 +4,7 @@ const Bullet = preload("res://Scenes/Bullet.tscn")
 
 var EnemyAtackType setget set_enemy_atack_type
 var EnemyShootSpeed setget set_enemy_shoot_speed
+var pos
 
 func _ready():
 	add_to_group("enemy")
@@ -18,6 +19,7 @@ func _ready():
 
 func shoot():
 	$GunFlash.show()
+	position = pos
 	if EnemyAtackType == 0:
 		var bullet = Bullet.instance()
 		bullet.initialize(global_position,Vector2(0,1),180,800,50,"player")
@@ -42,7 +44,9 @@ func set_enemy_shoot_speed(shoot_speed):
 	EnemyShootSpeed = shoot_speed
 	pass
 
-func initialize(_atack_type, _shoot_speed):
+func initialize(_atack_type, _shoot_speed, _pos):
 	EnemyAtackType=_atack_type
 	EnemyShootSpeed=_shoot_speed
+	if (_pos==null): pos=position
+	else: pos=_pos
 	pass

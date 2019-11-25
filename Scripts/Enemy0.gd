@@ -9,16 +9,11 @@ export var speed = 200
 export var atack_type = 0
 
 func _ready():
-	randomize()
-	$HealthBarEnemy/HealthBar.max_value = health
 	add_to_group("enemy")
 	
 	var atack = EnemyAtack.instance()
-	atack.set_enemy_atack_type(atack_type)
-	atack.set_enemy_shoot_speed(shoot_speed)
-	atack.position = $DeathPos.position
-	add_child(atack)
-	$HealthBarEnemy.health_setup(health)
+	atack.initialize(atack_type, shoot_speed, null)
+	$DeathPos.add_child(atack)
 	pass 
 
 func _on_Visible_screen_exited():
@@ -49,16 +44,16 @@ func _process(delta):
 
 func set_damage(damage):
 	health -= damage
+	$HealthBarEnemy.health_damaged(damage)
 	pass
 
 func set_health(new_health):
 	health = new_health
-	$HealthBarEnemy/HealthBar.value = health
-	if health <= 0: queue_free()
+	$HealthBarEnemy.health_setup(health)
 	pass
 
 func _on_Trigger_area_entered(someone):
 	if someone.is_in_group("player"):
-		$HealthBarEnemy.health_damaged(100)
+		set_damage(100)
 		someone.health -= 50
 	pass
