@@ -30,7 +30,6 @@ func _on_Visible_screen_exited():
 	pass
 
 func _on_HealthBarEnemy_death():
-	print("Dead!")
 	var ability = Ability.instance()
 	var dictionary = ["Repairkit", "Speedboost", "Shield"]
 	var dic_chance = [0.5, 0.4, 0.1]
