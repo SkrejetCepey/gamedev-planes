@@ -2,6 +2,7 @@ extends Node2D
 
 const Enemy0 = preload("res://Scenes/Enemy0.tscn")
 const Enemy1 = preload("res://Scenes/Enemy1.tscn")
+const Enemy2 = preload("res://Scenes/Enemy2.tscn")
 
 var enemy_type
 var pos
@@ -27,6 +28,10 @@ func initialize(_enemy_type, _pos):
 		enemy.position = pos
 	elif (enemy_type=="Enemy1"):
 		var enemy = Enemy1.instance()
+		add_child(enemy)
+		enemy.position = pos
+	elif (enemy_type=="Enemy2"):
+		var enemy = Enemy2.instance()
 		add_child(enemy)
 		enemy.position = pos
 	pass

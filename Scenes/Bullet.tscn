@@ -10,6 +10,9 @@ var direction = null setget direction_setter
 var damage = null setget damage_setter
 var velocity = Vector2(0,0)
 var enemy = null setget enemy_setter
+var have_target
+
+var vec
 
 func speed_setter(_speed):
 	if (_speed == null):
@@ -20,9 +23,12 @@ func speed_setter(_speed):
 
 func direction_setter(_direction):
 	if (_direction == null):
-		direction = Vector2(1,0)
+		direction = Vector2(0,1)
+		vec=direction
 		return
 	direction = _direction
+	if (have_target==true): vec = direction - global_position
+	else: vec = direction
 	pass
 
 func damage_setter(_damage):
@@ -39,7 +45,7 @@ func enemy_setter(_enemy):
 	enemy = _enemy
 	pass
 
-func initialize(_position,_direction,_rot,_speed,_damage, _enemy):
+func initialize(_position,_direction,_rot,_speed,_damage, _enemy, _have_target):
 	if(_position == null):
 		global_position = Vector2(0,0)
 	else:
@@ -49,11 +55,13 @@ func initialize(_position,_direction,_rot,_speed,_damage, _enemy):
 		global_rotation_degrees = 180
 	else:
 		global_rotation_degrees = _rot
-	
+	have_target=_have_target
 	direction_setter(_direction)
 	speed_setter(_speed)
 	damage_setter(_damage)
 	enemy_setter(_enemy)
+	
+	#if(have_target==true):global_rotation_degrees = angle
 	pass
 	
 func _ready():
@@ -61,10 +69,16 @@ func _ready():
 	pass
 	
 func _physics_process(delta):
-	if(position.y > get_viewport().get_visible_rect().size.y + 25):
+	if(position.y > get_viewport().get_visible_rect().size.y + 25 || position.y < 0):
 		queue_free()
-	velocity.y = speed * delta * direction.y
-	velocity.x = speed * delta * direction.x
+	#vec.normalized()
+	print(\"Vec\", vec.normalized())
+	velocity.y = speed * delta * vec.normalized().y
+	velocity.x = speed * delta * vec.normalized().x
+	#if (have_target==true):look_at(vec)
+	#look_at(direction)
+	#var angle = (atan2(vec.y, vec.x));
+	#if (have_target==true):rotation = lerp(rotation, angle, delta * 300);
 	translate(velocity)
 	pass
 
@@ -79,8 +93,7 @@ func _on_Trigger_area_entered(body):
 		body.health -= damage #maybe work
 		queue_free()
 		return
-	pass
-"
+	pass"
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 21.229
