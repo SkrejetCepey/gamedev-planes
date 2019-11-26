@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/Enemy1.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/Enemy1.2.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Enemys/f-16.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/HealthBarEnemy.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Sprites/Enemy1.png" type="Texture" id=4]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 0, 90.6, -15.39, 4.81, -56.21, -10.8, -55.05, -42.32, -33.27, -78.07, 0, -86.66, 33.98, -77.81, 55.77, -41.11, 55.89, -10.68, 16.56, 5.34, 0, 90.14 )
@@ -54,7 +53,7 @@ z_index = -1
 amount = 10
 speed_scale = 2.0
 process_material = SubResource( 4 )
-texture = ExtResource( 4 )
+texture = ExtResource( 2 )
 
 [node name="DeathPos" type="Position2D" parent="."]
 position = Vector2( 0, 36.903 )
