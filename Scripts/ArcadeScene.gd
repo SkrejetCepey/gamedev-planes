@@ -30,10 +30,10 @@ func _on_EnemySpawnTimer_timeout():
 	var situation = rand_range(0, 3)
 	if (situation<=1):
 		EnemySpawnLocation.set_offset(randi())
-		enemy.initialize("Enemy1", EnemySpawnLocation.position)
+		enemy.initialize("Enemy0", EnemySpawnLocation.position)
 	elif (situation<=2):
 		EnemySpawnLocation.set_offset(randi())
-		enemy.initialize("Enemy0", EnemySpawnLocation.position)
+		enemy.initialize("Enemy1", EnemySpawnLocation.position)
 	elif (situation<=3):
 		EnemySpawnLocation.set_offset(randi())
 		enemy.initialize("Enemy2", EnemySpawnLocation.position)
