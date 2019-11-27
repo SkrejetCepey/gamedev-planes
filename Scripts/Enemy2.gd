@@ -23,7 +23,7 @@ func _on_Visible_screen_exited():
 func _on_HealthBarEnemy_death():
 	var ability = Ability.instance()
 	var dictionary = ["Repairkit", "Speedboost", "Shield"]
-	var dic_chance = [0.1, 0.1, 0.1]
+	var dic_chance = [0.1, 0.1, 0.5]
 	ability.initialize(dictionary, dic_chance, "ability")
 	ability.global_position = $DeathPos.global_position
 	get_parent().get_parent().add_child(ability)

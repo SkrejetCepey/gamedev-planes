@@ -51,7 +51,9 @@ func initialize(_position,_direction,_speed,_damage, _enemy, _have_target):
 		global_position = Vector2(0,0)
 	else:
 		global_position = _position
-	have_target=_have_target
+	if (_have_target==null):
+		have_target=false
+	else:have_target=_have_target
 	direction_setter(_direction)
 	speed_setter(_speed)
 	damage_setter(_damage)
