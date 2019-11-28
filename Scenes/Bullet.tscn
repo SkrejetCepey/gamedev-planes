@@ -79,7 +79,8 @@ func _on_Trigger_area_entered(body):
 		queue_free()
 		return
 	elif (enemy==\"player\" and body.is_in_group(\"player\")==true):
-		body.health -= damage
+		#body.health -= damage #maybe work
+		body.get_damaged(damage)
 		queue_free()
 		return
 	pass"

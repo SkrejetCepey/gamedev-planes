@@ -16,7 +16,6 @@ func _physics_process(delta):
 	pass
 
 func _ready():
-	add_to_group("player")
 	position.y = get_viewport().get_visible_rect().size.y/2
 	position.x = get_viewport().get_visible_rect().size.x/2
 	ready_plane()
