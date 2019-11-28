@@ -40,6 +40,7 @@ func shoot():
 			get_parent().get_parent().get_parent().add_child(autobullet)
 			return
 		PlayerPosition = get_parent().get_parent().get_parent().get_parent().get_node("Player").global_position
+		autobullet.get_node("Sprite").texture = load("res://Sprites/auto_rocket.png")
 		autobullet.initialize(Vector2(global_position.x,global_position.y),PlayerPosition,650,50,"player",true)
 		get_parent().get_parent().get_parent().add_child(autobullet)
 	yield(get_tree().create_timer(0.14), "timeout")

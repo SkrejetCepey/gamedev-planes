@@ -27,6 +27,8 @@ func _ready():
 
 func _on_EnemySpawnTimer_timeout():
 	randomize()
+	if(!get_node("Player")):
+		return
 	var situation = rand_range(0, 3)
 	if (situation<=1):
 		EnemySpawnLocation.set_offset(randi())
