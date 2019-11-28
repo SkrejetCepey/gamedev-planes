@@ -10,6 +10,8 @@ const Player = preload("res://Scenes/Player.tscn")
 var enemy = EnemyInitializer.instance()
 
 func _ready():
+	#Не удалять в этом месте будет подгрузка Json
+	#Save.load_data()
 	randomize()
 	var player = Player.instance()
 	add_child(player)
