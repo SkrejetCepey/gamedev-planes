@@ -90,7 +90,6 @@ button_mask = 7
 text = "ОК"
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel"]
-editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -282,32 +281,35 @@ custom_constants/margin_right = 10
 custom_constants/margin_top = 10
 custom_constants/margin_left = 10
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" groups=[
+"Persist",
+]]
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 470.0
-margin_bottom = 40.0
+margin_bottom = 50.0
 custom_constants/separation = 30
 
 [node name="Panel_Dollar" type="Panel" parent="MarginContainer/HBoxContainer"]
 margin_right = 100.0
-margin_bottom = 30.0
-rect_min_size = Vector2( 100, 30 )
+margin_bottom = 40.0
+rect_min_size = Vector2( 100, 40 )
 custom_styles/panel = SubResource( 3 )
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/Panel_Dollar"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_constants/margin_right = 3
+rect_min_size = Vector2( 0, 40 )
+custom_constants/margin_right = 6
 custom_constants/margin_top = 3
-custom_constants/margin_left = 3
+custom_constants/margin_left = 6
 custom_constants/margin_bottom = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/Panel_Dollar/MarginContainer"]
-margin_left = 3.0
-margin_top = 4.0
-margin_right = 97.0
-margin_bottom = 25.0
+margin_left = 6.0
+margin_top = 9.0
+margin_right = 94.0
+margin_bottom = 30.0
 size_flags_vertical = 4
 custom_constants/separation = 3
 
@@ -344,22 +346,28 @@ text = "+"
 [node name="Panel_Emerald" type="Panel" parent="MarginContainer/HBoxContainer"]
 margin_left = 130.0
 margin_right = 230.0
-margin_bottom = 30.0
-rect_min_size = Vector2( 100, 30 )
+margin_bottom = 40.0
+rect_min_size = Vector2( 100, 40 )
 custom_styles/panel = SubResource( 3 )
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/Panel_Emerald"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_constants/margin_right = 3
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -50.0
+margin_top = -15.0
+margin_right = 50.0
+margin_bottom = 15.0
+custom_constants/margin_right = 6
 custom_constants/margin_top = 3
-custom_constants/margin_left = 3
+custom_constants/margin_left = 6
 custom_constants/margin_bottom = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/Panel_Emerald/MarginContainer"]
-margin_left = 3.0
+margin_left = 6.0
 margin_top = 4.0
-margin_right = 97.0
+margin_right = 94.0
 margin_bottom = 25.0
 size_flags_vertical = 4
 custom_constants/separation = 3
@@ -397,8 +405,8 @@ text = "+"
 [node name="Button_Setting" type="Button" parent="MarginContainer/HBoxContainer"]
 margin_left = 360.0
 margin_right = 460.0
-margin_bottom = 30.0
-rect_min_size = Vector2( 100, 30 )
+margin_bottom = 40.0
+rect_min_size = Vector2( 100, 40 )
 size_flags_horizontal = 10
 size_flags_vertical = 0
 custom_styles/normal = SubResource( 7 )
@@ -407,9 +415,9 @@ button_mask = 7
 [node name="TextureRect_setting" type="TextureRect" parent="MarginContainer/HBoxContainer/Button_Setting"]
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_left = 3.0
+margin_left = 4.16226
 margin_top = -11.0
-margin_right = 25.0
+margin_right = 26.1623
 margin_bottom = 11.0
 rect_min_size = Vector2( 22, 22 )
 texture = ExtResource( 7 )
@@ -420,9 +428,9 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -71.9199
+margin_left = -72.1136
 margin_top = -8.0
-margin_right = -2.91992
+margin_right = -3.11362
 margin_bottom = 9.0
 custom_fonts/font = SubResource( 8 )
 text = "Настройки"

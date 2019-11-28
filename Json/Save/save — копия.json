@@ -1,0 +1,49 @@
+{ 
+    "User":"Player",
+    "money":0,
+    "Emerald":0,
+    "TotalDistance": 102,
+    "Person_img": "path",
+    "Air": {
+        "SU-57": {
+            "air_img": "path",
+            "weapon": {
+                "level":1
+            },
+            "weapon_two": {
+                "level":1
+            },
+            "guard": {
+                "level":1
+            }
+        },
+        "SU-67": {
+            "air_img": "path",
+            "weapon": {
+                "level":1
+            },
+            "weapon_two": {
+                "level":1
+            },
+            "guard": {
+                "level":1
+            }
+        }
+    },
+    "Dron": {
+        "dron_img": "path",
+        "type": 0
+    },
+    "Dron_two": {
+        "dron_two_img": "path",
+        "type": 0
+    },
+    "Setting":
+    {   
+        "OnSoundMain": true,
+        "OnSoundGame": true,
+        "SoundMain": 0,
+        "SoundGame": 0,
+        "lang": "ru"
+    }
+}
