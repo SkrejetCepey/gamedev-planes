@@ -1,88 +1,68 @@
 extends KinematicBody2D
 
 const EnemyAtack = preload("res://Scenes/EnemyAtack.tscn")
-
-const Ability = preload("res://Scenes/TestAbility.tscn")
-
-export var min_speed = 100
-export var max_speed = 200
+const Ability = preload("res://Scenes/AbilitySystem.tscn")
 
 export var health = 300 setget set_health
 export var shoot_speed = 1
-
-var Speed
+export var speed = 200
 
 func _ready():
-	randomize()
 	add_to_group("enemy")
-	Speed = rand_range(min_speed, max_speed)
+	
+	var atack_left = EnemyAtack.instance()
+	atack_left.initialize(1, shoot_speed, null)
+	$LeftCannon.add_child(atack_left)
+	
+	var atack_right = EnemyAtack.instance()
+	atack_right.initialize(2, shoot_speed, null)
+	$RightCannon.add_child(atack_right)
 	
 	var atack = EnemyAtack.instance()
-	atack.set_enemy_atack_type(1)
-	atack.set_enemy_shoot_speed(shoot_speed)
-	atack.position = $DeathPos.position
-	add_child(atack)
+	atack.initialize(0, shoot_speed, null)
+	$DeathPos.add_child(atack)
+	
 	$HealthBarEnemy.health_setup(health)
-	#$EnemyAtackTimer.start()
-	#$GunFlashTimer.start()
-	#$HealthBarEnemy.health_setup(500)
-	$GunFlash1.hide()
-	$GunFlash2.hide()
-	$GunFlash3.hide()
 	pass 
 
 func _on_Visible_screen_exited():
 	queue_free()
 	pass
 
-#func _on_EnemyAtackTimer_timeout():
-#	var atack_left = AlternativeAtackLeft.instance()
-#	var atack_right = AlternativeAtackRight.instance()
-#	var atack = PrimaryAtack.instance()
-#	
-#	get_parent().get_parent().add_child(atack_left)
-#	get_parent().get_parent().add_child(atack_right)
-#	get_parent().get_parent().add_child(atack)
-#	atack.position = $EnemyPos.global_position
-#	atack_left.position = $EnemyPos.global_position
-#	atack_right.position = $EnemyPos.global_position
-	#print("atack1.position ", atack1.global_position)
-	
-#	$GunFlash1.show()
-#	$GunFlash2.show()
-#	$GunFlash3.show()
-#	yield($GunFlashTimer, "timeout")
-	
-#	$HealthBarEnemy.health_damaged(rand_range(1,100))
-#	pass
-
 func _on_HealthBarEnemy_death():
-	print("Dead!")
 	var ability = Ability.instance()
-	get_parent().get_parent().add_child(ability)
+	var dictionary = ["Repairkit", "Speedboost", "Shield"]
+	var dic_chance = [0.5, 0.4, 0.1]
+	ability.initialize(dictionary, dic_chance, "ability")
 	ability.global_position = $DeathPos.global_position
+	get_parent().get_parent().add_child(ability)
+	
+	#var cash = Ability.instance()
+	#var dictionary_cash = ["low_cash", "medium_cash", "large_cash"]
+	#var dic_chance_cash = [0.5, 0.4, 0.1]
+	#cash.initialize(dictionary_cash, dic_chance_cash, "cash")
+	#cash.global_position = $DeathPos.global_position
+	#get_parent().get_parent().add_child(cash)
+	
 	queue_free()
 	pass
 
 func _physics_process(delta):
-	move_and_collide(Vector2 (0,Speed * delta))
+	move_and_collide(Vector2 (0,speed * delta))
 	pass
 
-func _on_GunFlashTimer_timeout():
-	$GunFlash1.hide()
-	$GunFlash2.hide()
-	$GunFlash3.hide()
+func set_damage(damage):
+	health -= damage
+	$HealthBarEnemy.health_damaged(damage)
 	pass
 
 func set_health(new_health):
 	health = new_health
-	if health <= 0: queue_free()
+	$HealthBarEnemy.health_setup(health)
 	pass
-
 
 func _on_Trigger_area_entered(someone):
 	if someone.is_in_group("player"):
-		#health -= 50
-		$HealthBarEnemy.health_damaged(50)
-		someone.queue_free()
-	pass # Replace with function body.
+		set_damage(300)
+		someone.health -= 100
+	pass
