@@ -29,10 +29,8 @@ func _ready():
 	pass 
 
 func _notification(what):
-	if (what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST):
-		get_tree().change_scene("res://Scenes/StartGame.tscn") 
-	if (what == MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST):
-		get_tree().change_scene("res://Scenes/StartGame.tscn") 
+	if (what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST or what == MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST):
+		get_tree().change_scene("res://Scenes/StartGame.tscn")
 
 func _on_EnemySpawnTimer_timeout():
 	randomize()
