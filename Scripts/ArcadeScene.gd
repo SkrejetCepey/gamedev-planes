@@ -12,6 +12,7 @@ var enemy = EnemyInitializer.instance()
 func _ready():
 	#Не удалять в этом месте будет подгрузка Json
 	#Save.load_data()
+	get_tree().set_quit_on_go_back(false)
 	randomize()
 	var player = Player.instance()
 	add_child(player)
@@ -27,10 +28,15 @@ func _ready():
 	add_child(enemy)
 	pass 
 
+func _notification(what):
+	if (what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST):
+		get_tree().change_scene("res://Scenes/StartGame.tscn") 
+	if (what == MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST):
+		get_tree().change_scene("res://Scenes/StartGame.tscn") 
+
 func _on_EnemySpawnTimer_timeout():
 	randomize()
-	if(!get_node("Player")):
-		return
+	if(!get_node("Player")):return
 	var situation = rand_range(0, 3)
 	if (situation<=1):
 		EnemySpawnLocation.set_offset(randi())
