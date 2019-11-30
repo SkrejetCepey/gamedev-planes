@@ -75,7 +75,6 @@ func _physics_process(delta):
 
 func _on_Trigger_area_entered(body):
 	if (enemy==\"enemy\" and body.get_parent().is_in_group(\"enemy\")==true):
-		print(self.name)
 		body.get_parent().set_damage(damage)
 		queue_free()
 		return

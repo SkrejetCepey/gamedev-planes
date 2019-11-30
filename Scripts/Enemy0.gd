@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
-const Ability = preload("res://Scenes/AbilitySystem.tscn")
 const EnemyAtack = preload("res://Scenes/EnemyAtack.tscn")
+const DeathHandler = preload("res://Scenes/EnemyDeathHandler.tscn")
 
 export var health = 100 setget set_health
 export var shoot_speed = 1
@@ -21,12 +21,17 @@ func _on_Visible_screen_exited():
 	pass
 
 func _on_HealthBarEnemy_death():
-	var ability = Ability.instance()
-	var dictionary = ["Repairkit", "Speedboost", "Shield"]
+	#var ability = Ability.instance()
+	var death_handler = DeathHandler.instance()
+	var dic_boosts = ["Repairkit", "Speedboost", "Shield"]
 	var dic_chance = [0.5, 0.4, 0.1]
-	ability.initialize(dictionary, dic_chance, "ability")
-	ability.global_position = $DeathPos.global_position
-	get_parent().get_parent().add_child(ability)
+	
+	death_handler.ability_initialize(dic_boosts, dic_chance, $DeathPos.global_position)
+	get_parent().get_parent().add_child(death_handler)
+	
+	#ability.initialize(dic_boosts, dic_chance, "ability")
+	#ability.global_position = $DeathPos.global_position
+	#get_parent().get_parent().add_child(ability)
 	
 	#var cash = Ability.instance()
 	#var dictionary_cash = ["low_cash", "medium_cash", "large_cash"]

@@ -21,6 +21,7 @@ func _ready():
 				add_child(ability)
 				return
 			summ += chance[i]
+	else:get_parent().queue_free()
 	pass
 
 func initialize(_ability_type, _drop_chance, _ability_group):
@@ -34,5 +35,5 @@ func initialize(_ability_type, _drop_chance, _ability_group):
 	pass
 
 func destroy():
-	queue_free()
+	get_parent().queue_free()
 	pass
