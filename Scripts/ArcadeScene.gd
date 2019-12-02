@@ -51,5 +51,5 @@ func _on_EnemySpawnTimer_timeout():
 			enemy.initialize("Enemy2", EnemySpawnLocation.position)
 		elif (situation<=4):
 			EnemySpawnLocation.set_offset(randi())
-			boss.initialize("Hive", Vector2(get_viewport().get_visible_rect().size.x/2, -20))
+			boss.initialize("Hive", Vector2(get_viewport().get_visible_rect().size.x/2, 40))
 		pass

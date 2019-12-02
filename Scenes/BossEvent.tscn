@@ -5,7 +5,7 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "BossEvent"
-length = 1.5
+length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimationPlayer/Sprite:position")
 tracks/0/interp = 1
@@ -13,10 +13,22 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1.5 ),
+"times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 226.252, 715.601 ), Vector2( 226.252, -99.9731 ) ]
+"values": [ Vector2( 240, -75.185 ), Vector2( 240, 55.7393 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimationPlayer/Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.5, 1.5 ), Vector2( 1, 1 ) ]
 }
 
 [node name="BossEvent" type="Node2D"]
@@ -26,9 +38,9 @@ script = ExtResource( 1 )
 anims/BossEvent = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="AnimationPlayer"]
-position = Vector2( 226.252, 715.601 )
+position = Vector2( 240, -75.185 )
+scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 2 )
-flip_v = true
 
 [node name="Visible" type="VisibilityNotifier2D" parent="AnimationPlayer/Sprite"]
 [connection signal="screen_exited" from="AnimationPlayer/Sprite/Visible" to="." method="_on_Visible_screen_exited"]
