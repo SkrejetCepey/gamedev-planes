@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Shaders/DissolveShader.tres" type="Material" id=1]
+[ext_resource path="res://Sprites/Enemys/Bosses/hive.png" type="Texture" id=2]
+
+[sub_resource type="CubeMesh" id=2]
+size = Vector3( 144, 144, 1 )
+
+[sub_resource type="CapsuleMesh" id=3]
+radius = 100.0
+
+[node name="DissolveShader" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+visible = false
+material = ExtResource( 1 )
+position = Vector2( -0.902496, 0 )
+texture = ExtResource( 2 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+material = ExtResource( 1 )
+margin_left = 13.5778
+margin_top = 12.9594
+margin_right = 225.578
+margin_bottom = 251.959
+texture = ExtResource( 2 )
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="."]
+visible = false
+material = ExtResource( 1 )
+mesh = SubResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 156.989, 0 )
+texture = ExtResource( 2 )
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+material = ExtResource( 1 )
+position = Vector2( 156.56, 0 )
+mesh = SubResource( 3 )

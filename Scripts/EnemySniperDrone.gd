@@ -44,7 +44,7 @@ func _on_HealthBarEnemy_death():
 	pass
 
 func _process(delta):
-	if(!get_parent().get_parent().get_node("Player")):
+	if(get_parent().get_parent().get_node_or_null("Player")==null):
 		speed = 200
 	move_and_collide(Vector2 (0,speed * delta))
 	pass

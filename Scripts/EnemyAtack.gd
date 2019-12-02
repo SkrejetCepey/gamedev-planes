@@ -35,7 +35,7 @@ func shoot():
 		get_parent().get_parent().get_parent().add_child(bullet_right)
 	if EnemyAtackType == 3:
 		var autobullet = Bullet.instance()
-		if(!get_parent().get_parent().get_parent().get_parent().get_node("Player")):
+		if(get_parent().get_parent().get_parent().get_parent().get_node_or_null("Player")==null):
 			autobullet.initialize(Vector2(global_position.x,global_position.y),Vector2(0,1),650,50,"player",false)
 			get_parent().get_parent().get_parent().add_child(autobullet)
 			$GunFlash.hide()

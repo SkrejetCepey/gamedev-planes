@@ -36,7 +36,7 @@ func _notification(what):
 		get_tree().change_scene("res://Scenes/StartGame.tscn")
 
 func _on_EnemySpawnTimer_timeout():
-	if(!get_node("Player")):return
+	if(get_node_or_null("Player")==null):return
 	if (boss.get_child_count()==0):
 		randomize()
 		var situation = rand_range(0, 4)

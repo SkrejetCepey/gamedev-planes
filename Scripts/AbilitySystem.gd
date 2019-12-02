@@ -18,7 +18,8 @@ func _ready():
 			if(chance[i]+summ>=temp):
 				var ability = Ability.instance()
 				ability.initialize(ability_type[i], ability_group)
-				add_child(ability)
+				call_deferred("add_child", ability)
+				#add_child(ability)
 				return
 			summ += chance[i]
 	else:get_parent().queue_free()
