@@ -1,6 +1,8 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Scripts/ParticlesScripts/TestParticles.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/fire_particle.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/smoke_particle.png" type="Texture" id=3]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 blend_mode = 1
@@ -33,9 +35,8 @@ emission_sphere_radius = 2.0
 flag_disable_z = true
 spread = 180.0
 gravity = Vector3( 0, 0, 0 )
-initial_velocity = 100.0
+initial_velocity = 20.0
 initial_velocity_random = 0.5
-angular_velocity = 0.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 linear_accel = 100.0
@@ -74,7 +75,6 @@ spread = 180.0
 gravity = Vector3( 0, 140, 0 )
 initial_velocity = 100.0
 initial_velocity_random = 0.3
-angular_velocity = 0.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 linear_accel = 100.0
@@ -85,47 +85,46 @@ scale_random = 1.0
 scale_curve = SubResource( 14 )
 color_ramp = SubResource( 10 )
 
-[sub_resource type="Gradient" id=21]
+[sub_resource type="Gradient" id=16]
 offsets = PoolRealArray( 0.215385, 0.984615 )
 colors = PoolColorArray( 0.269531, 0.269531, 0.269531, 0.854902, 0.5, 0.5, 0.5, 0.133333 )
 
-[sub_resource type="GradientTexture" id=22]
-gradient = SubResource( 21 )
+[sub_resource type="GradientTexture" id=17]
+gradient = SubResource( 16 )
 
-[sub_resource type="Curve" id=16]
+[sub_resource type="Curve" id=18]
 min_value = -200.0
 max_value = 200.0
 _data = [ Vector2( 0, 176 ), 0.0, 1267.96, 0, 0, Vector2( 0.125, -133.76 ), -6229.14, -8.04572, 0, 1, Vector2( 1, -140.8 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=17]
-curve = SubResource( 16 )
-
-[sub_resource type="Curve" id=18]
-min_value = 1.0
-max_value = 5.0
-_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 5 ), 0.0, 0.0, 0, 0 ]
-
 [sub_resource type="CurveTexture" id=19]
 curve = SubResource( 18 )
 
-[sub_resource type="ParticlesMaterial" id=20]
+[sub_resource type="Curve" id=20]
+min_value = 0.99
+max_value = 5.0
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 5 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=21]
+curve = SubResource( 20 )
+
+[sub_resource type="ParticlesMaterial" id=22]
 emission_shape = 1
-emission_sphere_radius = 2.0
+emission_sphere_radius = 50.0
 flag_disable_z = true
 spread = 180.0
 gravity = Vector3( 0, 0, 0 )
 initial_velocity = 80.0
 initial_velocity_random = 0.5
-angular_velocity = 0.0
 orbit_velocity = 0.15
 orbit_velocity_random = 1.0
 linear_accel = 100.0
 linear_accel_random = 0.5
-linear_accel_curve = SubResource( 17 )
+linear_accel_curve = SubResource( 19 )
 scale = 2.0
 scale_random = 1.0
-scale_curve = SubResource( 19 )
-color_ramp = SubResource( 22 )
+scale_curve = SubResource( 21 )
+color_ramp = SubResource( 17 )
 
 [sub_resource type="Environment" id=23]
 background_mode = 4
@@ -144,12 +143,13 @@ __meta__ = {
 [node name="Particles2D" type="Particles2D" parent="."]
 material = SubResource( 1 )
 emitting = false
-amount = 200
+amount = 20
 lifetime = 0.6
 one_shot = true
 speed_scale = 2.0
 explosiveness = 0.5
 process_material = SubResource( 8 )
+texture = ExtResource( 2 )
 
 [node name="Particles2D" type="Particles2D" parent="Particles2D"]
 material = SubResource( 9 )
@@ -160,6 +160,7 @@ one_shot = true
 speed_scale = 2.0
 explosiveness = 0.8
 process_material = SubResource( 15 )
+texture = ExtResource( 2 )
 
 [node name="Particles2D2" type="Particles2D" parent="Particles2D"]
 self_modulate = Color( 1, 1, 1, 0.72549 )
@@ -170,19 +171,21 @@ lifetime = 0.8
 one_shot = true
 speed_scale = 3.0
 explosiveness = 0.8
-process_material = SubResource( 20 )
+process_material = SubResource( 22 )
+texture = ExtResource( 3 )
 
 [node name="Particles2D3" type="Particles2D" parent="Particles2D"]
 self_modulate = Color( 1, 1, 1, 0.0470588 )
 show_behind_parent = true
 z_index = 1
 emitting = false
-amount = 500
+amount = 250
 lifetime = 0.8
 one_shot = true
 speed_scale = 3.0
 explosiveness = 0.8
-process_material = SubResource( 20 )
+process_material = SubResource( 22 )
+texture = ExtResource( 3 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Particles2D"]
 environment = SubResource( 23 )

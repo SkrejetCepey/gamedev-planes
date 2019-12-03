@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 const BossAtack = preload("res://Scenes/BossAtack.tscn")
 const DeathHandler = preload("res://Scenes/EnemyDeathHandler.tscn")
+const Explosion = preload("res://Scenes/TestParticles.tscn")
 
 export var health = 5000 setget set_health
 export var shoot_speed = 5
@@ -50,6 +51,9 @@ func shoot():
 	pass
 
 func _on_HealthBarEnemy_death():
+	var explosion = Explosion.instance()
+	explosion.global_position = $DeathPos.global_position
+	get_parent().add_child(explosion)
 	#var ability = Ability.instance()
 	#var death_handler = DeathHandler.instance()
 	#var dic_boosts = ["Repairkit", "Speedboost", "Shield"]

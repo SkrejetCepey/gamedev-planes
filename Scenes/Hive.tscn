@@ -66,6 +66,7 @@ shape = SubResource( 3 )
 [node name="EnemyPos" type="Position2D" parent="."]
 
 [node name="Trigger" type="Area2D" parent="."]
+editor/display_folded = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Trigger"]
 scale = Vector2( 1.5, 1.5 )
