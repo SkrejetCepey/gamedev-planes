@@ -30,16 +30,19 @@ alignment = 2
 margin_top = 650.0
 margin_right = 99.0
 margin_bottom = 664.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Dev_build"
 
 [node name="FPSControl" type="Label" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer"]
 margin_top = 668.0
 margin_right = 99.0
 margin_bottom = 682.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "FPSControl"
 
 [node name="MemoryControl" type="Label" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer"]
 margin_top = 686.0
 margin_right = 99.0
 margin_bottom = 700.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "MemoryControl"

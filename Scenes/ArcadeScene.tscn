@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/ArcadeScene.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/HUD_elem.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/DebugControl.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sprites/Background/green_park.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 368.89 )
@@ -30,4 +31,9 @@ shape = SubResource( 1 )
 [node name="HUD_elem" parent="." instance=ExtResource( 2 )]
 
 [node name="DebugConrol" parent="." instance=ExtResource( 3 )]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 248.267, 405.481 )
+z_index = -3
+texture = ExtResource( 4 )
 [connection signal="timeout" from="EnemySpawnTimer" to="." method="_on_EnemySpawnTimer_timeout"]

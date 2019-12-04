@@ -6,6 +6,8 @@ const BossInitializer = preload("res://Scenes/BossInitializer.tscn")
 var EnemyPath = Path2D.new()
 var EnemySpawnLocation = PathFollow2D.new()
 
+var enemy_spawned = 0
+
 const Player = preload("res://Scenes/Player.tscn")
 
 var enemy = EnemyInitializer.instance()
@@ -39,17 +41,23 @@ func _on_EnemySpawnTimer_timeout():
 	if(get_node_or_null("Player")==null):return
 	if (boss.get_child_count()==0):
 		randomize()
-		var situation = rand_range(0, 4)
+		var situation=0
+		if(enemy_spawned>10): situation = rand_range(0, 4)
+		else: situation = rand_range(0, 3)
 		if (situation<=1):
+			enemy_spawned+=1
 			EnemySpawnLocation.set_offset(randi())
 			enemy.initialize("Enemy0", EnemySpawnLocation.position)
 		elif (situation<=2):
+			enemy_spawned+=1
 			EnemySpawnLocation.set_offset(randi())
 			enemy.initialize("Enemy1", EnemySpawnLocation.position)
 		elif (situation<=3):
+			enemy_spawned+=1
 			EnemySpawnLocation.set_offset(randi())
 			enemy.initialize("Enemy2", EnemySpawnLocation.position)
 		elif (situation<=4):
 			EnemySpawnLocation.set_offset(randi())
 			boss.initialize("Hive", Vector2(get_viewport().get_visible_rect().size.x/2, 40))
+			enemy_spawned=0
 		pass
