@@ -28,7 +28,8 @@ func direction_setter(_direction):
 		return
 	direction = _direction
 	if (have_target==true): 
-		vec = (direction - global_position).normalized()
+		#vec = (direction - global_position).normalized()
+		vec = (direction - position).normalized()
 	else: vec = direction
 	pass
 
