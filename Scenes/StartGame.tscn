@@ -150,25 +150,27 @@ anchor_bottom = 1.0
 margin_left = -224.5
 margin_right = 224.5
 custom_constants/margin_right = 11
-custom_constants/margin_top = 55
+custom_constants/margin_top = 70
 custom_constants/margin_left = 11
 custom_constants/margin_bottom = 11
 
 [node name="AnimatedСartoon_&_Button" type="VBoxContainer" parent="MarginContainer"]
+editor/display_folded = true
 margin_left = 11.0
-margin_top = 55.0
+margin_top = 70.0
 margin_right = 438.0
 margin_bottom = 709.0
 rect_min_size = Vector2( 300, 0 )
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/AnimatedСartoon_&_Button"]
+editor/display_folded = true
 margin_right = 427.0
-margin_bottom = 270.0
+margin_bottom = 255.0
 size_flags_vertical = 3
 
 [node name="Panel" type="Panel" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer"]
 margin_right = 427.0
-margin_bottom = 270.0
+margin_bottom = 255.0
 custom_styles/panel = SubResource( 1 )
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel"]
@@ -183,7 +185,6 @@ margin_bottom = 284.0
 size_flags_horizontal = 3
 
 [node name="1" type="HBoxContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer"]
-editor/display_folded = true
 margin_right = 415.0
 margin_bottom = 28.0
 theme = SubResource( 2 )
@@ -206,7 +207,6 @@ text = "1"
 align = 1
 
 [node name="MarginContainer_img" type="MarginContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/1"]
-editor/display_folded = true
 margin_left = 34.0
 margin_right = 62.0
 margin_bottom = 28.0
@@ -225,7 +225,6 @@ texture = ExtResource( 2 )
 expand = true
 
 [node name="MarginContainer_NamePerson" type="MarginContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/1"]
-editor/display_folded = true
 margin_left = 66.0
 margin_right = 127.0
 margin_bottom = 28.0
@@ -241,7 +240,6 @@ margin_bottom = 21.0
 text = "PLAYER1"
 
 [node name="MarginContainer_Right" type="MarginContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer/Panel/ScrollContainer/VBoxContainer/1"]
-editor/display_folded = true
 margin_left = 415.0
 margin_right = 415.0
 margin_bottom = 28.0
@@ -999,14 +997,14 @@ margin_bottom = 13.7483
 text = "121"
 
 [node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/AnimatedСartoon_&_Button"]
-editor/display_folded = true
-margin_top = 274.0
+margin_top = 259.0
 margin_right = 427.0
-margin_bottom = 654.0
+margin_bottom = 639.0
 custom_constants/margin_top = 10
 custom_constants/margin_bottom = 10
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer2"]
+editor/display_folded = true
 margin_top = 10.0
 margin_right = 427.0
 margin_bottom = 370.0
@@ -1016,7 +1014,6 @@ size_flags_vertical = 3
 custom_constants/separation = 50
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer2/HBoxContainer"]
-editor/display_folded = true
 margin_right = 300.0
 margin_bottom = 360.0
 size_flags_horizontal = 3

@@ -1,6 +1,6 @@
 extends Node2D
 
-const Bullet = preload("res://Scenes/PlayerProjectileBullet.tscn")
+const Bullet = preload("res://Scenes/Bullet.tscn")
 var projectileNumber = 1 setget projectileNumberSet
 var upgradeLvl = 0 setget upgradeLvlSet
 var firerate = 0.3
@@ -21,30 +21,28 @@ func _ready():
 	pass
 
 func shoot():
-	if upgradeLvl == 0:
-		createBulletArray(Vector2(0, -20))
-	else:
-		createBulletArray(Vector2(-10, -20))
-		createBulletArray(Vector2(0, -20))
-		createBulletArray(Vector2(10, -20))
-	pass
-
-func createBulletArray(rot):
-	if projectileNumber == 1:
-		addBullet(position, rot)
+	var x = global_position.x
+	var y = global_position.y
+	var pos = Vector2(x, y)
+	var dir = Vector2(0, -1)
+	if projectileNumber == 0:
+		addBullet(pos, dir, 0)
+	elif projectileNumber == 1:
+		pos.x - 100
+		addBullet(pos, dir, 0)
+		pos.x + 20
+		addBullet(pos, dir, 0)
 	elif projectileNumber == 2:
-		addBullet(Vector2(position.x - 10, position.y), rot)
-		addBullet(Vector2(position.x + 10, position.y), rot)
-	elif projectileNumber == 3:
-		addBullet(Vector2(position.x - 15, position.y), rot)
-		addBullet(position, rot)
-		addBullet(Vector2(position.x + 15, position.y), rot)
+		addBullet(pos, dir, 0)
+		pos.x - 15
+		addBullet(pos, dir, 0)
+		pos.x + 30
+		addBullet(pos, dir, 0)
 	pass
 
-func addBullet(pos, rot):
+func addBullet(pos, dir, rot):
 	var bullet = Bullet.instance()
-	bullet.global_position = global_position
-	bullet.setSpeed(rot)
+	bullet.initialize(pos, dir, 800, 10, "enemy", false) 
 	get_tree().get_root().get_node("ArcadeScene").add_child(bullet)
 	pass
 

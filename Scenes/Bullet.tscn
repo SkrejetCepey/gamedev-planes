@@ -74,12 +74,13 @@ func _physics_process(delta):
 	pass
 
 func _on_Trigger_area_entered(body):
-	if (enemy==\"enemy\" and body.is_in_group(\"enemy\")==true):
-		body.set_damage(damage)
+	if (enemy==\"enemy\" and body.get_parent().is_in_group(\"enemy\")==true):
+		body.get_parent().set_damage(damage)
 		queue_free()
 		return
 	elif (enemy==\"player\" and body.is_in_group(\"player\")==true):
-		body.health -= damage
+		#body.health -= damage #maybe work
+		body.get_damaged(damage)
 		queue_free()
 		return
 	pass"

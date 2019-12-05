@@ -8,7 +8,8 @@ var ability_type
 var ability_group
 
 func _physics_process(delta):
-	if(position.y > get_viewport().get_visible_rect().size.y + 10): get_parent().destroy()
+	if(position.y > get_viewport().get_visible_rect().size.y + 10): 
+		get_parent().destroy()
 	pass
 	
 func _ready():

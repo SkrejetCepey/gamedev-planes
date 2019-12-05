@@ -16,7 +16,6 @@ func _physics_process(delta):
 	pass
 
 func _ready():
-	add_to_group("player")
 	position.y = get_viewport().get_visible_rect().size.y/2
 	position.x = get_viewport().get_visible_rect().size.x/2
 	ready_plane()
@@ -63,8 +62,8 @@ func moving():
 		prevMousePos = null
 		
 	var pos = position
-	pos.x = clamp(position.x, 100, get_viewport().get_size().x - 100)
-	pos.y = clamp(position.y, 100, get_viewport().get_size().y - 100)
+	pos.x = clamp(position.x, 100, get_viewport().get_visible_rect().size.x - 100)
+	pos.y = clamp(position.y, 100, get_viewport().get_visible_rect().size.y - 100)
 	position = pos
 	pass
 

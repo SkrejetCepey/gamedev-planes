@@ -2,7 +2,7 @@ extends Control
 
 signal death
 
-export var MaxHealth = 100
+#export var MaxHealth = 100
 
 onready var HealthBar = $HealthBar
 onready var UpdateTween = $UpdateTween
@@ -18,6 +18,7 @@ func health_damaged(damage):
 	UpdateTween.start()
 	
 func health_setup(MaxHealth):
+	HealthBar.max_value=MaxHealth
 	HealthBar.value=MaxHealth
 	HealthBar.hide()
 	pass
