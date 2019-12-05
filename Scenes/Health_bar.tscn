@@ -3,18 +3,18 @@
 [ext_resource path="res://Interface/fonts/18097.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/Setting.tscn" type="PackedScene" id=2]
 
-[sub_resource type="StyleBoxFlat" id=4]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
-
-[sub_resource type="DynamicFont" id=1]
-size = 18
-font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 18
 font_data = ExtResource( 1 )
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="DynamicFont" id=3]
+size = 18
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.145098, 0.172549, 0.231373, 1 )
 
 [node name="Health_bar" type="CanvasLayer"]
@@ -24,7 +24,7 @@ anchor_right = 1.0
 margin_bottom = 55.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_right = 742.0
+margin_right = 488.0
 margin_bottom = 55.0
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
@@ -43,7 +43,7 @@ margin_bottom = 40.0
 rect_min_size = Vector2( 30, 30 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_styles/panel = SubResource( 4 )
+custom_styles/panel = SubResource( 1 )
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/MarginContainer/Panel_Health_bar"]
 editor/display_folded = true
@@ -66,7 +66,7 @@ custom_constants/separation = 10
 margin_top = 1.0
 margin_right = 23.0
 margin_bottom = 22.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "HP"
 
 [node name="Label_HP_count" type="Label" parent="VBoxContainer/HBoxContainer/MarginContainer/Panel_Health_bar/MarginContainer/HBoxContainer"]
@@ -75,7 +75,7 @@ margin_left = 33.0
 margin_top = 1.0
 margin_right = 66.0
 margin_bottom = 22.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "100"
 
 [node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
@@ -93,7 +93,7 @@ margin_top = 10.0
 margin_right = 260.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 250, 30 )
-custom_styles/fg = SubResource( 3 )
+custom_styles/fg = SubResource( 4 )
 value = 50.0
 percent_visible = false
 
