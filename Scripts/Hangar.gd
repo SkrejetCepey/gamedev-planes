@@ -153,7 +153,7 @@ func modifications(extra_arg_0):
 		if(i == str(SelectedAir)):
 			#Броня
 				if(extra_arg_0 == "1"):
-<<<<<<< Updated upstream
+
 					Label_Armor_Counter += 1 #Счетчик
 					if(Label_Armor_Counter <= 6): #Ограничение до 6
 						#Уровень брони
@@ -195,7 +195,7 @@ func modifications(extra_arg_0):
 						Label_Two_Weapon_Counter -= 1
 						$HUD_elem.updateHud()
 						SaveLoad.save_data(null,null)
-=======
+
 					if(Label_Armor_Counter <= 5): #Ограничение до 6
 						if(Dollar >= int(Label_Armor_price.text)):
 							#Цена брони
@@ -273,7 +273,7 @@ func modifications(extra_arg_0):
 							SaveLoad.save_data(null,null)
 						else:
 							print("Денег нет")
->>>>>>> Stashed changes
+
 	pass
 
 
@@ -303,7 +303,7 @@ func buyAir(extra_arg_0):
 		#Присваивание счетчика
 		#print(SelectedAir)
 	else:
-<<<<<<< Updated upstream
+
 		Hangar_data["Dollar"] = Dollar - Air[extra_arg_0].price
 		$HUD_elem.updateHud()
 		#Присваивание значений
@@ -311,7 +311,7 @@ func buyAir(extra_arg_0):
 		Air[extra_arg_0].lock = false
 		update_data_their(extra_arg_0)
 		SaveLoad.save_data(null,null)
-=======
+
 		if(Dollar <= Air[extra_arg_0].price):
 			print("Денег нет")
 		else:
@@ -324,7 +324,7 @@ func buyAir(extra_arg_0):
 			
 			update_data_their(extra_arg_0)
 			SaveLoad.save_data(null,null)
->>>>>>> Stashed changes
+
 	pass
 
 func update_data_their(extra_arg_0):
