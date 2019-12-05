@@ -1,0 +1,85 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scripts/TestAbility.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Materials/Abilities.tres" type="Material" id=3]
+[ext_resource path="res://Sprites/acid.png" type="Texture" id=4]
+
+[sub_resource type="PhysicsMaterial" id=1]
+bounce = 5.0
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 15.6414, 15.5505 )
+
+[sub_resource type="Curve" id=3]
+_data = [ Vector2( 0.00227094, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.242554, 0.0072 ), 0.349587, 0.0, 0, 0 ]
+
+[sub_resource type="Animation" id=4]
+resource_name = "AnimationSprite"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.5, 0.5 ), Vector2( 0.65, 0.65 ), Vector2( 0.5, 0.5 ) ]
+}
+
+[node name="TestAbility" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 4
+mode = 2
+mass = 5.10204
+physics_material_override = SubResource( 1 )
+gravity_scale = 0.5
+script = ExtResource( 1 )
+speed = 120
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.65, 0.65 )
+z_index = -1
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="Trigger" type="Area2D" parent="."]
+editor/display_folded = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Trigger"]
+visible = false
+shape = SubResource( 2 )
+
+[node name="Whoo" type="Particles2D" parent="."]
+visible = false
+z_index = -2
+amount = 1
+lifetime = 0.5
+process_material = ExtResource( 3 )
+texture = ExtResource( 4 )
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+visible = false
+z_index = -2
+amount = 20
+lifetime = 0.21
+emission_shape = 1
+emission_sphere_radius = 0.01
+spread = 120.48
+gravity = Vector2( 0, 0 )
+initial_velocity = 236.56
+initial_velocity_random = 1.0
+radial_accel = 100.0
+radial_accel_random = 1.0
+scale_amount = 291.32
+scale_amount_curve = SubResource( 3 )
+color = Color( 1, 1, 1, 0.396078 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/AnimationSprite = SubResource( 4 )
+[connection signal="area_entered" from="Trigger" to="." method="_on_Trigger_area_entered"]

@@ -10,6 +10,9 @@ var direction = null setget direction_setter
 var damage = null setget damage_setter
 var velocity = Vector2(0,0)
 var enemy = null setget enemy_setter
+var have_target
+
+var vec
 
 func speed_setter(_speed):
 	if (_speed == null):
@@ -20,9 +23,13 @@ func speed_setter(_speed):
 
 func direction_setter(_direction):
 	if (_direction == null):
-		direction = Vector2(1,0)
+		direction = Vector2(0,1)
+		vec=direction
 		return
 	direction = _direction
+	if (have_target==true): 
+		vec = (direction - global_position).normalized()
+	else: vec = direction
 	pass
 
 func damage_setter(_damage):
@@ -39,54 +46,50 @@ func enemy_setter(_enemy):
 	enemy = _enemy
 	pass
 
-func initialize(_position,_direction,_rot,_speed,_damage, _enemy):
+func initialize(_position,_direction,_speed,_damage, _enemy, _have_target):
 	if(_position == null):
 		global_position = Vector2(0,0)
 	else:
 		global_position = _position
-	
-	if(_rot == null):
-		global_rotation_degrees = 180
-	else:
-		global_rotation_degrees = _rot
-	
+	if (_have_target==null):
+		have_target=false
+	else:have_target=_have_target
 	direction_setter(_direction)
 	speed_setter(_speed)
 	damage_setter(_damage)
 	enemy_setter(_enemy)
-	pass
-	
+	if(have_target==true):rotation = (direction - position).angle() + PI/2
+	else:rotation = direction.angle() + PI/2
+
 func _ready():
 	add_to_group(\"bullet\")
 	pass
 	
 func _physics_process(delta):
-	if(position.y > get_viewport().get_visible_rect().size.y + 25):
+	if(position.y > get_viewport().get_visible_rect().size.y + 25 || position.y < 0):
 		queue_free()
-	velocity.y = speed * delta * direction.y
-	velocity.x = speed * delta * direction.x
+	velocity.y = speed * delta * vec.normalized().y
+	velocity.x = speed * delta * vec.normalized().x
 	translate(velocity)
 	pass
 
 func _on_Trigger_area_entered(body):
 	if (enemy==\"enemy\" and body.is_in_group(\"enemy\")==true):
-		body.get_node(\"HealthBarEnemy\").health_damaged(damage)
+		body.set_damage(damage)
 		queue_free()
 		return
 	elif (enemy==\"player\" and body.is_in_group(\"player\")==true):
-		body.health -= damage #maybe work
+		body.health -= damage
 		queue_free()
 		return
-	pass
-"
+	pass"
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 21.229
 height = 98.8474
 
 [node name="Bullet" type="Area2D"]
-position = Vector2( 235.229, 264.633 )
-scale = Vector2( 0.25, 0.25 )
+scale = Vector2( 0.2, 0.2 )
 script = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
