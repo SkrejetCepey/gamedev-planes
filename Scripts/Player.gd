@@ -10,6 +10,8 @@ var plane
 var droneL
 var droneR
 var speed = 0.2
+var width
+var height
 
 func _physics_process(delta):
 	moving()
@@ -35,6 +37,8 @@ func ready_drones():
 func ready_plane():
 	plane = SU_57.instance()
 	add_child(plane)
+	width = (plane.get_node("Sprite").texture.get_size().x) * 0.5
+	height = (plane.get_node("Sprite").texture.get_size().x) * 0.5
 	pass
 	
 func ready_guns():
@@ -56,14 +60,23 @@ func moving():
 		if prevMousePos == null:
 			prevMousePos = get_global_mouse_position()
 		motion = (currentMousePos - prevMousePos) * speed
+		if motion.x < -2:
+			print("left")
+			plane.set_sprite(1)
+		elif motion.x > 2:
+			print("right")
+			plane.set_sprite(2)
+		else:
+			plane.set_sprite(0)
 		translate(motion)
 		prevMousePos = prevMousePos + motion
 	elif Input.is_action_just_released("player_move"):
 		prevMousePos = null
+		plane.set_sprite(0)
 		
 	var pos = position
-	pos.x = clamp(position.x, 100, get_viewport().get_visible_rect().size.x - 100)
-	pos.y = clamp(position.y, 100, get_viewport().get_visible_rect().size.y - 100)
+	pos.x = clamp(position.x, width/2, get_viewport().get_visible_rect().size.x - width/2)
+	pos.y = clamp(position.y, height/2, get_viewport().get_visible_rect().size.y - height/2)
 	position = pos
 	pass
 

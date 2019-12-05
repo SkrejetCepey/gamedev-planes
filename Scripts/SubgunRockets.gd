@@ -38,7 +38,8 @@ func addBullet(pos, rot):
 	var rocket = Rocket.instance()
 	rocket.global_position = global_position
 	rocket.setSpeed(rot)
-	get_tree().get_root().get_node("ArcadeScene").add_child(rocket)
+#	get_tree().get_root().get_node("ArcadeScene").add_child(rocket)
+	get_parent().get_parent().add_child(rocket)
 	pass
 
 func projectileNumberSet(number):
