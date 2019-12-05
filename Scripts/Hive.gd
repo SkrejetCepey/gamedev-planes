@@ -4,7 +4,7 @@ const BossAtack = preload("res://Scenes/BossAtack.tscn")
 const DeathHandler = preload("res://Scenes/EnemyDeathHandler.tscn")
 const Explosion = preload("res://Scenes/TestParticles.tscn")
 
-export var health = 5000 setget set_health
+export var health = 1000 setget set_health
 export var shoot_speed = 5
 export var speed = 10
 export var atack_type = 4
@@ -91,6 +91,7 @@ func _process(delta):
 func set_damage(damage):
 	if (get_node_or_null("Shield")==null):
 		health -= damage
+		$HealthBarEnemy/HealthBar.value = health
 		$HealthBarEnemy.health_damaged(damage)
 	pass
 

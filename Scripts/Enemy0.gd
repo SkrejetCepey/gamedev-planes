@@ -49,6 +49,7 @@ func _process(delta):
 
 func set_damage(damage):
 	health -= damage
+	$HealthBarEnemy/HealthBar.value = health
 	$HealthBarEnemy.health_damaged(damage)
 	pass
 

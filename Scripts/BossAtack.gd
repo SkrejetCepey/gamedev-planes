@@ -20,6 +20,7 @@ func _ready():
 	pass
 
 func shoot():
+	randomize()
 	#$GunFlash.show()
 	position = pos
 	if EnemyAtackType == 0:
@@ -47,8 +48,12 @@ func shoot():
 	if EnemyAtackType == 4:
 		var drone = EnemySniperDrone.instance()
 		drone.position = Vector2(global_position.x, global_position.y)
+		if(get_parent().get_parent().get_parent().get_node_or_null("Hive")!=null):
+			var temp = round(rand_range(1, 2))
+			drone.setTarget(get_parent().get_parent().get_parent().get_node("Hive").get_node(str(temp) + "dronepos"))
+		else: return;
 		get_parent().get_parent().get_parent().add_child(drone)
-	yield(get_tree().create_timer(0.14), "timeout")
+	#yield(get_tree().create_timer(0.14), "timeout")
 	#$GunFlash.hide()
 	pass
 

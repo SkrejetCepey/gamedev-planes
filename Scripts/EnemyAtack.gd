@@ -12,10 +12,11 @@ func _ready():
 	$GunFlash.hide()
 	
 	var fireTimer = Timer.new()
-	fireTimer.set_wait_time(EnemyShootSpeed)
-	fireTimer.connect("timeout", self, "shoot")
-	add_child(fireTimer)
-	fireTimer.start()
+	if (EnemyShootSpeed!=0):
+		fireTimer.set_wait_time(EnemyShootSpeed)
+		fireTimer.connect("timeout", self, "shoot")
+		add_child(fireTimer)
+		fireTimer.start()
 	pass
 
 func shoot():
