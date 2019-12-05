@@ -3,7 +3,7 @@ extends KinematicBody2D
 const EnemyAtack = preload("res://Scenes/EnemyAtack.tscn")
 const DeathHandler = preload("res://Scenes/EnemyDeathHandler.tscn")
 
-export var health = 500 setget set_health
+export var health = 150 setget set_health
 export var shoot_speed = 0.5
 export var speed = 250
 export var atack_type = 3
@@ -41,6 +41,7 @@ func _process(delta):
 
 func set_damage(damage):
 	health -= damage
+	$HealthBarEnemy/HealthBar.value = health
 	$HealthBarEnemy.health_damaged(damage)
 	pass
 

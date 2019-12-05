@@ -122,6 +122,12 @@ margin_top = 29.7738
 margin_right = -47.9404
 margin_bottom = 29.7738
 rect_scale = Vector2( 0.25, 0.25 )
+
+[node name="1dronepos" type="Position2D" parent="."]
+position = Vector2( 96.34, 66.72 )
+
+[node name="2dronepos" type="Position2D" parent="."]
+position = Vector2( -96.34, 66.72 )
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
 [connection signal="area_entered" from="Trigger" to="." method="_on_Trigger_area_entered"]
 [connection signal="death" from="HealthBarEnemy" to="." method="_on_HealthBarEnemy_death"]

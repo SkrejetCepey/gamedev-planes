@@ -12,10 +12,11 @@ func _ready():
 	$GunFlash.hide()
 	
 	var fireTimer = Timer.new()
-	fireTimer.set_wait_time(EnemyShootSpeed)
-	fireTimer.connect("timeout", self, "shoot")
-	add_child(fireTimer)
-	fireTimer.start()
+	if (EnemyShootSpeed!=0):
+		fireTimer.set_wait_time(EnemyShootSpeed)
+		fireTimer.connect("timeout", self, "shoot")
+		add_child(fireTimer)
+		fireTimer.start()
 	pass
 
 func shoot():
@@ -45,7 +46,8 @@ func shoot():
 		autobullet.initialize(Vector2(global_position.x,global_position.y),PlayerPosition,650,50,"player",true)
 		get_parent().get_parent().get_parent().add_child(autobullet)
 	yield(get_tree().create_timer(0.14), "timeout")
-	$GunFlash.hide()
+	if (get_node_or_null("GunFlash")!=null):
+		$GunFlash.hide()
 	pass
 
 func set_enemy_atack_type(atack_type):
