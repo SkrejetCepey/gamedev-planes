@@ -43,8 +43,9 @@ func createBulletArray(pos, dir, rot):
 
 func addBullet(pos, dir, rot):
 	var bullet = Bullet.instance()
-	bullet.initialize(pos, dir, bulletSpeed, 10, "enemy", false)
-	get_tree().get_root().get_node("ArcadeScene").add_child(bullet)
+	bullet.initialize(pos, dir, bulletSpeed, 50, "enemy", false)
+	#get_tree().get_root().get_node("ArcadeScene").add_child(bullet)
+	get_parent().get_parent().add_child(bullet)
 	pass
 
 func projectileNumberSet(number):
