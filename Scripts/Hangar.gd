@@ -22,6 +22,8 @@ var Dollar = 0
 #Выбран какой истребитель
 var SelectedAir = 1
 #
+var Air_Hangar
+#
 var button1
 var button2
 #
@@ -52,6 +54,10 @@ func _ready():
 	#
 	Button2_price_air = $Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button2/Button2_price_air
 	Change_Air_ColorRect = $Change_Air_ColorRect
+	#Air_Hangar
+	Air_Hangar = $MarginContainer/VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer/Button_Air/TextureRect_Air
+	
+	
 	#
 	new_style = StyleBoxFlat.new()
 	#Загрузка из json
@@ -59,6 +65,7 @@ func _ready():
 	#Присваивание переменных
 	Dollar = Hangar_data["Dollar"]
 	SelectedAir = Hangar_data["SelectedAir"]
+	print(SelectedAir)
 	#Выставляем данные в Ангар
 	#for counter in Hangar_data:
 		#print(counter)
@@ -95,8 +102,20 @@ func _ready():
 				Label_Armor_Counter = mod_guard_level
 				#Присваивания цены
 				Label_Two_Weapon_price.text = str(Air[i].weapon_two.price) #2-го оружия
-				Label_Weapon_price.text = str(Air[i].weapon.price) #оружия
+				Label_Weapon_price.text = str(Air[i].weapon.price ) #оружия
 				Label_Armor_price.text = str(Air[i].guard.price) #брони
+				#При загрузки подгрузится выбранная картинка для самолета
+				Air_Hangar.texture = load(str(Air[i].air_img))
+				print(Air[i].air_img)
+				#Air_Hangar.texture = load("res://Interface/Hangar/Air/Air_" + str(SelectedAir) +".png")
+				#Если в модификациях = 6, то обнуляем price 
+				if(mod_weapon_two_level == 6):
+					Label_Two_Weapon_price.text = " "
+				if(mod_weapon_level == 6):
+					Label_Weapon_price.text = " "
+				if(mod_guard_level == 6):
+					Label_Armor_price.text = " "
+					
 			pass
 		#Или нет
 		else:
@@ -132,9 +151,9 @@ func modifications(extra_arg_0):
 	for i in Air:
 		#print(i)
 		if(i == str(SelectedAir)):
-				print(SelectedAir)
 			#Броня
 				if(extra_arg_0 == "1"):
+
 					Label_Armor_Counter += 1 #Счетчик
 					if(Label_Armor_Counter <= 6): #Ограничение до 6
 						#Уровень брони
@@ -176,7 +195,88 @@ func modifications(extra_arg_0):
 						Label_Two_Weapon_Counter -= 1
 						$HUD_elem.updateHud()
 						SaveLoad.save_data(null,null)
+
+					if(Label_Armor_Counter <= 5): #Ограничение до 6
+						if(Dollar >= int(Label_Armor_price.text)):
+							#Цена брони
+							SaveLoad.data.Dollar = Dollar - int(Label_Armor_price.text)
+							#приравняли локальный доллар
+							Dollar = SaveLoad.data.Dollar
+							#Прибавляем +1
+							Label_Armor_Counter += 1
+							#Уровень брони
+							Label_Armor.text[0] = str(Label_Armor_Counter) 
+							Air[i].guard.level = Label_Armor_Counter
+							#Прибавляем +1 к счетчику чтобы узнать следующию цену брони и вписать в labelprice
+							Label_Armor_Counter += 1
+							Label_Armor_price.text = str(Label_Armor_Counter*int(Label_Armor_price.text))
+							#добавляем следующию цену в Armor price
+							Air[i].guard.price = int(Label_Armor_price.text)
+							Label_Armor_Counter -= 1
+							#
+							if(Label_Armor_Counter == 6):
+								Label_Armor_price.text = " "
+
+							$HUD_elem.updateHud()
+							SaveLoad.save_data(null,null)
+						else:
+							print("Денег нет")
+
+						
+			#Оружие
+				elif(extra_arg_0 == "2"):
+					if(Label_Weapon_Counter <= 5):
+						if(Dollar >= int(Label_Weapon_price.text)):
+							#Цена оружия
+							SaveLoad.data.Dollar = Dollar -  int(Label_Weapon_price.text)
+							#приравняли локальный доллар
+							Dollar = SaveLoad.data.Dollar
+							#Прибавляем +1
+							Label_Weapon_Counter += 1 
+							#Уровень оружия
+							Label_Weapon.text[0] = str(Label_Weapon_Counter) 
+							Air[i].weapon.level = Label_Weapon_Counter
+							#Прибавляем +1 к счетчику чтобы узнать следующию цену брони и вписать в labelprice
+							Label_Weapon_Counter += 1
+							Label_Weapon_price.text = str(Label_Weapon_Counter * int(Label_Weapon_price.text))
+							Label_Weapon_Counter -= 1
+							#
+							if(Label_Weapon_Counter == 6):
+								Label_Weapon_price.text = " "
+							
+							$HUD_elem.updateHud()
+							SaveLoad.save_data(null,null)
+						else: 
+							print("Денег нет")
+			#Второе оружие
+				elif(extra_arg_0 == "3"):
+					if(Label_Two_Weapon_Counter <= 5):
+						if(Dollar >= int(Label_Two_Weapon_price.text)):
+							#Цена оружия
+							SaveLoad.data.Dollar = Dollar - int(Label_Two_Weapon_price.text)
+							#приравняли локальный доллар
+							Dollar = SaveLoad.data.Dollar
+							#
+							Label_Two_Weapon_Counter += 1
+							#Уровень 2-го оружия
+							Label_Two_Weapon.text[0] = str(Label_Two_Weapon_Counter) 
+							Air[i].weapon_two.level = Label_Two_Weapon_Counter
+							#
+							Label_Two_Weapon_Counter += 1
+							Label_Two_Weapon_price.text = str(Label_Weapon_Counter * int(Label_Two_Weapon_price.text))
+							Label_Two_Weapon_Counter -= 1
+							#
+							if(Label_Two_Weapon_Counter == 6):
+								Label_Two_Weapon_price.text = " "
+							#
+							$HUD_elem.updateHud()
+							SaveLoad.save_data(null,null)
+						else:
+							print("Денег нет")
+
 	pass
+
+
 
 #Переход на покупку истребителей
 func _on_Button_Air_pressed():
@@ -198,9 +298,12 @@ func buyAir(extra_arg_0):
 		#print(Air[extra_arg_0]
 		SelectedAir = extra_arg_0
 		update_data_their(extra_arg_0)
+		
+		SaveLoad.save_data(null,null)
 		#Присваивание счетчика
 		#print(SelectedAir)
 	else:
+
 		Hangar_data["Dollar"] = Dollar - Air[extra_arg_0].price
 		$HUD_elem.updateHud()
 		#Присваивание значений
@@ -208,9 +311,24 @@ func buyAir(extra_arg_0):
 		Air[extra_arg_0].lock = false
 		update_data_their(extra_arg_0)
 		SaveLoad.save_data(null,null)
+
+		if(Dollar <= Air[extra_arg_0].price):
+			print("Денег нет")
+		else:
+			Hangar_data["Dollar"] = Dollar - Air[extra_arg_0].price
+			$HUD_elem.updateHud()
+			Dollar = Hangar_data["Dollar"]
+			#Присваивание значений
+			SelectedAir = extra_arg_0
+			Air[extra_arg_0].lock = false
+			
+			update_data_their(extra_arg_0)
+			SaveLoad.save_data(null,null)
+
 	pass
 
 func update_data_their(extra_arg_0):
+	Hangar_data["SelectedAir"] = SelectedAir
 	#Присваивания уровня	
 	Label_Armor_Counter = Air[extra_arg_0].guard.level
 	Label_Weapon_Counter = Air[extra_arg_0].weapon.level
@@ -223,6 +341,12 @@ func update_data_their(extra_arg_0):
 	Label_Armor.text[0] = str(Air[extra_arg_0].guard.level)
 	Label_Weapon.text[0] = str(Air[extra_arg_0].weapon.level) 
 	Label_Two_Weapon.text[0] = str(Air[extra_arg_0].weapon_two.level) 
+	#При выборе подгрузится выбранная картинка для самолета
+	#Air[extra_arg_0].air_img
+	Air_Hangar.texture = load(Air[extra_arg_0].air_img)
+	
+	print(Air[extra_arg_0].air_img)
+	#Air_Hangar.texture = load("res://Interface/Hangar/Air/Air_" + str(extra_arg_0) +".png")
 	pass
 
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/MiG-29.png-eafc01aeaf5b93da853602e0cf69a56a.stex"
+path="res://.import/Air_4.png-cc183cc1e991eb26f8a350af29de163c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Interface/Hangar/Air/MiG-29.png"
-dest_files=[ "res://.import/MiG-29.png-eafc01aeaf5b93da853602e0cf69a56a.stex" ]
+source_file="res://Interface/Hangar/Air/Air_4.png"
+dest_files=[ "res://.import/Air_4.png-cc183cc1e991eb26f8a350af29de163c.stex" ]
 
 [params]
 

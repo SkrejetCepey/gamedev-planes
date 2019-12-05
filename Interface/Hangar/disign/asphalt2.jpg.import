@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Cicus.png-b4b06ee55a3875bf2cf77d6a522fd0c5.stex"
+path="res://.import/asphalt2.jpg-4ed033281191f10f1b1e26358864f11e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Interface/Hangar/Air/Cicus.png"
-dest_files=[ "res://.import/Cicus.png-b4b06ee55a3875bf2cf77d6a522fd0c5.stex" ]
+source_file="res://Interface/Hangar/disign/asphalt2.jpg"
+dest_files=[ "res://.import/asphalt2.jpg-4ed033281191f10f1b1e26358864f11e.stex" ]
 
 [params]
 

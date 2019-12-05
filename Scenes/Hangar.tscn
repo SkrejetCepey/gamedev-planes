@@ -1,54 +1,53 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Scripts/Hangar.gd" type="Script" id=1]
-[ext_resource path="res://Interface/Hangar/Air/Air_1.png" type="Texture" id=2]
-[ext_resource path="res://Interface/Hangar/Dron/dron_1 (2).png" type="Texture" id=3]
-[ext_resource path="res://Interface/Hangar/Dron/dron_1.png" type="Texture" id=4]
-[ext_resource path="res://Interface/Hangar/Armor.png" type="Texture" id=5]
-[ext_resource path="res://Interface/fonts/18097.ttf" type="DynamicFontData" id=6]
-[ext_resource path="res://Interface/Hangar/Two_Weapon.png" type="Texture" id=7]
-[ext_resource path="res://Interface/Hangar/Weapon.png" type="Texture" id=8]
-[ext_resource path="res://Interface/Hangar/Air/MiG-29.png" type="Texture" id=9]
-[ext_resource path="res://Scenes/HUD_elem.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Interface/Hangar/disign/asphalt2_ph.jpg" type="Texture" id=2]
+[ext_resource path="res://Interface/Hangar/disign/markup_air.png" type="Texture" id=3]
+[ext_resource path="res://Interface/Hangar/Dron/dron_1 (2).png" type="Texture" id=4]
+[ext_resource path="res://Interface/Hangar/Dron/dron_1.png" type="Texture" id=5]
+[ext_resource path="res://Interface/Hangar/Armor.png" type="Texture" id=6]
+[ext_resource path="res://Interface/fonts/18097.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://Interface/Hangar/Two_Weapon.png" type="Texture" id=8]
+[ext_resource path="res://Interface/Hangar/Weapon.png" type="Texture" id=9]
+[ext_resource path="res://Interface/Hangar/Air/Air_1.png" type="Texture" id=10]
+[ext_resource path="res://Interface/Hangar/Air/Air_2.png" type="Texture" id=11]
+[ext_resource path="res://Interface/Hangar/Air/Air_3.png" type="Texture" id=12]
+[ext_resource path="res://Interface/Hangar/Air/Air_4.png" type="Texture" id=13]
+[ext_resource path="res://Scenes/HUD_elem.tscn" type="PackedScene" id=14]
 
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.6, 0.6, 0.6, 0 )
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color( 0, 0, 0, 1 )
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
+[sub_resource type="StreamTexture" id=20]
+flags = 4
+load_path = "res://.import/markup.png-6422da89bc70a288527e121bbe2e41aa.stex"
 
-[sub_resource type="StyleBoxFlat" id=2]
+[sub_resource type="StyleBoxFlat" id=15]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color( 0, 0, 0, 1 )
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
+corner_radius_top_right = 3
+
+[sub_resource type="StyleBoxFlat" id=18]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
 border_color = Color( 0, 0, 0, 1 )
 corner_radius_top_left = 3
 corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
-[sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0.6, 0.6, 0.6, 0 )
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.192157, 0.247059, 0.34902, 1 )
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
@@ -73,7 +72,33 @@ corner_radius_bottom_left = 3
 
 [sub_resource type="DynamicFont" id=6]
 size = 12
-font_data = ExtResource( 6 )
+font_data = ExtResource( 7 )
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0.494118, 0.490196, 0.478431, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+corner_detail = 16
+
+[sub_resource type="StyleBoxFlat" id=19]
+bg_color = Color( 0.494118, 0.490196, 0.478431, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+corner_detail = 16
 
 [sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0.494141, 0.48835, 0.476768, 1 )
@@ -96,18 +121,18 @@ border_width_bottom = 3
 [sub_resource type="DynamicFont" id=9]
 size = 20
 outline_color = Color( 1, 0, 0, 1 )
-font_data = ExtResource( 6 )
+font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=10]
 size = 20
-font_data = ExtResource( 6 )
+font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=11]
 size = 14
-font_data = ExtResource( 6 )
+font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=12]
-font_data = ExtResource( 6 )
+font_data = ExtResource( 7 )
 
 [node name="Hangar" type="Control" groups=[
 "Persist",
@@ -116,62 +141,88 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
 
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 7
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_bottom = -4.0
 custom_constants/margin_right = 11
 custom_constants/margin_top = 60
 custom_constants/margin_left = 11
 custom_constants/margin_bottom = 20
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-editor/display_folded = true
-margin_left = 53.0
+margin_left = 43.0
 margin_top = 60.0
-margin_right = 427.0
-margin_bottom = 696.0
+margin_right = 437.0
+margin_bottom = 703.0
 size_flags_horizontal = 4
-custom_constants/separation = 10
 
 [node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
-editor/display_folded = true
-margin_right = 374.0
-margin_bottom = 456.0
+margin_right = 394.0
+margin_bottom = 475.0
 size_flags_vertical = 7
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer2"]
+margin_right = 394.0
+margin_bottom = 475.0
+texture = SubResource( 20 )
+expand = true
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/MarginContainer2"]
+margin_right = 394.0
+margin_bottom = 475.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
 custom_constants/margin_bottom = 10
 
-[node name="Border" type="Panel" parent="MarginContainer/VBoxContainer/MarginContainer2"]
-margin_right = 374.0
-margin_bottom = 446.0
-custom_styles/panel = SubResource( 1 )
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer2/MarginContainer"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 384.0
+margin_bottom = 465.0
+custom_constants/separation = 15
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer2"]
-editor/display_folded = true
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer"]
 margin_right = 374.0
-margin_bottom = 446.0
+margin_bottom = 250.0
+size_flags_horizontal = 7
+size_flags_vertical = 14
+custom_constants/margin_top = 20
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer"]
-editor/display_folded = true
-margin_right = 374.0
-margin_bottom = 245.0
-size_flags_horizontal = 3
-size_flags_vertical = 15
-custom_constants/margin_top = 15
-
-[node name="Button_Air" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer/MarginContainer"]
-editor/display_folded = true
+[node name="Button_Air" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer"]
 margin_left = 72.0
-margin_top = 15.0
+margin_top = 20.0
 margin_right = 302.0
-margin_bottom = 245.0
+margin_bottom = 250.0
 rect_min_size = Vector2( 230, 230 )
 size_flags_horizontal = 6
 size_flags_vertical = 5
-custom_styles/normal = SubResource( 2 )
+custom_styles/hover = SubResource( 15 )
+custom_styles/focus = SubResource( 14 )
+custom_styles/normal = SubResource( 13 )
 
-[node name="TextureRect_Air" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer/MarginContainer/Button_Air"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer/Button_Air"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -100.0
+margin_top = -100.0
+margin_right = 100.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 200, 200 )
+texture = ExtResource( 3 )
+expand = true
+
+[node name="TextureRect_Air" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer/Button_Air"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -180,20 +231,18 @@ margin_left = -79.5
 margin_top = -111.5
 margin_right = 79.5
 margin_bottom = 111.5
-texture = ExtResource( 2 )
 expand = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer"]
 editor/display_folded = true
-margin_top = 256.0
+margin_top = 265.0
 margin_right = 374.0
-margin_bottom = 446.0
+margin_bottom = 455.0
 size_flags_horizontal = 3
-size_flags_vertical = 14
+size_flags_vertical = 15
 alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer"]
-editor/display_folded = true
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer"]
 margin_right = 185.0
 margin_bottom = 190.0
 custom_constants/margin_right = 15
@@ -201,18 +250,31 @@ custom_constants/margin_top = 20
 custom_constants/margin_left = 20
 custom_constants/margin_bottom = 20
 
-[node name="Button_Dron_one" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer/MarginContainer"]
-editor/display_folded = true
+[node name="Button_Dron_one" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer"]
 margin_left = 20.0
 margin_top = 20.0
 margin_right = 170.0
 margin_bottom = 170.0
 rect_min_size = Vector2( 150, 150 )
 size_flags_horizontal = 0
-size_flags_vertical = 0
+size_flags_vertical = 6
+custom_styles/hover = SubResource( 17 )
 custom_styles/normal = SubResource( 3 )
 
-[node name="TextureRect_Dron_one" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer/MarginContainer/Button_Dron_one"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/Button_Dron_one"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -65.0
+margin_top = -65.0
+margin_right = 65.0
+margin_bottom = 65.0
+rect_min_size = Vector2( 130, 130 )
+texture = ExtResource( 3 )
+expand = true
+
+[node name="TextureRect_Dron_one" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/Button_Dron_one"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -221,10 +283,9 @@ margin_left = -49.5
 margin_top = -66.5
 margin_right = 49.5
 margin_bottom = 66.5
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
-[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer"]
-editor/display_folded = true
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer"]
 margin_left = 189.0
 margin_right = 374.0
 margin_bottom = 190.0
@@ -233,18 +294,31 @@ custom_constants/margin_top = 20
 custom_constants/margin_left = 15
 custom_constants/margin_bottom = 20
 
-[node name="Button_Dron_two" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer/MarginContainer2"]
-editor/display_folded = true
+[node name="Button_Dron_two" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2"]
 margin_left = 15.0
 margin_top = 20.0
 margin_right = 165.0
 margin_bottom = 170.0
 rect_min_size = Vector2( 150, 150 )
 size_flags_horizontal = 0
-size_flags_vertical = 0
+size_flags_vertical = 6
+custom_styles/hover = SubResource( 18 )
 custom_styles/normal = SubResource( 4 )
 
-[node name="TextureRect_Dron_two" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer/MarginContainer2/Button_Dron_two"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/Button_Dron_two"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -65.0
+margin_top = -65.0
+margin_right = 65.0
+margin_bottom = 65.0
+rect_min_size = Vector2( 130, 130 )
+texture = ExtResource( 3 )
+expand = true
+
+[node name="TextureRect_Dron_two" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/Button_Dron_two"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -253,21 +327,29 @@ margin_left = -68.0
 margin_top = -51.0
 margin_right = 68.0
 margin_bottom = 51.0
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
+
+[node name="Border" type="Panel" parent="MarginContainer/VBoxContainer/MarginContainer2"]
+visible = false
+margin_right = 394.0
+margin_bottom = 475.0
+custom_styles/panel = SubResource( 1 )
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
-margin_top = 466.0
-margin_right = 374.0
-margin_bottom = 566.0
+editor/display_folded = true
+margin_top = 479.0
+margin_right = 394.0
+margin_bottom = 579.0
 custom_constants/margin_bottom = 0
 
 [node name="Border" type="Panel" parent="MarginContainer/VBoxContainer/MarginContainer"]
-margin_right = 374.0
+visible = false
+margin_right = 394.0
 margin_bottom = 100.0
 custom_styles/panel = SubResource( 1 )
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/MarginContainer"]
-margin_right = 374.0
+margin_right = 394.0
 margin_bottom = 100.0
 size_flags_vertical = 5
 custom_constants/margin_top = 10
@@ -275,15 +357,14 @@ custom_constants/margin_bottom = 10
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer"]
 margin_top = 10.0
-margin_right = 374.0
+margin_right = 394.0
 margin_bottom = 90.0
 custom_constants/separation = 24
 alignment = 1
 
 [node name="Button_Armor" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer2"]
-editor/display_folded = true
-margin_left = 43.0
-margin_right = 123.0
+margin_left = 53.0
+margin_right = 133.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 80, 80 )
 size_flags_horizontal = 0
@@ -301,7 +382,7 @@ margin_top = -30.0
 margin_right = 25.0
 margin_bottom = 30.0
 rect_min_size = Vector2( 50, 60 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 expand = true
 
 [node name="Label_Armor" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer2/Button_Armor"]
@@ -324,8 +405,8 @@ valign = 1
 
 [node name="Button_Weapon" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer2"]
 editor/display_folded = true
-margin_left = 147.0
-margin_right = 227.0
+margin_left = 157.0
+margin_right = 237.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 80, 80 )
 size_flags_horizontal = 0
@@ -354,7 +435,7 @@ margin_top = -25.6635
 margin_right = 25.0
 margin_bottom = 24.3365
 rect_min_size = Vector2( 50, 50 )
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 expand = true
 
 [node name="Label_Weapon_price" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer2/Button_Weapon"]
@@ -367,8 +448,8 @@ valign = 1
 
 [node name="Button_Two_Weapon" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer2"]
 editor/display_folded = true
-margin_left = 251.0
-margin_right = 331.0
+margin_left = 261.0
+margin_right = 341.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 80, 80 )
 size_flags_horizontal = 0
@@ -386,7 +467,7 @@ margin_top = -30.6635
 margin_right = 30.0
 margin_bottom = 29.3365
 rect_min_size = Vector2( 60, 60 )
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 expand = true
 
 [node name="Label_Two_Weapon" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer2/Button_Two_Weapon"]
@@ -408,18 +489,19 @@ align = 1
 valign = 1
 
 [node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
-editor/display_folded = true
-margin_top = 576.0
-margin_right = 374.0
-margin_bottom = 636.0
+margin_top = 583.0
+margin_right = 394.0
+margin_bottom = 643.0
 size_flags_horizontal = 9
 size_flags_vertical = 9
 
 [node name="Button_StartGame" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer3"]
-margin_right = 374.0
+margin_right = 394.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 0, 60 )
 size_flags_vertical = 8
+custom_styles/hover = SubResource( 16 )
+custom_styles/pressed = SubResource( 19 )
 custom_styles/normal = SubResource( 7 )
 text = "OK"
 
@@ -448,14 +530,14 @@ margin_right = 415.0
 margin_bottom = 700.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer"]
-margin_right = 404.0
+margin_right = 416.0
 margin_bottom = 576.0
 size_flags_horizontal = 3
 size_flags_vertical = 11
 scroll_horizontal_enabled = false
 
 [node name="GridContainer" type="GridContainer" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer"]
-margin_right = 404.0
+margin_right = 416.0
 margin_bottom = 576.0
 size_flags_horizontal = 3
 size_flags_vertical = 11
@@ -463,7 +545,7 @@ columns = 2
 
 [node name="Button1" type="Button" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
 editor/display_folded = true
-margin_right = 200.0
+margin_right = 206.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 200, 200 )
 size_flags_horizontal = 3
@@ -480,7 +562,7 @@ margin_right = 54.5
 margin_bottom = 76.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource( 2 )
+texture = ExtResource( 10 )
 expand = true
 
 [node name="Button1_NotEnoughMoney" type="Label" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button1"]
@@ -569,8 +651,8 @@ valign = 1
 
 [node name="Button2" type="Button" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
 editor/display_folded = true
-margin_left = 204.0
-margin_right = 404.0
+margin_left = 210.0
+margin_right = 416.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 200, 200 )
 size_flags_horizontal = 3
@@ -581,14 +663,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -65.5332
-margin_top = 75.1974
-margin_right = 93.4668
-margin_bottom = 201.197
-rect_rotation = -90.0
+margin_left = -55.5
+margin_top = -63.0
+margin_right = 55.5
+margin_bottom = 63.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource( 9 )
+texture = ExtResource( 11 )
 expand = true
 
 [node name="Button2_NotEnoughMoney" type="Label" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button2"]
@@ -681,7 +762,7 @@ valign = 1
 [node name="Button3" type="Button" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
 editor/display_folded = true
 margin_top = 204.0
-margin_right = 200.0
+margin_right = 206.0
 margin_bottom = 404.0
 rect_min_size = Vector2( 200, 200 )
 size_flags_horizontal = 3
@@ -699,7 +780,7 @@ margin_bottom = 201.197
 rect_rotation = -90.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource( 9 )
+texture = ExtResource( 12 )
 expand = true
 
 [node name="Button2_NotEnoughMoney" type="Label" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button3"]
@@ -791,9 +872,9 @@ valign = 1
 
 [node name="Button4" type="Button" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
 editor/display_folded = true
-margin_left = 204.0
+margin_left = 210.0
 margin_top = 204.0
-margin_right = 404.0
+margin_right = 416.0
 margin_bottom = 404.0
 rect_min_size = Vector2( 200, 200 )
 size_flags_horizontal = 3
@@ -811,7 +892,7 @@ margin_bottom = 201.197
 rect_rotation = -90.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource( 9 )
+texture = ExtResource( 13 )
 expand = true
 
 [node name="Button2_NotEnoughMoney" type="Label" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button4"]
@@ -903,15 +984,15 @@ valign = 1
 
 [node name="ChangeAir" type="Button" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer"]
 margin_top = 580.0
-margin_right = 404.0
+margin_right = 416.0
 margin_bottom = 640.0
 rect_min_size = Vector2( 0, 60 )
 size_flags_vertical = 9
 custom_fonts/font = SubResource( 12 )
 text = "ОК"
 
-[node name="HUD_elem" parent="." instance=ExtResource( 10 )]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer/MarginContainer/Button_Air" to="." method="_on_Button_Air_pressed"]
+[node name="HUD_elem" parent="." instance=ExtResource( 14 )]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer/Button_Air" to="." method="_on_Button_Air_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer2/Button_Armor" to="." method="modifications" binds= [ "1" ]]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer2/Button_Weapon" to="." method="modifications" binds= [ "2" ]]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer2/Button_Two_Weapon" to="." method="modifications" binds= [ "3" ]]

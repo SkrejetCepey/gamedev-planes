@@ -1,6 +1,6 @@
 { 
     "User":"Player",
-    "Dollar":0,
+    "Dollar":100000,
     "Emerald":0,
     "SelectedAir": 1,
     "TotalDistance": 102,
@@ -10,7 +10,7 @@
             "lock" : false,
             "price" : 0,
             "name": "Su-57",
-            "air_img": "path",
+            "air_img": "res://Interface/Hangar/Air/Air_1.png",
             "weapon": {
                 "level":1,
                 "price": 3333
@@ -28,7 +28,7 @@
             "lock" : true,
             "price" : 10000,
             "name": "Mig-57",
-            "air_img": "path",
+            "air_img": "res://Interface/Hangar/Air/Air_2.png",
             "weapon": {
                 "level":1,
                 "price": 11
@@ -46,7 +46,7 @@
             "lock" : true,
             "price" : 30000,
             "name": "oct-23",
-            "air_img": "path",
+            "air_img": "res://Interface/Hangar/Air/Air_3.png",
             "weapon": {
                 "level":1,
                 "price": 111
@@ -64,7 +64,7 @@
             "lock" : true,
             "price" : 50000,
             "name": "Bg-77",
-            "air_img": "path",
+            "air_img": "res://Interface/Hangar/Air/Air_4.png",
             "weapon": {
                 "level":1,
                 "price": 1111

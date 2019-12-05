@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Interface/HUD/Setting.png" type="Texture" id=1]
+[ext_resource path="res://Interface/fonts/18097.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.192157, 0.247059, 0.34902, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 16
+
+[sub_resource type="DynamicFont" id=2]
+size = 14
+font_data = ExtResource( 2 )
+
+[node name="Button_Setting" type="Button"]
+editor/display_folded = true
+margin_left = 320.0
+margin_right = 460.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 140, 45 )
+size_flags_horizontal = 10
+size_flags_vertical = 0
+custom_styles/normal = SubResource( 1 )
+button_mask = 7
+
+[node name="TextureRect_setting" type="TextureRect" parent="."]
+margin_left = 6.0
+margin_top = 7.0
+margin_right = 36.0
+margin_bottom = 37.0
+rect_min_size = Vector2( 30, 30 )
+size_flags_horizontal = 2
+size_flags_vertical = 6
+texture = ExtResource( 1 )
+expand = true
+
+[node name="Label_setting" type="Label" parent="."]
+margin_left = 43.9811
+margin_top = 14.5987
+margin_right = 112.981
+margin_bottom = 31.5987
+size_flags_horizontal = 4
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 2 )
+text = "Настройки"
+align = 1
