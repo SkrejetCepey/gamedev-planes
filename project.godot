@@ -21,11 +21,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Global="*res://Scripts/Global.gd"
-
-[debug]
-
-settings/stdout/print_fps=true
+SaveLoad="*res://Scripts/SaveLoad.gd"
 
 [display]
 

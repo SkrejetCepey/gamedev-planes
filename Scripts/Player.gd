@@ -62,8 +62,8 @@ func moving():
 		prevMousePos = null
 		
 	var pos = position
-	pos.x = clamp(position.x, 100, get_viewport().get_size().x - 100)
-	pos.y = clamp(position.y, 100, get_viewport().get_size().y - 100)
+	pos.x = clamp(position.x, 100, get_viewport().get_visible_rect().size.x - 100)
+	pos.y = clamp(position.y, 100, get_viewport().get_visible_rect().size.y - 100)
 	position = pos
 	pass
 

@@ -1,13 +1,15 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Scripts/Hangar.gd" type="Script" id=1]
 [ext_resource path="res://Interface/Hangar/Air/Air_1.png" type="Texture" id=2]
 [ext_resource path="res://Interface/Hangar/Dron/dron_1 (2).png" type="Texture" id=3]
 [ext_resource path="res://Interface/Hangar/Dron/dron_1.png" type="Texture" id=4]
 [ext_resource path="res://Interface/Hangar/Armor.png" type="Texture" id=5]
-[ext_resource path="res://Interface/Hangar/Two_Weapon.png" type="Texture" id=6]
-[ext_resource path="res://Interface/Hangar/Weapon.png" type="Texture" id=7]
-[ext_resource path="res://Scenes/HUD_elem.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Interface/fonts/18097.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Interface/Hangar/Two_Weapon.png" type="Texture" id=7]
+[ext_resource path="res://Interface/Hangar/Weapon.png" type="Texture" id=8]
+[ext_resource path="res://Interface/Hangar/Air/MiG-29.png" type="Texture" id=9]
+[ext_resource path="res://Scenes/HUD_elem.tscn" type="PackedScene" id=10]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
@@ -69,7 +71,11 @@ corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
-[sub_resource type="StyleBoxFlat" id=6]
+[sub_resource type="DynamicFont" id=6]
+size = 12
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0.494141, 0.48835, 0.476768, 1 )
 border_width_left = 2
 border_width_top = 2
@@ -81,7 +87,31 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
-[node name="Hangar" type="Control"]
+[sub_resource type="StyleBoxFlat" id=8]
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+
+[sub_resource type="DynamicFont" id=9]
+size = 20
+outline_color = Color( 1, 0, 0, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 20
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 14
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=12]
+font_data = ExtResource( 6 )
+
+[node name="Hangar" type="Control" groups=[
+"Persist",
+]]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
@@ -90,34 +120,37 @@ script = ExtResource( 1 )
 editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_bottom = -4.0
 custom_constants/margin_right = 11
-custom_constants/margin_top = 50
+custom_constants/margin_top = 60
 custom_constants/margin_left = 11
 custom_constants/margin_bottom = 20
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 editor/display_folded = true
 margin_left = 53.0
-margin_top = 50.0
+margin_top = 60.0
 margin_right = 427.0
-margin_bottom = 709.0
+margin_bottom = 696.0
 size_flags_horizontal = 4
-custom_constants/separation = 20
+custom_constants/separation = 10
 
 [node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+editor/display_folded = true
 margin_right = 374.0
-margin_bottom = 449.0
+margin_bottom = 456.0
 size_flags_vertical = 7
 custom_constants/margin_bottom = 10
 
 [node name="Border" type="Panel" parent="MarginContainer/VBoxContainer/MarginContainer2"]
 margin_right = 374.0
-margin_bottom = 439.0
+margin_bottom = 446.0
 custom_styles/panel = SubResource( 1 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer2"]
+editor/display_folded = true
 margin_right = 374.0
-margin_bottom = 439.0
+margin_bottom = 446.0
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer"]
 editor/display_folded = true
@@ -152,9 +185,9 @@ expand = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer"]
 editor/display_folded = true
-margin_top = 249.0
+margin_top = 256.0
 margin_right = 374.0
-margin_bottom = 439.0
+margin_bottom = 446.0
 size_flags_horizontal = 3
 size_flags_vertical = 14
 alignment = 1
@@ -223,11 +256,10 @@ margin_bottom = 51.0
 texture = ExtResource( 4 )
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
-editor/display_folded = true
-margin_top = 469.0
+margin_top = 466.0
 margin_right = 374.0
-margin_bottom = 579.0
-custom_constants/margin_bottom = 10
+margin_bottom = 566.0
+custom_constants/margin_bottom = 0
 
 [node name="Border" type="Panel" parent="MarginContainer/VBoxContainer/MarginContainer"]
 margin_right = 374.0
@@ -235,7 +267,6 @@ margin_bottom = 100.0
 custom_styles/panel = SubResource( 1 )
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/MarginContainer"]
-editor/display_folded = true
 margin_right = 374.0
 margin_bottom = 100.0
 size_flags_vertical = 5
@@ -250,6 +281,7 @@ custom_constants/separation = 24
 alignment = 1
 
 [node name="Button_Armor" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer2"]
+editor/display_folded = true
 margin_left = 43.0
 margin_right = 123.0
 margin_bottom = 80.0
@@ -264,13 +296,34 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -31.0
-margin_top = -38.5
-margin_right = 31.0
-margin_bottom = 38.5
+margin_left = -25.0
+margin_top = -30.0
+margin_right = 25.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 50, 60 )
 texture = ExtResource( 5 )
+expand = true
 
-[node name="Button2_Weapon" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer2"]
+[node name="Label_Armor" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer2/Button_Armor"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -14.0
+custom_fonts/font = SubResource( 6 )
+text = "1/6"
+align = 1
+valign = 1
+
+[node name="Label_Armor_price" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer2/Button_Armor"]
+anchor_right = 1.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 6 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="Button_Weapon" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer2"]
+editor/display_folded = true
 margin_left = 147.0
 margin_right = 227.0
 margin_bottom = 80.0
@@ -278,19 +331,42 @@ rect_min_size = Vector2( 80, 80 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_styles/normal = SubResource( 5 )
+shortcut_in_tooltip = false
+button_mask = 7
 
-[node name="TextureRect_Weapon" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer2/Button2_Weapon"]
+[node name="Label_Weapon" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer2/Button_Weapon"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -14.0
+custom_fonts/font = SubResource( 6 )
+text = "1/6"
+align = 1
+valign = 1
+
+[node name="TextureRect_Weapon" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer2/Button_Weapon"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -36.5
-margin_top = -38.5
-margin_right = 36.5
-margin_bottom = 38.5
-texture = ExtResource( 6 )
+margin_left = -25.0
+margin_top = -25.6635
+margin_right = 25.0
+margin_bottom = 24.3365
+rect_min_size = Vector2( 50, 50 )
+texture = ExtResource( 7 )
+expand = true
 
-[node name="Button3_Two_Weapon" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer2"]
+[node name="Label_Weapon_price" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer2/Button_Weapon"]
+anchor_right = 1.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 6 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="Button_Two_Weapon" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer2"]
+editor/display_folded = true
 margin_left = 251.0
 margin_right = 331.0
 margin_bottom = 80.0
@@ -298,23 +374,44 @@ rect_min_size = Vector2( 80, 80 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_styles/normal = SubResource( 5 )
+button_mask = 7
 
-[node name="TextureRect_Two_Weapon" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer2/Button3_Two_Weapon"]
+[node name="TextureRect_Two_Weapon" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer2/Button_Two_Weapon"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -33.5
-margin_top = -38.5
-margin_right = 33.5
-margin_bottom = 38.5
-texture = ExtResource( 7 )
+margin_left = -30.0
+margin_top = -30.6635
+margin_right = 30.0
+margin_bottom = 29.3365
+rect_min_size = Vector2( 60, 60 )
+texture = ExtResource( 8 )
+expand = true
+
+[node name="Label_Two_Weapon" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer2/Button_Two_Weapon"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -25.0
+custom_fonts/font = SubResource( 6 )
+text = "1/6"
+align = 1
+valign = 1
+
+[node name="Label_Two_Weapon_price" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer2/Button_Two_Weapon"]
+anchor_right = 1.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 6 )
+text = "0"
+align = 1
+valign = 1
 
 [node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
 editor/display_folded = true
-margin_top = 599.0
+margin_top = 576.0
 margin_right = 374.0
-margin_bottom = 659.0
+margin_bottom = 636.0
 size_flags_horizontal = 9
 size_flags_vertical = 9
 
@@ -323,8 +420,504 @@ margin_right = 374.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 0, 60 )
 size_flags_vertical = 8
-custom_styles/normal = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
 text = "OK"
 
-[node name="HUD_elem" parent="." instance=ExtResource( 8 )]
+[node name="Change_Air_ColorRect" type="ColorRect" parent="."]
+editor/display_folded = true
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.227451, 0.188235, 0.188235, 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="Change_Air_ColorRect"]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -213.0
+margin_right = 213.0
+custom_constants/margin_right = 11
+custom_constants/margin_top = 60
+custom_constants/margin_left = 11
+custom_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Change_Air_ColorRect/MarginContainer"]
+margin_left = 11.0
+margin_top = 60.0
+margin_right = 415.0
+margin_bottom = 700.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer"]
+margin_right = 404.0
+margin_bottom = 576.0
+size_flags_horizontal = 3
+size_flags_vertical = 11
+scroll_horizontal_enabled = false
+
+[node name="GridContainer" type="GridContainer" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer"]
+margin_right = 404.0
+margin_bottom = 576.0
+size_flags_horizontal = 3
+size_flags_vertical = 11
+columns = 2
+
+[node name="Button1" type="Button" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+editor/display_folded = true
+margin_right = 200.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 200, 200 )
+size_flags_horizontal = 3
+custom_styles/normal = SubResource( 8 )
+
+[node name="TextureRect_Button1" type="TextureRect" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button1"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -54.5
+margin_top = -76.0
+margin_right = 54.5
+margin_bottom = 76.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource( 2 )
+expand = true
+
+[node name="Button1_NotEnoughMoney" type="Label" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button1"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -55.5
+margin_top = -12.0
+margin_right = 55.5
+margin_bottom = 12.0
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0.792157, 0.00784314, 0.00784314, 1 )
+text = "Нет денег !!!"
+align = 1
+
+[node name="Button1_name" type="Label" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button1"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -26.0
+custom_fonts/font = SubResource( 10 )
+text = "Миг 57"
+align = 1
+valign = 1
+
+[node name="Button1_speed" type="Label" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button1"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 4.0
+margin_top = -95.0
+margin_right = 26.0
+margin_bottom = -66.0
+custom_fonts/font = SubResource( 11 )
+text = "40"
+align = 1
+valign = 1
+
+[node name="Button1_speed2" type="Label" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button1"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 28.6405
+margin_top = -95.5133
+margin_right = 50.6405
+margin_bottom = -66.5133
+custom_fonts/font = SubResource( 11 )
+text = "speed"
+align = 1
+valign = 1
+
+[node name="Button1_damage" type="Label" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button1"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 2.40993
+margin_top = -69.9322
+margin_right = 35.4099
+margin_bottom = -40.9322
+custom_fonts/font = SubResource( 11 )
+text = "190"
+align = 1
+valign = 1
+
+[node name="Button1_damage2" type="Label" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button1"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 26.0237
+margin_top = -70.4455
+margin_right = 91.0237
+margin_bottom = -41.4455
+custom_fonts/font = SubResource( 11 )
+text = "damage"
+align = 1
+valign = 1
+
+[node name="Button1_price_air" type="Label" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button1"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 127.21
+margin_top = -93.1975
+margin_right = 192.21
+margin_bottom = -64.1975
+custom_fonts/font = SubResource( 11 )
+align = 1
+valign = 1
+
+[node name="Button2" type="Button" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+editor/display_folded = true
+margin_left = 204.0
+margin_right = 404.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 200, 200 )
+size_flags_horizontal = 3
+custom_styles/normal = SubResource( 8 )
+
+[node name="TextureRect_Button1" type="TextureRect" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -65.5332
+margin_top = 75.1974
+margin_right = 93.4668
+margin_bottom = 201.197
+rect_rotation = -90.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource( 9 )
+expand = true
+
+[node name="Button2_NotEnoughMoney" type="Label" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button2"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -55.5
+margin_top = -12.0
+margin_right = 55.5
+margin_bottom = 12.0
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0.792157, 0.00784314, 0.00784314, 1 )
+text = "Нет денег !!!"
+align = 1
+
+[node name="Button2_name" type="Label" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button2"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -26.0
+custom_fonts/font = SubResource( 10 )
+text = "Миг 57"
+align = 1
+valign = 1
+
+[node name="Button2_speed" type="Label" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button2"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 4.0
+margin_top = -95.0
+margin_right = 26.0
+margin_bottom = -66.0
+custom_fonts/font = SubResource( 11 )
+text = "60"
+align = 1
+valign = 1
+
+[node name="Button2_speed2" type="Label" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button2"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 28.6405
+margin_top = -95.5133
+margin_right = 50.6405
+margin_bottom = -66.5133
+custom_fonts/font = SubResource( 11 )
+text = "speed"
+align = 1
+valign = 1
+
+[node name="Button2_damage" type="Label" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button2"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 2.40993
+margin_top = -70.5624
+margin_right = 35.4099
+margin_bottom = -41.5624
+custom_fonts/font = SubResource( 11 )
+text = "250"
+align = 1
+valign = 1
+
+[node name="Button2_damage2" type="Label" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button2"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 26.0237
+margin_top = -70.4455
+margin_right = 91.0237
+margin_bottom = -41.4455
+custom_fonts/font = SubResource( 11 )
+text = "damage"
+align = 1
+valign = 1
+
+[node name="Button2_price_air" type="Label" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button2"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -69.7899
+margin_top = -92.9346
+margin_right = -4.78992
+margin_bottom = -63.9346
+custom_fonts/font = SubResource( 11 )
+text = "10000"
+align = 1
+valign = 1
+
+[node name="Button3" type="Button" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+editor/display_folded = true
+margin_top = 204.0
+margin_right = 200.0
+margin_bottom = 404.0
+rect_min_size = Vector2( 200, 200 )
+size_flags_horizontal = 3
+custom_styles/normal = SubResource( 8 )
+
+[node name="TextureRect_Button1" type="TextureRect" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button3"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -65.5332
+margin_top = 75.1974
+margin_right = 93.4668
+margin_bottom = 201.197
+rect_rotation = -90.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource( 9 )
+expand = true
+
+[node name="Button2_NotEnoughMoney" type="Label" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button3"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -55.5
+margin_top = -12.0
+margin_right = 55.5
+margin_bottom = 12.0
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0.792157, 0.00784314, 0.00784314, 1 )
+text = "Нет денег !!!"
+align = 1
+
+[node name="Button3_name" type="Label" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button3"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -26.0
+custom_fonts/font = SubResource( 10 )
+text = "Миг 57"
+align = 1
+valign = 1
+
+[node name="Button2_speed" type="Label" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button3"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 4.0
+margin_top = -95.0
+margin_right = 26.0
+margin_bottom = -66.0
+custom_fonts/font = SubResource( 11 )
+text = "60"
+align = 1
+valign = 1
+
+[node name="Button2_speed2" type="Label" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button3"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 28.6405
+margin_top = -95.5133
+margin_right = 50.6405
+margin_bottom = -66.5133
+custom_fonts/font = SubResource( 11 )
+text = "speed"
+align = 1
+valign = 1
+
+[node name="Button2_damage" type="Label" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button3"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 2.40993
+margin_top = -70.5624
+margin_right = 35.4099
+margin_bottom = -41.5624
+custom_fonts/font = SubResource( 11 )
+text = "250"
+align = 1
+valign = 1
+
+[node name="Button2_damage2" type="Label" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button3"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 26.0237
+margin_top = -70.4455
+margin_right = 91.0237
+margin_bottom = -41.4455
+custom_fonts/font = SubResource( 11 )
+text = "damage"
+align = 1
+valign = 1
+
+[node name="Button3_price_air" type="Label" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button3"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -69.7899
+margin_top = -92.9346
+margin_right = -4.78992
+margin_bottom = -63.9346
+custom_fonts/font = SubResource( 11 )
+text = "10000"
+align = 1
+valign = 1
+
+[node name="Button4" type="Button" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+editor/display_folded = true
+margin_left = 204.0
+margin_top = 204.0
+margin_right = 404.0
+margin_bottom = 404.0
+rect_min_size = Vector2( 200, 200 )
+size_flags_horizontal = 3
+custom_styles/normal = SubResource( 8 )
+
+[node name="TextureRect_Button1" type="TextureRect" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button4"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -65.5332
+margin_top = 75.1974
+margin_right = 93.4668
+margin_bottom = 201.197
+rect_rotation = -90.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource( 9 )
+expand = true
+
+[node name="Button2_NotEnoughMoney" type="Label" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button4"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -55.5
+margin_top = -12.0
+margin_right = 55.5
+margin_bottom = 12.0
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0.792157, 0.00784314, 0.00784314, 1 )
+text = "Нет денег !!!"
+align = 1
+
+[node name="Button4_name" type="Label" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button4"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -26.0
+custom_fonts/font = SubResource( 10 )
+text = "Миг 57"
+align = 1
+valign = 1
+
+[node name="Button2_speed" type="Label" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button4"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 4.0
+margin_top = -95.0
+margin_right = 26.0
+margin_bottom = -66.0
+custom_fonts/font = SubResource( 11 )
+text = "60"
+align = 1
+valign = 1
+
+[node name="Button2_speed2" type="Label" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button4"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 28.6405
+margin_top = -95.5133
+margin_right = 50.6405
+margin_bottom = -66.5133
+custom_fonts/font = SubResource( 11 )
+text = "speed"
+align = 1
+valign = 1
+
+[node name="Button2_damage" type="Label" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button4"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 2.40993
+margin_top = -70.5624
+margin_right = 35.4099
+margin_bottom = -41.5624
+custom_fonts/font = SubResource( 11 )
+text = "250"
+align = 1
+valign = 1
+
+[node name="Button2_damage2" type="Label" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button4"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 26.0237
+margin_top = -70.4455
+margin_right = 91.0237
+margin_bottom = -41.4455
+custom_fonts/font = SubResource( 11 )
+text = "damage"
+align = 1
+valign = 1
+
+[node name="Button4_price_air" type="Label" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button4"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -69.7899
+margin_top = -92.9346
+margin_right = -4.78992
+margin_bottom = -63.9346
+custom_fonts/font = SubResource( 11 )
+text = "10000"
+align = 1
+valign = 1
+
+[node name="ChangeAir" type="Button" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer"]
+margin_top = 580.0
+margin_right = 404.0
+margin_bottom = 640.0
+rect_min_size = Vector2( 0, 60 )
+size_flags_vertical = 9
+custom_fonts/font = SubResource( 12 )
+text = "ОК"
+
+[node name="HUD_elem" parent="." instance=ExtResource( 10 )]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer/MarginContainer/Button_Air" to="." method="_on_Button_Air_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer2/Button_Armor" to="." method="modifications" binds= [ "1" ]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer2/Button_Weapon" to="." method="modifications" binds= [ "2" ]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer2/Button_Two_Weapon" to="." method="modifications" binds= [ "3" ]]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer3/Button_StartGame" to="." method="_on_Button_StartGame_pressed"]
+[connection signal="pressed" from="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button1" to="." method="buyAir" binds= [ "1" ]]
+[connection signal="pressed" from="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button2" to="." method="buyAir" binds= [ "2" ]]
+[connection signal="pressed" from="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button3" to="." method="buyAir" binds= [ "3" ]]
+[connection signal="pressed" from="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button4" to="." method="buyAir" binds= [ "4" ]]
+[connection signal="pressed" from="Change_Air_ColorRect/MarginContainer/VBoxContainer/ChangeAir" to="." method="_on_ChangeAir_pressed"]

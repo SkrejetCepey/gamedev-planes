@@ -35,16 +35,18 @@ func shoot():
 		get_parent().get_parent().get_parent().add_child(bullet_right)
 	if EnemyAtackType == 3:
 		var autobullet = Bullet.instance()
-		if(!get_parent().get_parent().get_parent().get_parent().get_node("Player")):
+		if(get_parent().get_parent().get_parent().get_parent().get_node_or_null("Player")==null):
 			autobullet.initialize(Vector2(global_position.x,global_position.y),Vector2(0,1),650,50,"player",false)
 			get_parent().get_parent().get_parent().add_child(autobullet)
+			$GunFlash.hide()
 			return
 		PlayerPosition = get_parent().get_parent().get_parent().get_parent().get_node("Player").global_position
 		autobullet.get_node("Sprite").texture = load("res://Sprites/auto_rocket.png")
 		autobullet.initialize(Vector2(global_position.x,global_position.y),PlayerPosition,650,50,"player",true)
 		get_parent().get_parent().get_parent().add_child(autobullet)
 	yield(get_tree().create_timer(0.14), "timeout")
-	$GunFlash.hide()
+	if (get_node_or_null("GunFlash")!=null):
+		$GunFlash.hide()
 	pass
 
 func set_enemy_atack_type(atack_type):
