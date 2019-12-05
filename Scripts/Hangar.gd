@@ -146,7 +146,7 @@ func modifications(extra_arg_0):
 						Label_Armor_price.text = str(Air[i].guard.price * Label_Armor_Counter*7)
 						Label_Armor_Counter -= 1
 						$HUD_elem.updateHud()
-						SaveLoad.save_data_null()
+						SaveLoad.save_data(null,null)
 			#Оружие
 				elif(extra_arg_0 == "2"):
 					Label_Weapon_Counter += 1 
@@ -160,7 +160,7 @@ func modifications(extra_arg_0):
 						Label_Weapon_price.text = str(Air[i].weapon.price * Label_Weapon_Counter*7)
 						Label_Weapon_Counter -= 1
 						$HUD_elem.updateHud()
-						SaveLoad.save_data_null()
+						SaveLoad.save_data(null,null)
 			#Второе оружие
 				elif(extra_arg_0 == "3"):
 					Label_Two_Weapon_Counter += 1
@@ -175,7 +175,7 @@ func modifications(extra_arg_0):
 						Label_Two_Weapon_price.text = str(Air[i].weapon_two.price * Label_Two_Weapon_Counter*7)
 						Label_Two_Weapon_Counter -= 1
 						$HUD_elem.updateHud()
-						SaveLoad.save_data_null()
+						SaveLoad.save_data(null,null)
 	pass
 
 #Переход на покупку истребителей
@@ -207,7 +207,7 @@ func buyAir(extra_arg_0):
 		SelectedAir = extra_arg_0
 		Air[extra_arg_0].lock = false
 		update_data_their(extra_arg_0)
-		SaveLoad.save_data_null()
+		SaveLoad.save_data(null,null)
 	pass
 
 func update_data_their(extra_arg_0):
