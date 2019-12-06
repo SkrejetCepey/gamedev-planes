@@ -24,14 +24,17 @@ func initialize(_enemy_type, _pos):
 	pos = _pos
 	if (enemy_type=="Enemy0"):
 		var enemy = Enemy0.instance()
-		add_child(enemy)
+		call_deferred("add_child", enemy)
+		#add_child(enemy)
 		enemy.position = pos
 	elif (enemy_type=="Enemy1"):
 		var enemy = Enemy1.instance()
-		add_child(enemy)
+		call_deferred("add_child", enemy)
+		#add_child(enemy)
 		enemy.position = pos
 	elif (enemy_type=="Enemy2"):
 		var enemy = Enemy2.instance()
-		add_child(enemy)
+		call_deferred("add_child", enemy)
+		#add_child(enemy)
 		enemy.position = pos
 	pass
