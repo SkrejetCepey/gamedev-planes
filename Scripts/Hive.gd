@@ -35,6 +35,10 @@ func _ready():
 		var atack = BossAtack.instance()
 		atack.initialize(atack_type, shoot_speed, null)
 		get_node(str(i)+"cannon").add_child(atack)
+		
+		#var atack_suicide = BossAtack.instance()
+		#atack_suicide.initialize(5, shoot_speed, null)
+		#get_node(str(i)+"cannon").add_child(atack_suicide)
 	#$DeathPos.add_child(atack)
 	pass 
 
@@ -48,6 +52,8 @@ func shoot():
 		if(typical_counter==0): 
 			$Shield.queue_free()
 			typical_counter-=1
+	#if(get_parent().get_node_or_null("EnemySuicideDrone")==null):
+		#get_node(str(round(rand_range(0, 11)))+"cannon").get_node("BossAtack").shoot()
 	pass
 
 func _on_HealthBarEnemy_death():
