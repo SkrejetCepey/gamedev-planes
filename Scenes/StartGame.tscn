@@ -1,14 +1,15 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Scripts/Global.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://Interface/icon/level_up.png" type="Texture" id=3]
 [ext_resource path="res://Interface/fonts/18097.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://Interface/Main/Test/Silviabig.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Player/Person.png" type="Texture" id=5]
 [ext_resource path="res://Interface/icon/Dron.png" type="Texture" id=6]
 [ext_resource path="res://Interface/icon/map.png" type="Texture" id=7]
 [ext_resource path="res://Interface/icon/Hangar_air_two.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/HUD_elem.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Music/Other/MainMenuTheme.wav" type="AudioStream" id=10]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.376471, 0.376471, 0.376471, 1 )
@@ -143,6 +144,7 @@ expand = true
 stretch_mode = 7
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+editor/display_folded = true
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
@@ -1002,7 +1004,6 @@ custom_constants/margin_top = 10
 custom_constants/margin_bottom = 10
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/AnimatedСartoon_&_Button/MarginContainer2"]
-editor/display_folded = true
 margin_top = 10.0
 margin_right = 427.0
 margin_bottom = 370.0
@@ -1236,6 +1237,7 @@ texture = ExtResource( 8 )
 expand = true
 
 [node name="ButtonPlay" type="VBoxContainer" parent="."]
+editor/display_folded = true
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1265,5 +1267,8 @@ button_mask = 7
 text = "PLAY"
 
 [node name="HUD_elem" parent="." instance=ExtResource( 9 )]
+
+[node name="MainMenuTheme" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 10 )
 [connection signal="pressed" from="MarginContainer/AnimatedСartoon_&_Button/MarginContainer2/HBoxContainer/VBoxContainer2/MarginContainer_Hangar/Button_Hangar" to="." method="_on_Button_Hangar_pressed"]
 [connection signal="pressed" from="ButtonPlay/MarginContainer/Button_PLAY" to="." method="_on_Button_PLAY_pressed"]

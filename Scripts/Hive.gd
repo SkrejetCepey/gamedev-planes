@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 const BossAtack = preload("res://Scenes/BossAtack.tscn")
 const DeathHandler = preload("res://Scenes/EnemyDeathHandler.tscn")
-const Explosion = preload("res://Scenes/TestParticles.tscn")
+#const Explosion = preload("res://Scenes/TestParticles.tscn")
 
 export var health = 1000 setget set_health
 export var shoot_speed = 5
@@ -44,22 +44,37 @@ func _ready():
 
 func shoot():
 	randomize()
+	var temp = str(round(rand_range(0, 11)))+"cannon"
+	
 	if(get_parent().get_parent().get_node_or_null("Player")==null):
 		return
 	if(get_parent().get_node_or_null("EnemySniperDrone")==null):
-		get_node(str(round(rand_range(0, 11)))+"cannon").get_node("BossAtack").shoot()
+		#get_node(temp).get_node("BossAtack").set_enemy_atack_type(4)
+		get_node(temp).get_node("BossAtack").initialize(atack_type, shoot_speed, null)
+		get_node(temp).get_node("BossAtack").shoot()
 		if(typical_counter>0): typical_counter-=1
-		if(typical_counter==0): 
-			$Shield.queue_free()
-			typical_counter-=1
+		#if(typical_counter==0): 
+		#	$Shield.queue_free()
+		#	typical_counter-=1
+		#	return
+	#if(get_parent().get_node_or_null("EnemySuicideDrone")==null):
+		#atack.set_enemy_atack_type(5)
+	#get_node(temp).get_node("BossAtack").set_enemy_atack_type(5)
+	get_node(temp).get_node("BossAtack").initialize(5, 1, null)
+	get_node(temp).get_node("BossAtack").shoot()
+	#if(typical_counter>0): typical_counter-=1
+	if(typical_counter==0): 
+		$Shield.queue_free()
+		typical_counter-=1
+		return
 	#if(get_parent().get_node_or_null("EnemySuicideDrone")==null):
 		#get_node(str(round(rand_range(0, 11)))+"cannon").get_node("BossAtack").shoot()
 	pass
 
 func _on_HealthBarEnemy_death():
-	var explosion = Explosion.instance()
-	explosion.global_position = $DeathPos.global_position
-	get_parent().add_child(explosion)
+	#var explosion = Explosion.instance()
+	#explosion.global_position = $DeathPos.global_position
+	#get_parent().add_child(explosion)
 	#var ability = Ability.instance()
 	#var death_handler = DeathHandler.instance()
 	#var dic_boosts = ["Repairkit", "Speedboost", "Shield"]

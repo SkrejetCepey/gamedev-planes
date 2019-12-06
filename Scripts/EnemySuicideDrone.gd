@@ -3,18 +3,18 @@ extends KinematicBody2D
 const EnemyAtack = preload("res://Scenes/EnemyAtack.tscn")
 const DeathHandler = preload("res://Scenes/EnemyDeathHandler.tscn")
 
-export var health = 100 setget set_health
+export var health = 200 setget set_health
 export var shoot_speed = 1
-export var speed = 50
+export var speed = 200
 export var atack_type = 1
 var target
 
 func _ready():
 	add_to_group("enemy")
 	
-	var atack = EnemyAtack.instance()
-	atack.initialize(atack_type, shoot_speed, null)
-	$DeathPos.add_child(atack)
+	#var atack = EnemyAtack.instance()
+	#atack.initialize(atack_type, shoot_speed, null)
+	#$DeathPos.add_child(atack)
 	pass 
 
 func _on_Visible_screen_exited():
@@ -38,12 +38,15 @@ func _process(delta):
 	
 	if(get_parent().get_parent().get_node_or_null("Player")==null):
 		speed = 200
+		motion = Vector2(0,1) * speed * delta
+		move_and_collide(motion)
+		return
 	if(get_parent().get_node_or_null("Hive")==null):
 		queue_free()
 		#move_and_collide(Vector2 (0,speed * delta))
 		return
 	target = get_parent().get_parent().get_node("Player")
-	motion = (target.global_position - global_position) * 0.5 * delta
+	motion = (target.position - position).normalized()
 	
 	move_and_collide(motion)
 	#move_and_collide(Vector2 (0,speed * delta))
@@ -51,6 +54,7 @@ func _process(delta):
 
 func set_damage(damage):
 	health -= damage
+	$HealthBarEnemy/HealthBar.value = health
 	$HealthBarEnemy.health_damaged(damage)
 	pass
 
@@ -61,8 +65,8 @@ func set_health(new_health):
 
 func _on_Trigger_area_entered(someone):
 	if someone.is_in_group("player"):
-		set_damage(100)
-		someone.health -= 50
+		someone.health = 0
+		queue_free()
 	pass
 
 func setTarget(pos):

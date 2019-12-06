@@ -37,3 +37,6 @@ rect_scale = Vector2( 0.05, 0.05 )
 [node name="DeathPos" type="Position2D" parent="."]
 
 [node name="EnemyPos" type="Position2D" parent="."]
+[connection signal="area_entered" from="Trigger" to="." method="_on_Trigger_area_entered"]
+[connection signal="screen_exited" from="Visible" to="." method="_on_Visible_screen_exited"]
+[connection signal="death" from="HealthBarEnemy" to="." method="_on_HealthBarEnemy_death"]

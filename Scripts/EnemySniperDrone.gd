@@ -3,7 +3,7 @@ extends KinematicBody2D
 const EnemyAtack = preload("res://Scenes/EnemyAtack.tscn")
 const DeathHandler = preload("res://Scenes/EnemyDeathHandler.tscn")
 
-export var health = 100 setget set_health
+export var health = 800 setget set_health
 export var shoot_speed = 1
 export var speed = 50
 export var atack_type = 3
