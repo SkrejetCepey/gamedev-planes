@@ -1,14 +1,15 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/StatisticsGameOver.gd" type="Script" id=1]
-[ext_resource path="res://Interface/fonts/18097.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Sprites/issue.png" type="Texture" id=2]
+[ext_resource path="res://Interface/fonts/18097.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 27
-font_data = ExtResource( 2 )
+font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=2]
-font_data = ExtResource( 2 )
+font_data = ExtResource( 3 )
 
 [node name="CanvasLayer_Statistics" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -44,6 +45,28 @@ rect_min_size = Vector2( 200, 60 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "Try it again"
+
+[node name="Button_bugreport" type="Button" parent="ColorRect/Panel"]
+editor/display_folded = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 145.0
+margin_top = 189.0
+margin_right = 202.0
+margin_bottom = 254.0
+rect_min_size = Vector2( 5, 5 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/Panel/Button_bugreport"]
+margin_left = 9.82617
+margin_top = 13.0078
+margin_right = 2009.83
+margin_bottom = 2013.01
+rect_scale = Vector2( 0.02, 0.02 )
+texture = ExtResource( 2 )
 
 [node name="Button_Ok" type="Button" parent="ColorRect/Panel"]
 anchor_left = 0.5
@@ -132,4 +155,5 @@ margin_bottom = 25.0
 custom_fonts/font = SubResource( 2 )
 text = "+ 0"
 [connection signal="pressed" from="ColorRect/Panel/Button_continue" to="." method="_on_Button_continue_pressed"]
+[connection signal="pressed" from="ColorRect/Panel/Button_bugreport" to="." method="_on_Button_bugreport_pressed"]
 [connection signal="pressed" from="ColorRect/Panel/Button_Ok" to="." method="_on_Button_Ok_pressed"]
