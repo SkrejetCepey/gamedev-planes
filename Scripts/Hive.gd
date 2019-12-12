@@ -18,7 +18,6 @@ func _ready():
 	$AnimationPlayer.play("Hive")
 	$AnimationPlayer.queue("HiveMoving")
 	get_parent().get_node("BossEvent").queue_free()
-	$AudioStreamPlayer2D.play()
 	#$AnimationPlayer.play("AnimationEnemyHive")
 	
 	set_process(false)

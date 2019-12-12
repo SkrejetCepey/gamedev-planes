@@ -61,10 +61,10 @@ func moving():
 			prevMousePos = get_global_mouse_position()
 		motion = (currentMousePos - prevMousePos) * speed
 		if motion.x < -2:
-			print("left")
+			#print("left")
 			plane.set_sprite(1)
 		elif motion.x > 2:
-			print("right")
+			#print("right")
 			plane.set_sprite(2)
 		else:
 			plane.set_sprite(0)

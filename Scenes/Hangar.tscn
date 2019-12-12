@@ -15,30 +15,30 @@
 [ext_resource path="res://Interface/Hangar/Air/Air_4.png" type="Texture" id=13]
 [ext_resource path="res://Scenes/HUD_elem.tscn" type="PackedScene" id=14]
 
-[sub_resource type="StreamTexture" id=20]
+[sub_resource type="StreamTexture" id=1]
 flags = 4
 load_path = "res://.import/markup.png-6422da89bc70a288527e121bbe2e41aa.stex"
 
-[sub_resource type="StyleBoxFlat" id=15]
-bg_color = Color( 0.6, 0.6, 0.6, 0 )
-
-[sub_resource type="StyleBoxFlat" id=14]
-bg_color = Color( 0.6, 0.6, 0.6, 0 )
-
-[sub_resource type="StyleBoxFlat" id=13]
-bg_color = Color( 0.6, 0.6, 0.6, 0 )
-
-[sub_resource type="StyleBoxFlat" id=17]
+[sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
-corner_radius_top_right = 3
-
-[sub_resource type="StyleBoxFlat" id=18]
-bg_color = Color( 0.6, 0.6, 0.6, 0 )
 
 [sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+corner_radius_top_right = 3
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=8]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
 border_color = Color( 0, 0, 0, 1 )
 corner_radius_top_left = 3
@@ -46,7 +46,7 @@ corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
-[sub_resource type="StyleBoxFlat" id=1]
+[sub_resource type="StyleBoxFlat" id=9]
 bg_color = Color( 0.192157, 0.247059, 0.34902, 1 )
 border_width_left = 1
 border_width_top = 1
@@ -58,7 +58,7 @@ corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=10]
 bg_color = Color( 0.360784, 0.360784, 0.360784, 1 )
 border_width_left = 1
 border_width_top = 1
@@ -70,11 +70,11 @@ corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=11]
 size = 12
 font_data = ExtResource( 7 )
 
-[sub_resource type="StyleBoxFlat" id=16]
+[sub_resource type="StyleBoxFlat" id=12]
 bg_color = Color( 0.494118, 0.490196, 0.478431, 1 )
 border_width_left = 1
 border_width_top = 1
@@ -87,7 +87,7 @@ corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 corner_detail = 16
 
-[sub_resource type="StyleBoxFlat" id=19]
+[sub_resource type="StyleBoxFlat" id=13]
 bg_color = Color( 0.494118, 0.490196, 0.478431, 1 )
 border_width_left = 1
 border_width_top = 1
@@ -100,7 +100,7 @@ corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 corner_detail = 16
 
-[sub_resource type="StyleBoxFlat" id=7]
+[sub_resource type="StyleBoxFlat" id=14]
 bg_color = Color( 0.494141, 0.48835, 0.476768, 1 )
 border_width_left = 2
 border_width_top = 2
@@ -112,26 +112,26 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
-[sub_resource type="StyleBoxFlat" id=8]
+[sub_resource type="StyleBoxFlat" id=15]
 border_width_left = 3
 border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=16]
 size = 20
 outline_color = Color( 1, 0, 0, 1 )
 font_data = ExtResource( 7 )
 
-[sub_resource type="DynamicFont" id=10]
+[sub_resource type="DynamicFont" id=17]
 size = 20
 font_data = ExtResource( 7 )
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="DynamicFont" id=18]
 size = 14
 font_data = ExtResource( 7 )
 
-[sub_resource type="DynamicFont" id=12]
+[sub_resource type="DynamicFont" id=19]
 font_data = ExtResource( 7 )
 
 [node name="Hangar" type="Control" groups=[
@@ -172,7 +172,7 @@ size_flags_vertical = 7
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer2"]
 margin_right = 394.0
 margin_bottom = 475.0
-texture = SubResource( 20 )
+texture = SubResource( 1 )
 expand = true
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/MarginContainer2"]
@@ -205,9 +205,9 @@ margin_bottom = 250.0
 rect_min_size = Vector2( 230, 230 )
 size_flags_horizontal = 6
 size_flags_vertical = 5
-custom_styles/hover = SubResource( 15 )
-custom_styles/focus = SubResource( 14 )
-custom_styles/normal = SubResource( 13 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer/Button_Air"]
 anchor_left = 0.5
@@ -258,8 +258,8 @@ margin_bottom = 170.0
 rect_min_size = Vector2( 150, 150 )
 size_flags_horizontal = 0
 size_flags_vertical = 6
-custom_styles/hover = SubResource( 17 )
-custom_styles/normal = SubResource( 3 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/Button_Dron_one"]
 anchor_left = 0.5
@@ -302,8 +302,8 @@ margin_bottom = 170.0
 rect_min_size = Vector2( 150, 150 )
 size_flags_horizontal = 0
 size_flags_vertical = 6
-custom_styles/hover = SubResource( 18 )
-custom_styles/normal = SubResource( 4 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/Button_Dron_two"]
 anchor_left = 0.5
@@ -333,7 +333,7 @@ texture = ExtResource( 5 )
 visible = false
 margin_right = 394.0
 margin_bottom = 475.0
-custom_styles/panel = SubResource( 1 )
+custom_styles/panel = SubResource( 9 )
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
 editor/display_folded = true
@@ -346,7 +346,7 @@ custom_constants/margin_bottom = 0
 visible = false
 margin_right = 394.0
 margin_bottom = 100.0
-custom_styles/panel = SubResource( 1 )
+custom_styles/panel = SubResource( 9 )
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/MarginContainer"]
 margin_right = 394.0
@@ -369,7 +369,7 @@ margin_bottom = 80.0
 rect_min_size = Vector2( 80, 80 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_styles/normal = SubResource( 5 )
+custom_styles/normal = SubResource( 10 )
 button_mask = 7
 
 [node name="TextureRect_Armor" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer2/Button_Armor"]
@@ -390,7 +390,7 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -14.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 11 )
 text = "1/6"
 align = 1
 valign = 1
@@ -398,7 +398,7 @@ valign = 1
 [node name="Label_Armor_price" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer2/Button_Armor"]
 anchor_right = 1.0
 margin_bottom = 14.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 11 )
 text = "0"
 align = 1
 valign = 1
@@ -411,7 +411,7 @@ margin_bottom = 80.0
 rect_min_size = Vector2( 80, 80 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_styles/normal = SubResource( 5 )
+custom_styles/normal = SubResource( 10 )
 shortcut_in_tooltip = false
 button_mask = 7
 
@@ -420,7 +420,7 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -14.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 11 )
 text = "1/6"
 align = 1
 valign = 1
@@ -441,7 +441,7 @@ expand = true
 [node name="Label_Weapon_price" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer2/Button_Weapon"]
 anchor_right = 1.0
 margin_bottom = 14.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 11 )
 text = "0"
 align = 1
 valign = 1
@@ -454,7 +454,7 @@ margin_bottom = 80.0
 rect_min_size = Vector2( 80, 80 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_styles/normal = SubResource( 5 )
+custom_styles/normal = SubResource( 10 )
 button_mask = 7
 
 [node name="TextureRect_Two_Weapon" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer2/Button_Two_Weapon"]
@@ -475,7 +475,7 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -25.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 11 )
 text = "1/6"
 align = 1
 valign = 1
@@ -483,7 +483,7 @@ valign = 1
 [node name="Label_Two_Weapon_price" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer2/Button_Two_Weapon"]
 anchor_right = 1.0
 margin_bottom = 14.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 11 )
 text = "0"
 align = 1
 valign = 1
@@ -500,9 +500,9 @@ margin_right = 394.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 0, 60 )
 size_flags_vertical = 8
-custom_styles/hover = SubResource( 16 )
-custom_styles/pressed = SubResource( 19 )
-custom_styles/normal = SubResource( 7 )
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 13 )
+custom_styles/normal = SubResource( 14 )
 text = "OK"
 
 [node name="Change_Air_ColorRect" type="ColorRect" parent="."]
@@ -549,7 +549,7 @@ margin_right = 206.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 200, 200 )
 size_flags_horizontal = 3
-custom_styles/normal = SubResource( 8 )
+custom_styles/normal = SubResource( 15 )
 
 [node name="TextureRect_Button1" type="TextureRect" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button1"]
 anchor_left = 0.5
@@ -575,7 +575,7 @@ margin_left = -55.5
 margin_top = -12.0
 margin_right = 55.5
 margin_bottom = 12.0
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 16 )
 custom_colors/font_color = Color( 0.792157, 0.00784314, 0.00784314, 1 )
 text = "Нет денег !!!"
 align = 1
@@ -585,7 +585,7 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -26.0
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 17 )
 text = "Миг 57"
 align = 1
 valign = 1
@@ -597,7 +597,7 @@ margin_left = 4.0
 margin_top = -95.0
 margin_right = 26.0
 margin_bottom = -66.0
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 18 )
 text = "40"
 align = 1
 valign = 1
@@ -609,7 +609,7 @@ margin_left = 28.6405
 margin_top = -95.5133
 margin_right = 50.6405
 margin_bottom = -66.5133
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 18 )
 text = "speed"
 align = 1
 valign = 1
@@ -621,7 +621,7 @@ margin_left = 2.40993
 margin_top = -69.9322
 margin_right = 35.4099
 margin_bottom = -40.9322
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 18 )
 text = "190"
 align = 1
 valign = 1
@@ -633,7 +633,7 @@ margin_left = 26.0237
 margin_top = -70.4455
 margin_right = 91.0237
 margin_bottom = -41.4455
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 18 )
 text = "damage"
 align = 1
 valign = 1
@@ -645,7 +645,7 @@ margin_left = 127.21
 margin_top = -93.1975
 margin_right = 192.21
 margin_bottom = -64.1975
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 18 )
 align = 1
 valign = 1
 
@@ -656,7 +656,7 @@ margin_right = 416.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 200, 200 )
 size_flags_horizontal = 3
-custom_styles/normal = SubResource( 8 )
+custom_styles/normal = SubResource( 15 )
 
 [node name="TextureRect_Button1" type="TextureRect" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button2"]
 anchor_left = 0.5
@@ -682,7 +682,7 @@ margin_left = -55.5
 margin_top = -12.0
 margin_right = 55.5
 margin_bottom = 12.0
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 16 )
 custom_colors/font_color = Color( 0.792157, 0.00784314, 0.00784314, 1 )
 text = "Нет денег !!!"
 align = 1
@@ -692,7 +692,7 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -26.0
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 17 )
 text = "Миг 57"
 align = 1
 valign = 1
@@ -704,7 +704,7 @@ margin_left = 4.0
 margin_top = -95.0
 margin_right = 26.0
 margin_bottom = -66.0
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 18 )
 text = "60"
 align = 1
 valign = 1
@@ -716,7 +716,7 @@ margin_left = 28.6405
 margin_top = -95.5133
 margin_right = 50.6405
 margin_bottom = -66.5133
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 18 )
 text = "speed"
 align = 1
 valign = 1
@@ -728,7 +728,7 @@ margin_left = 2.40993
 margin_top = -70.5624
 margin_right = 35.4099
 margin_bottom = -41.5624
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 18 )
 text = "250"
 align = 1
 valign = 1
@@ -740,7 +740,7 @@ margin_left = 26.0237
 margin_top = -70.4455
 margin_right = 91.0237
 margin_bottom = -41.4455
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 18 )
 text = "damage"
 align = 1
 valign = 1
@@ -754,7 +754,7 @@ margin_left = -69.7899
 margin_top = -92.9346
 margin_right = -4.78992
 margin_bottom = -63.9346
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 18 )
 text = "10000"
 align = 1
 valign = 1
@@ -766,7 +766,7 @@ margin_right = 206.0
 margin_bottom = 404.0
 rect_min_size = Vector2( 200, 200 )
 size_flags_horizontal = 3
-custom_styles/normal = SubResource( 8 )
+custom_styles/normal = SubResource( 15 )
 
 [node name="TextureRect_Button1" type="TextureRect" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button3"]
 anchor_left = 0.5
@@ -793,7 +793,7 @@ margin_left = -55.5
 margin_top = -12.0
 margin_right = 55.5
 margin_bottom = 12.0
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 16 )
 custom_colors/font_color = Color( 0.792157, 0.00784314, 0.00784314, 1 )
 text = "Нет денег !!!"
 align = 1
@@ -803,7 +803,7 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -26.0
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 17 )
 text = "Миг 57"
 align = 1
 valign = 1
@@ -815,7 +815,7 @@ margin_left = 4.0
 margin_top = -95.0
 margin_right = 26.0
 margin_bottom = -66.0
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 18 )
 text = "60"
 align = 1
 valign = 1
@@ -827,7 +827,7 @@ margin_left = 28.6405
 margin_top = -95.5133
 margin_right = 50.6405
 margin_bottom = -66.5133
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 18 )
 text = "speed"
 align = 1
 valign = 1
@@ -839,7 +839,7 @@ margin_left = 2.40993
 margin_top = -70.5624
 margin_right = 35.4099
 margin_bottom = -41.5624
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 18 )
 text = "250"
 align = 1
 valign = 1
@@ -851,7 +851,7 @@ margin_left = 26.0237
 margin_top = -70.4455
 margin_right = 91.0237
 margin_bottom = -41.4455
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 18 )
 text = "damage"
 align = 1
 valign = 1
@@ -865,7 +865,7 @@ margin_left = -69.7899
 margin_top = -92.9346
 margin_right = -4.78992
 margin_bottom = -63.9346
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 18 )
 text = "10000"
 align = 1
 valign = 1
@@ -878,7 +878,7 @@ margin_right = 416.0
 margin_bottom = 404.0
 rect_min_size = Vector2( 200, 200 )
 size_flags_horizontal = 3
-custom_styles/normal = SubResource( 8 )
+custom_styles/normal = SubResource( 15 )
 
 [node name="TextureRect_Button1" type="TextureRect" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button4"]
 anchor_left = 0.5
@@ -905,7 +905,7 @@ margin_left = -55.5
 margin_top = -12.0
 margin_right = 55.5
 margin_bottom = 12.0
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 16 )
 custom_colors/font_color = Color( 0.792157, 0.00784314, 0.00784314, 1 )
 text = "Нет денег !!!"
 align = 1
@@ -915,7 +915,7 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -26.0
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 17 )
 text = "Миг 57"
 align = 1
 valign = 1
@@ -927,7 +927,7 @@ margin_left = 4.0
 margin_top = -95.0
 margin_right = 26.0
 margin_bottom = -66.0
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 18 )
 text = "60"
 align = 1
 valign = 1
@@ -939,7 +939,7 @@ margin_left = 28.6405
 margin_top = -95.5133
 margin_right = 50.6405
 margin_bottom = -66.5133
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 18 )
 text = "speed"
 align = 1
 valign = 1
@@ -951,7 +951,7 @@ margin_left = 2.40993
 margin_top = -70.5624
 margin_right = 35.4099
 margin_bottom = -41.5624
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 18 )
 text = "250"
 align = 1
 valign = 1
@@ -963,7 +963,7 @@ margin_left = 26.0237
 margin_top = -70.4455
 margin_right = 91.0237
 margin_bottom = -41.4455
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 18 )
 text = "damage"
 align = 1
 valign = 1
@@ -977,7 +977,7 @@ margin_left = -69.7899
 margin_top = -92.9346
 margin_right = -4.78992
 margin_bottom = -63.9346
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 18 )
 text = "10000"
 align = 1
 valign = 1
@@ -988,7 +988,7 @@ margin_right = 416.0
 margin_bottom = 640.0
 rect_min_size = Vector2( 0, 60 )
 size_flags_vertical = 9
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 19 )
 text = "ОК"
 
 [node name="HUD_elem" parent="." instance=ExtResource( 14 )]

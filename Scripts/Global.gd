@@ -1,7 +1,8 @@
 extends Control
 
 func _ready():
-	$MainMenuTheme.play()
+	if(get_node("/root/SoundHandler").get_child(0).playing==false):
+		get_node("/root/SoundHandler").get_child(0).play()
 	pass
 
 func _on_Button_PLAY_pressed():
