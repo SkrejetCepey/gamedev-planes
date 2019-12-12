@@ -38,8 +38,7 @@ script = ExtResource( 1 )
 anims/BossEvent = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="AnimationPlayer"]
-position = Vector2( 240, -75.185 )
-scale = Vector2( 1.5, 1.5 )
+position = Vector2( 240, 55.7393 )
 texture = ExtResource( 2 )
 
 [node name="Visible" type="VisibilityNotifier2D" parent="AnimationPlayer/Sprite"]

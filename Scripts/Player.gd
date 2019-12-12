@@ -5,6 +5,9 @@ const Maingun = preload("res://Scenes/PlayerCannon.tscn")
 const Subgun = preload("res://Scenes/SubgunRockets.tscn")
 const Drone = preload("res://Scenes/DroneTest.tscn")
 
+#preload gameover scene
+const GameOver = preload("res://Scenes/StatisticsGameOver.tscn")
+
 var prevMousePos = null
 var plane
 var droneL
@@ -81,6 +84,11 @@ func moving():
 	pass
 
 func self_destruct():
+	var gameover_screen = GameOver.instance()
+	get_parent().add_child(gameover_screen)
+	get_parent().get_node("Background_move").stop()
+	
+	#get_tree().change_scene("res://Scenes/StatisticsGameOver.tscn")
 	droneL.queue_free()
 	droneR.queue_free()
 	queue_free()
