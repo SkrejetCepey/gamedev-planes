@@ -153,49 +153,6 @@ func modifications(extra_arg_0):
 		if(i == str(SelectedAir)):
 			#Броня
 				if(extra_arg_0 == "1"):
-
-					Label_Armor_Counter += 1 #Счетчик
-					if(Label_Armor_Counter <= 6): #Ограничение до 6
-						#Уровень брони
-						Label_Armor.text[0] = str(Label_Armor_Counter) 
-						Air[i].guard.level = Label_Armor_Counter
-						#Цена брони
-						SaveLoad.data.Dollar = SaveLoad.data.Dollar - (Air[i].guard.price * Label_Armor_Counter*7)
-						Label_Armor_Counter += 1
-						Label_Armor_price.text = str(Air[i].guard.price * Label_Armor_Counter*7)
-						Label_Armor_Counter -= 1
-						$HUD_elem.updateHud()
-						SaveLoad.save_data(null,null)
-			#Оружие
-				elif(extra_arg_0 == "2"):
-					Label_Weapon_Counter += 1 
-					if(Label_Weapon_Counter <= 6):
-						#Уровень оружия
-						Label_Weapon.text[0] = str(Label_Weapon_Counter) 
-						Air[i].weapon.level = Label_Weapon_Counter
-						#Цена оружия
-						SaveLoad.data.Dollar = SaveLoad.data.Dollar - (Air[i].weapon.price * Label_Weapon_Counter*7)
-						Label_Weapon_Counter += 1
-						Label_Weapon_price.text = str(Air[i].weapon.price * Label_Weapon_Counter*7)
-						Label_Weapon_Counter -= 1
-						$HUD_elem.updateHud()
-						SaveLoad.save_data(null,null)
-			#Второе оружие
-				elif(extra_arg_0 == "3"):
-					Label_Two_Weapon_Counter += 1
-					if(Label_Two_Weapon_Counter <= 6):
-						#Уровень 2-го оружия
-						Label_Two_Weapon.text[0] = str(Label_Two_Weapon_Counter) 
-						#Air[i].weapon_two.level = Label_Two_Weapon_Counter
-						SaveLoad.data.Air[i].weapon_two.level = Label_Two_Weapon_Counter
-						#Цена 2-го оружия
-						SaveLoad.data.Dollar = SaveLoad.data.Dollar - (Air[i].weapon_two.price * Label_Two_Weapon_Counter*7)
-						Label_Two_Weapon_Counter += 1
-						Label_Two_Weapon_price.text = str(Air[i].weapon_two.price * Label_Two_Weapon_Counter*7)
-						Label_Two_Weapon_Counter -= 1
-						$HUD_elem.updateHud()
-						SaveLoad.save_data(null,null)
-
 					if(Label_Armor_Counter <= 5): #Ограничение до 6
 						if(Dollar >= int(Label_Armor_price.text)):
 							#Цена брони
@@ -273,7 +230,6 @@ func modifications(extra_arg_0):
 							SaveLoad.save_data(null,null)
 						else:
 							print("Денег нет")
-
 	pass
 
 
@@ -303,15 +259,6 @@ func buyAir(extra_arg_0):
 		#Присваивание счетчика
 		#print(SelectedAir)
 	else:
-
-		Hangar_data["Dollar"] = Dollar - Air[extra_arg_0].price
-		$HUD_elem.updateHud()
-		#Присваивание значений
-		SelectedAir = extra_arg_0
-		Air[extra_arg_0].lock = false
-		update_data_their(extra_arg_0)
-		SaveLoad.save_data(null,null)
-
 		if(Dollar <= Air[extra_arg_0].price):
 			print("Денег нет")
 		else:
@@ -324,7 +271,6 @@ func buyAir(extra_arg_0):
 			
 			update_data_their(extra_arg_0)
 			SaveLoad.save_data(null,null)
-
 	pass
 
 func update_data_their(extra_arg_0):

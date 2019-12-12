@@ -22,6 +22,7 @@ config/icon="res://icon.png"
 [autoload]
 
 SaveLoad="*res://Scripts/SaveLoad.gd"
+SoundHandler="*res://Scenes/SoundHandler.tscn"
 
 [display]
 

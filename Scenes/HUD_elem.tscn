@@ -7,7 +7,7 @@
 [ext_resource path="res://Scenes/Setting.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Music/SoundMain/gameover.wav" type="AudioStream" id=6]
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.192157, 0.247059, 0.34902, 1 )
 border_width_left = 1
 border_width_top = 1
@@ -20,11 +20,11 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 16
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=2]
 size = 14
 font_data = ExtResource( 3 )
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.803922, 0.117647, 0.117647, 0 )
 border_width_left = 1
 border_width_top = 1
@@ -37,7 +37,7 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 16
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=4]
 font_data = ExtResource( 3 )
 
 [node name="HUD_elem" type="CanvasLayer"]
@@ -68,7 +68,7 @@ editor/display_folded = true
 margin_right = 140.0
 margin_bottom = 45.0
 rect_min_size = Vector2( 140, 45 )
-custom_styles/panel = SubResource( 3 )
+custom_styles/panel = SubResource( 1 )
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/Panel_Dollar"]
 anchor_right = 1.0
@@ -103,7 +103,7 @@ margin_right = 90.0
 margin_bottom = 21.0
 size_flags_horizontal = 0
 size_flags_vertical = 6
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 2 )
 text = "999999"
 valign = 1
 uppercase = true
@@ -115,8 +115,8 @@ margin_bottom = 25.0
 rect_min_size = Vector2( 25, 25 )
 size_flags_horizontal = 10
 size_flags_vertical = 0
-custom_styles/normal = SubResource( 5 )
-custom_fonts/font = SubResource( 6 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "+"
 
 [node name="Panel_Emerald" type="Panel" parent="MarginContainer/HBoxContainer"]
@@ -125,7 +125,7 @@ margin_left = 160.0
 margin_right = 300.0
 margin_bottom = 45.0
 rect_min_size = Vector2( 140, 40 )
-custom_styles/panel = SubResource( 3 )
+custom_styles/panel = SubResource( 1 )
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/Panel_Emerald"]
 anchor_right = 1.0
@@ -160,7 +160,7 @@ margin_right = 88.0
 margin_bottom = 19.0
 size_flags_horizontal = 0
 size_flags_vertical = 6
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 2 )
 text = "999999"
 valign = 1
 uppercase = true
@@ -172,8 +172,8 @@ margin_bottom = 21.0
 rect_min_size = Vector2( 20, 20 )
 size_flags_horizontal = 10
 size_flags_vertical = 0
-custom_styles/normal = SubResource( 5 )
-custom_fonts/font = SubResource( 6 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "+"
 
 [node name="Button_Setting" parent="MarginContainer/HBoxContainer" instance=ExtResource( 5 )]

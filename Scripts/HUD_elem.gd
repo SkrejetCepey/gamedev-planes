@@ -12,7 +12,7 @@ func _ready():
 	Label_Emerald = $MarginContainer/HBoxContainer/Panel_Emerald/MarginContainer/HBoxContainer/Label_Emerald
 	Label_Dollar.text = str(SaveLoad.data.Dollar)
 	Label_Emerald.text = str(SaveLoad.data.Emerald)
-	panel = get_node("Panel")
+	#panel = get_node("Panel")
 	pass 
 
 func updateHud():

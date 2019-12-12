@@ -3,7 +3,6 @@
 [ext_resource path="res://Scripts/PathAbilityTest.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Abilities/TestAbility.tscn" type="PackedScene" id=2]
 
-
 [sub_resource type="Curve2D" id=1]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -1.00977, 0.33429, 0, 0, 0, 0, 5.43904, -24.2223, 0, 0, 0, 0, 11.5708, -47.2895 )

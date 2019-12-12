@@ -16,6 +16,9 @@ var boss = BossInitializer.instance()
 func _ready():
 	#Не удалять в этом месте будет подгрузка Json
 	#Save.load_data()
+	
+	get_node("/root/SoundHandler").get_child(0).stop()
+	
 	get_tree().set_quit_on_go_back(false)
 	randomize()
 	var player = Player.instance()

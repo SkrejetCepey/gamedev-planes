@@ -2,6 +2,7 @@ extends Node2D
 
 const Bullet = preload("res://Scenes/Bullet.tscn")
 const EnemySniperDrone = preload("res://Scenes/EnemySniperDrone.tscn")
+const EnemySuicideDrone = preload("res://Scenes/EnemySuicideDrone.tscn")
 
 var EnemyAtackType setget set_enemy_atack_type
 var EnemyShootSpeed setget set_enemy_shoot_speed
@@ -51,8 +52,14 @@ func shoot():
 		if(get_parent().get_parent().get_parent().get_node_or_null("Hive")!=null):
 			var temp = round(rand_range(1, 2))
 			drone.setTarget(get_parent().get_parent().get_parent().get_node("Hive").get_node(str(temp) + "dronepos"))
-		else: return;
+		else: return
 		get_parent().get_parent().get_parent().add_child(drone)
+	if EnemyAtackType == 5:
+		if(get_parent().get_parent().get_parent().get_node_or_null("Hive")!=null):
+			var drone = EnemySuicideDrone.instance()
+			drone.position = Vector2(global_position.x, global_position.y)
+			get_parent().get_parent().get_parent().add_child(drone)
+		else:return
 	#yield(get_tree().create_timer(0.14), "timeout")
 	#$GunFlash.hide()
 	pass
