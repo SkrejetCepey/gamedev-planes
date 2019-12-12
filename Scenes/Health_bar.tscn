@@ -29,8 +29,10 @@ margin_bottom = 55.0
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
 editor/display_folded = true
+margin_top = 7.0
 margin_right = 50.0
-margin_bottom = 55.0
+margin_bottom = 47.0
+size_flags_vertical = 6
 custom_constants/margin_right = 10
 custom_constants/margin_top = 10
 custom_constants/margin_left = 10
@@ -81,8 +83,10 @@ text = "100"
 [node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
 editor/display_folded = true
 margin_left = 54.0
+margin_top = 7.0
 margin_right = 324.0
-margin_bottom = 55.0
+margin_bottom = 47.0
+size_flags_vertical = 6
 custom_constants/margin_right = 10
 custom_constants/margin_top = 10
 custom_constants/margin_left = 10
@@ -101,6 +105,7 @@ percent_visible = false
 margin_left = 328.0
 margin_right = 488.0
 margin_bottom = 55.0
+size_flags_vertical = 6
 custom_constants/margin_right = 10
 custom_constants/margin_top = 10
 custom_constants/margin_left = 10

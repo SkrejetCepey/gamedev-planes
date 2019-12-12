@@ -23,6 +23,8 @@ var Dollar = 0
 var SelectedAir = 1
 #
 var Air_Hangar
+var Dron_1_Hangar
+var Dron_2_Hangar
 #
 var button1
 var button2
@@ -35,9 +37,12 @@ var Hangar_data = {}
 var temp_air = []
 #Переменные для словаря
 var Change_Air_ColorRect
+var Change_Dron_ColorRect
 var Air 
+var Dron
 var flag = true
 var i = 0
+#var f = 0
 var new_style
 func _ready():
 	#Присваивания node
@@ -54,8 +59,13 @@ func _ready():
 	#
 	Button2_price_air = $Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button2/Button2_price_air
 	Change_Air_ColorRect = $Change_Air_ColorRect
-	#Air_Hangar
+	Change_Dron_ColorRect = $Change_Dron_ColorRect
+	#Главная кнопка Air
 	Air_Hangar = $MarginContainer/VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer/Button_Air/TextureRect_Air
+	#Главная кнопка Дрон 1
+	Dron_1_Hangar = $MarginContainer/VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/Button_Dron_1/TextureRect_Dron_one
+	#Главная кнопка Дрон 2
+	Dron_2_Hangar = $MarginContainer/VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/Button_Dron_2/TextureRect_Dron_two
 	
 	
 	#
@@ -65,12 +75,51 @@ func _ready():
 	#Присваивание переменных
 	Dollar = Hangar_data["Dollar"]
 	SelectedAir = Hangar_data["SelectedAir"]
-	print(SelectedAir)
+	#print(SelectedAir)
 	#Выставляем данные в Ангар
 	#for counter in Hangar_data:
 		#print(counter)
-	#Условия
+
+	#выбранный Дрон
+	Dron = Hangar_data["Dron"]
+	#print(Dron["2"])
+	#######################Дроны############################################
+	for f in Dron:
+		#print(f)
+		# Присваиваиваем ко всем кнопкам price
+		var obj_price_dron = "Change_Dron_ColorRect/MarginContainer2/VBoxContainer/ScrollContainer/GridContainer/Button" + f + "/Button" + f + "_price_dron"
+		# Присваиваиваем ко всем кнопкам name
+		var obj_name_dron = "Change_Dron_ColorRect/MarginContainer2/VBoxContainer/ScrollContainer/GridContainer/Button" + f + "/Button" + f + "_name"
+		# присваиваем Ноды созданные динамически
+		var obj_price_dron_node = get_node(obj_price_dron)
+		var obj_name_dron_node = get_node(obj_name_dron)
+		#Если объектов в json не соотвествует кнопок в Godot, то просто пропускаем
+		if(obj_price_dron_node == null || obj_name_dron == null):
+			break
+		#Присваивание объектов в не зависимости если купили объект
+		obj_name_dron_node.text = str(Dron[f].name)
+		#Если куплен дрон
+		if(Dron[f].lock == false):
+			#Если выбранна 1 кнопка
+			if(Hangar_data["SelectedDron1"]):
+				#print(str(Dron[str(Hangar_data["SelectedDron1"])].dron_img))
+				Dron_1_Hangar.texture = load(str(Dron[str(Hangar_data["SelectedDron1"])].dron_img))
+				pass
+			if(Hangar_data["SelectedDron2"]):
+				#print(str(Dron[str(Hangar_data["SelectedDron2"])].dron_img))
+				Dron_2_Hangar.texture = load(str(Dron[str(Hangar_data["SelectedDron2"])].dron_img))
+				pass
+			pass
+			#Если выбранна 2 кнопка
+			
+		else:
+			#Присваивание параметров в Label
+			obj_price_dron_node.text = str(Dron[f].price)
+			pass
+		
+	#выбранный самолет
 	Air = Hangar_data["Air"]
+	##################################Истребители########################
 	for i in Air:
 		#Присваиваем значения Label
 		var obj_price = "Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button" + i + "/Button" + i + "_price_air"
@@ -106,7 +155,7 @@ func _ready():
 				Label_Armor_price.text = str(Air[i].guard.price) #брони
 				#При загрузки подгрузится выбранная картинка для самолета
 				Air_Hangar.texture = load(str(Air[i].air_img))
-				print(Air[i].air_img)
+				#print(Air[i].air_img)
 				#Air_Hangar.texture = load("res://Interface/Hangar/Air/Air_" + str(SelectedAir) +".png")
 				#Если в модификациях = 6, то обнуляем price 
 				if(mod_weapon_two_level == 6):
@@ -119,26 +168,9 @@ func _ready():
 			pass
 		#Или нет
 		else:
-			#Если будет отсуствовать object button
-		#с json на label
 			#Цена истерибетелей
 			obj_price_node.text = str(Air[i].price)
-			#Броня
-			if(Air[i].guard):
-				pass
-				#print(Air[i].guard)
-			#Оружие
-			if(Air[i].weapon):
-				pass
-				#print(Air[i].weapon)
-			#Второе оружие
-			if(Air[i].weapon_two):
-				pass
-	#Ограничитель счётчика
-	for i in 7:
-			#Label_Armor_Counter = i
-			#Label_Armor.text[0] = str(i)
-			pass
+		##################################Конец Истребители########################
 	pass 
 	
 #Главная кнопка
@@ -146,7 +178,7 @@ func _on_Button_StartGame_pressed():
 # warning-ignore:return_value_discarded
 	get_tree().change_scene("res://Scenes/StartGame.tscn")
 	pass 
-
+##############Модификации оружии####################################################
 func modifications(extra_arg_0):
 	for i in Air:
 		#print(i)
@@ -248,16 +280,13 @@ func _on_ChangeAir_pressed():
 
 #Покупка истребителей
 func buyAir(extra_arg_0):
-	#bue = button + "1" 
 	#Выбираем lock - является (куплен (false) / не куплен (true))
 	if(Air[extra_arg_0].lock == false):
-		#print(Air[extra_arg_0]
 		SelectedAir = extra_arg_0
 		update_data_their(extra_arg_0)
 		
 		SaveLoad.save_data(null,null)
 		#Присваивание счетчика
-		#print(SelectedAir)
 	else:
 		if(Dollar <= Air[extra_arg_0].price):
 			print("Денег нет")
@@ -268,7 +297,6 @@ func buyAir(extra_arg_0):
 			#Присваивание значений
 			SelectedAir = extra_arg_0
 			Air[extra_arg_0].lock = false
-			
 			update_data_their(extra_arg_0)
 			SaveLoad.save_data(null,null)
 	pass
@@ -290,8 +318,6 @@ func update_data_their(extra_arg_0):
 	#При выборе подгрузится выбранная картинка для самолета
 	#Air[extra_arg_0].air_img
 	Air_Hangar.texture = load(Air[extra_arg_0].air_img)
-	
-	print(Air[extra_arg_0].air_img)
 	#Air_Hangar.texture = load("res://Interface/Hangar/Air/Air_" + str(extra_arg_0) +".png")
 	pass
 
@@ -305,5 +331,69 @@ func BorderColor(text):
 	new_style.border_width_right = 5
 	new_style.border_color = Color(text)
 	pass
+
+########################DRON###################################################
+func _on_ChangeDron_pressed():
+	Change_Dron_ColorRect.hide()
+	pass 
+
+#####Ловим события какая кнопка Dron была вызвана###################
+#Выбранная кнопка SelectedDron
+var SelectedDron = 1
+func Change_dron(extra_arg_0):
+	if("SelectedDron" + str(extra_arg_0)):
+		#### Присвоим
+		#Hangar_data["SelectedDron" + str(extra_arg_0)]
+		SelectedDron = extra_arg_0
+		pass
+	Change_Dron_ColorRect.show()
+	#print(extra_arg_0)
+	pass 
+######Покупка Дрона#####################################################
+func buyDron(extra_arg_0):
+		#Если объект куплен, то выбераем
+		if(Dron[extra_arg_0].lock == false):
+			#Если нажата левая кнопка дрона
+			if(SelectedDron == 1):
+				SaveLoad.data["SelectedDron1"] = extra_arg_0
+				Dron_1_Hangar.texture = load(str(Dron[extra_arg_0].dron_img))
+				pass
+			#Если нажата правая кнопка дрона
+			if(SelectedDron == 2):
+				SaveLoad.data["SelectedDron2"] = extra_arg_0
+				Dron_2_Hangar.texture = load(str(Dron[extra_arg_0].dron_img))
+				pass
+			SaveLoad.save_data(null,null)
+			print(extra_arg_0)
+		#Если объект не куплен, то выбераем
+		else: 
+			print(Dron[extra_arg_0].lock)
+			if(Dollar <= Dron[extra_arg_0].price):
+				print("Денег нет")
+			else:
+				#Если выбрана левая кнопка дрона
+				if(SelectedDron == 1):
+					Hangar_data["Dollar"] = Dollar - Dron[extra_arg_0].price
+					$HUD_elem.updateHud()
+					Dollar = Hangar_data["Dollar"]
+					SaveLoad.data["SelectedDron1"] = extra_arg_0
+					Dron_1_Hangar.texture = load(str(Dron[extra_arg_0].dron_img))
+					Dron[extra_arg_0].lock = false
+					SaveLoad.save_data(null,null)
+					pass
+				#Если нажата правая кнопка дрона
+				if(SelectedDron == 2):
+					Hangar_data["Dollar"] = Dollar - Dron[extra_arg_0].price
+					$HUD_elem.updateHud()
+					Dollar = Hangar_data["Dollar"]
+					SaveLoad.data["SelectedDron2"] = extra_arg_0
+					Dron_2_Hangar.texture = load(str(Dron[extra_arg_0].dron_img))
+					Dron[extra_arg_0].lock = false
+					SaveLoad.save_data(null,null)
+					pass
+				pass
+		pass
+	
+
 
 

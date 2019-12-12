@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/ArcadeScene.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/HUD_elem.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Health_bar.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/DebugControl.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Sprites/Background/green_park.png" type="Texture" id=4]
 
@@ -45,8 +45,9 @@ shape = SubResource( 1 )
 position = Vector2( 480, 365.459 )
 shape = SubResource( 1 )
 
-[node name="HUD_elem" parent="." instance=ExtResource( 2 )]
+[node name="DebugConrol" parent="." instance=ExtResource( 2 )]
 
+[node name="Health_bar" parent="." instance=ExtResource( 2 )]
 [node name="DebugConrol" parent="." instance=ExtResource( 3 )]
 
 [node name="Background_move" type="AnimationPlayer" parent="."]

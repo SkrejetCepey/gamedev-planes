@@ -1,81 +1,82 @@
 { 
     "User":"Player",
-    "Dollar":0,
+    "Dollar":100000,
     "Emerald":0,
     "SelectedAir": 1,
     "TotalDistance": 102,
+    "Points": 1,
     "Person_img": "path",
     "Air": {
         "1": {
             "lock" : false,
             "price" : 0,
             "name": "Su-57",
-            "air_img": "path",
+            "air_img": "res://Interface/Hangar/Air/Air_1.png",
             "weapon": {
                 "level":1,
-                "price": 3333
+                "price": 1500
             },
             "weapon_two": {
                 "level":1,
-                "price": 2
+                "price": 1000
             },
             "guard": {
                 "level":1,
-                "price": 3
+                "price": 500
             }
         },
         "2": {
             "lock" : true,
             "price" : 10000,
             "name": "Mig-57",
-            "air_img": "path",
+            "air_img": "res://Interface/Hangar/Air/Air_2.png",
             "weapon": {
                 "level":1,
-                "price": 11
+                "price": 2000
             },
             "weapon_two": {
                 "level":1,
-                "price": 22
+                "price": 1500
             },
             "guard": {
                 "level":1,
-                "price": 33
+                "price": 1000
             }
         },
         "3": {
             "lock" : true,
             "price" : 30000,
             "name": "oct-23",
-            "air_img": "path",
+            "air_img": "res://Interface/Hangar/Air/Air_3.png",
             "weapon": {
                 "level":1,
-                "price": 111
+                "price": 2500
             },
             "weapon_two": {
                 "level":1,
-                "price": 222
+                "price": 2000
             },
             "guard": {
                 "level":1,
-                "price": 333
+                "price": 1500
             }
         },
         "4": {
             "lock" : true,
             "price" : 50000,
             "name": "Bg-77",
-            "air_img": "path",
+            "air_img": "res://Interface/Hangar/Air/Air_4.png",
             "weapon": {
                 "level":1,
-                "price": 1111
+                "price": 3000
             },
             "weapon_two": {
                 "level":1,
-                "price": 2222
+                "price": 2500
             },
             "guard": {
                 "level":1,
-                "price": 3333
+                "price": 2000
             }
         },
         "5": {
@@ -85,25 +86,55 @@
             "air_img": "path",
             "weapon": {
                 "level":1,
-                "price": 3000
+                "price": 3500
             },
             "weapon_two": {
                 "level":1,
-                "price": 2000
+                "price": 3000
             },
             "guard": {
                 "level":1,
-                "price": 1600
+                "price": 2500
             }
         }
     },
     "Dron": {
-        "dron_img": "path",
-        "type": 0
-    },
-    "Dron_two": {
-        "dron_two_img": "path",
-        "type": 0
+        "1":{
+            "lock" : true,
+            "price" : 15000,
+            "name": "ScanEagle",
+            "dron_img": "path",
+            "price": 3000,
+            "damage": 100,
+            "guard": 100
+        },
+        "2":{
+            "lock" : true,
+            "price" : 25000,
+            "name": "RQShadow",
+            "dron_img": "path",
+            "price": 10000,
+            "damage": 1,
+            "guard": 100
+        },
+        "3":{
+            "lock" : true,
+            "price" : 35000,
+            "name": "MQ1Predator",
+            "dron_img": "path",
+            "price": 15000,
+            "damage": 100,
+            "guard": 100
+        },
+        "4":{
+            "lock" : true,
+            "price" : 40000,
+            "name": "RQ4GlobalHawk",
+            "dron_img": "path",
+            "price": 20000,
+            "damage": 100,
+            "guard": 100
+        }
     },
     "Setting":
     {   

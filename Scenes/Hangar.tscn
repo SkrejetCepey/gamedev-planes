@@ -1,19 +1,21 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Scripts/Hangar.gd" type="Script" id=1]
 [ext_resource path="res://Interface/Hangar/disign/asphalt2_ph.jpg" type="Texture" id=2]
 [ext_resource path="res://Interface/Hangar/disign/markup_air.png" type="Texture" id=3]
-[ext_resource path="res://Interface/Hangar/Dron/dron_1 (2).png" type="Texture" id=4]
-[ext_resource path="res://Interface/Hangar/Dron/dron_1.png" type="Texture" id=5]
-[ext_resource path="res://Interface/Hangar/Armor.png" type="Texture" id=6]
-[ext_resource path="res://Interface/fonts/18097.ttf" type="DynamicFontData" id=7]
-[ext_resource path="res://Interface/Hangar/Two_Weapon.png" type="Texture" id=8]
-[ext_resource path="res://Interface/Hangar/Weapon.png" type="Texture" id=9]
-[ext_resource path="res://Interface/Hangar/Air/Air_1.png" type="Texture" id=10]
-[ext_resource path="res://Interface/Hangar/Air/Air_2.png" type="Texture" id=11]
-[ext_resource path="res://Interface/Hangar/Air/Air_3.png" type="Texture" id=12]
-[ext_resource path="res://Interface/Hangar/Air/Air_4.png" type="Texture" id=13]
-[ext_resource path="res://Scenes/HUD_elem.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Interface/Hangar/Armor.png" type="Texture" id=4]
+[ext_resource path="res://Interface/fonts/18097.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Interface/Hangar/Two_Weapon.png" type="Texture" id=6]
+[ext_resource path="res://Interface/Hangar/Weapon.png" type="Texture" id=7]
+[ext_resource path="res://Interface/Hangar/Air/Air_1.png" type="Texture" id=8]
+[ext_resource path="res://Interface/Hangar/Air/Air_2.png" type="Texture" id=9]
+[ext_resource path="res://Interface/Hangar/Air/Air_3.png" type="Texture" id=10]
+[ext_resource path="res://Interface/Hangar/Air/Air_4.png" type="Texture" id=11]
+[ext_resource path="res://Interface/Hangar/Dron/dron_1.png" type="Texture" id=12]
+[ext_resource path="res://Interface/Hangar/Dron/dron_2.png" type="Texture" id=13]
+[ext_resource path="res://Interface/Hangar/Dron/dron_3.png" type="Texture" id=14]
+[ext_resource path="res://Interface/Hangar/Dron/dron_4.png" type="Texture" id=15]
+[ext_resource path="res://Scenes/HUD_elem.tscn" type="PackedScene" id=16]
 
 [sub_resource type="StreamTexture" id=1]
 flags = 4
@@ -72,7 +74,7 @@ corner_radius_bottom_left = 3
 
 [sub_resource type="DynamicFont" id=11]
 size = 12
-font_data = ExtResource( 7 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="StyleBoxFlat" id=12]
 bg_color = Color( 0.494118, 0.490196, 0.478431, 1 )
@@ -121,18 +123,18 @@ border_width_bottom = 3
 [sub_resource type="DynamicFont" id=16]
 size = 20
 outline_color = Color( 1, 0, 0, 1 )
-font_data = ExtResource( 7 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=17]
 size = 20
-font_data = ExtResource( 7 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=18]
 size = 14
-font_data = ExtResource( 7 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=19]
-font_data = ExtResource( 7 )
+font_data = ExtResource( 5 )
 
 [node name="Hangar" type="Control" groups=[
 "Persist",
@@ -234,7 +236,6 @@ margin_bottom = 111.5
 expand = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer"]
-editor/display_folded = true
 margin_top = 265.0
 margin_right = 374.0
 margin_bottom = 455.0
@@ -250,7 +251,7 @@ custom_constants/margin_top = 20
 custom_constants/margin_left = 20
 custom_constants/margin_bottom = 20
 
-[node name="Button_Dron_one" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer"]
+[node name="Button_Dron_1" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer"]
 margin_left = 20.0
 margin_top = 20.0
 margin_right = 170.0
@@ -261,7 +262,7 @@ size_flags_vertical = 6
 custom_styles/hover = SubResource( 5 )
 custom_styles/normal = SubResource( 6 )
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/Button_Dron_one"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/Button_Dron_1"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -274,7 +275,7 @@ rect_min_size = Vector2( 130, 130 )
 texture = ExtResource( 3 )
 expand = true
 
-[node name="TextureRect_Dron_one" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/Button_Dron_one"]
+[node name="TextureRect_Dron_one" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/Button_Dron_1"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -283,7 +284,7 @@ margin_left = -49.5
 margin_top = -66.5
 margin_right = 49.5
 margin_bottom = 66.5
-texture = ExtResource( 4 )
+expand = true
 
 [node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer"]
 margin_left = 189.0
@@ -294,7 +295,7 @@ custom_constants/margin_top = 20
 custom_constants/margin_left = 15
 custom_constants/margin_bottom = 20
 
-[node name="Button_Dron_two" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2"]
+[node name="Button_Dron_2" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2"]
 margin_left = 15.0
 margin_top = 20.0
 margin_right = 165.0
@@ -305,7 +306,7 @@ size_flags_vertical = 6
 custom_styles/hover = SubResource( 7 )
 custom_styles/normal = SubResource( 8 )
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/Button_Dron_two"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/Button_Dron_2"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -318,16 +319,16 @@ rect_min_size = Vector2( 130, 130 )
 texture = ExtResource( 3 )
 expand = true
 
-[node name="TextureRect_Dron_two" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/Button_Dron_two"]
+[node name="TextureRect_Dron_two" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/Button_Dron_2"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -68.0
-margin_top = -51.0
-margin_right = 68.0
-margin_bottom = 51.0
-texture = ExtResource( 5 )
+margin_left = -49.5
+margin_top = -66.5
+margin_right = 49.5
+margin_bottom = 66.5
+expand = true
 
 [node name="Border" type="Panel" parent="MarginContainer/VBoxContainer/MarginContainer2"]
 visible = false
@@ -382,7 +383,7 @@ margin_top = -30.0
 margin_right = 25.0
 margin_bottom = 30.0
 rect_min_size = Vector2( 50, 60 )
-texture = ExtResource( 6 )
+texture = ExtResource( 4 )
 expand = true
 
 [node name="Label_Armor" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer2/Button_Armor"]
@@ -435,7 +436,7 @@ margin_top = -25.6635
 margin_right = 25.0
 margin_bottom = 24.3365
 rect_min_size = Vector2( 50, 50 )
-texture = ExtResource( 8 )
+texture = ExtResource( 6 )
 expand = true
 
 [node name="Label_Weapon_price" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer2/Button_Weapon"]
@@ -467,7 +468,7 @@ margin_top = -30.6635
 margin_right = 30.0
 margin_bottom = 29.3365
 rect_min_size = Vector2( 60, 60 )
-texture = ExtResource( 9 )
+texture = ExtResource( 7 )
 expand = true
 
 [node name="Label_Two_Weapon" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer2/Button_Two_Weapon"]
@@ -513,6 +514,7 @@ anchor_bottom = 1.0
 color = Color( 0.227451, 0.188235, 0.188235, 1 )
 
 [node name="MarginContainer" type="MarginContainer" parent="Change_Air_ColorRect"]
+editor/display_folded = true
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
@@ -530,14 +532,14 @@ margin_right = 415.0
 margin_bottom = 700.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer"]
-margin_right = 416.0
+margin_right = 404.0
 margin_bottom = 576.0
 size_flags_horizontal = 3
 size_flags_vertical = 11
 scroll_horizontal_enabled = false
 
 [node name="GridContainer" type="GridContainer" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer"]
-margin_right = 416.0
+margin_right = 404.0
 margin_bottom = 576.0
 size_flags_horizontal = 3
 size_flags_vertical = 11
@@ -545,7 +547,7 @@ columns = 2
 
 [node name="Button1" type="Button" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
 editor/display_folded = true
-margin_right = 206.0
+margin_right = 200.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 200, 200 )
 size_flags_horizontal = 3
@@ -562,7 +564,7 @@ margin_right = 54.5
 margin_bottom = 76.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource( 10 )
+texture = ExtResource( 8 )
 expand = true
 
 [node name="Button1_NotEnoughMoney" type="Label" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button1"]
@@ -651,8 +653,8 @@ valign = 1
 
 [node name="Button2" type="Button" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
 editor/display_folded = true
-margin_left = 210.0
-margin_right = 416.0
+margin_left = 204.0
+margin_right = 404.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 200, 200 )
 size_flags_horizontal = 3
@@ -669,7 +671,7 @@ margin_right = 55.5
 margin_bottom = 63.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource( 11 )
+texture = ExtResource( 9 )
 expand = true
 
 [node name="Button2_NotEnoughMoney" type="Label" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button2"]
@@ -762,7 +764,7 @@ valign = 1
 [node name="Button3" type="Button" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
 editor/display_folded = true
 margin_top = 204.0
-margin_right = 206.0
+margin_right = 200.0
 margin_bottom = 404.0
 rect_min_size = Vector2( 200, 200 )
 size_flags_horizontal = 3
@@ -780,7 +782,7 @@ margin_bottom = 201.197
 rect_rotation = -90.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource( 12 )
+texture = ExtResource( 10 )
 expand = true
 
 [node name="Button2_NotEnoughMoney" type="Label" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button3"]
@@ -872,9 +874,9 @@ valign = 1
 
 [node name="Button4" type="Button" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
 editor/display_folded = true
-margin_left = 210.0
+margin_left = 204.0
 margin_top = 204.0
-margin_right = 416.0
+margin_right = 404.0
 margin_bottom = 404.0
 rect_min_size = Vector2( 200, 200 )
 size_flags_horizontal = 3
@@ -892,7 +894,7 @@ margin_bottom = 201.197
 rect_rotation = -90.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource( 13 )
+texture = ExtResource( 11 )
 expand = true
 
 [node name="Button2_NotEnoughMoney" type="Label" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button4"]
@@ -984,15 +986,501 @@ valign = 1
 
 [node name="ChangeAir" type="Button" parent="Change_Air_ColorRect/MarginContainer/VBoxContainer"]
 margin_top = 580.0
-margin_right = 416.0
+margin_right = 404.0
 margin_bottom = 640.0
 rect_min_size = Vector2( 0, 60 )
 size_flags_vertical = 9
 custom_fonts/font = SubResource( 19 )
 text = "ОК"
 
-[node name="HUD_elem" parent="." instance=ExtResource( 14 )]
+[node name="Change_Dron_ColorRect" type="ColorRect" parent="."]
+editor/display_folded = true
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="MarginContainer2" type="MarginContainer" parent="Change_Dron_ColorRect"]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -213.0
+margin_right = 213.0
+custom_constants/margin_right = 11
+custom_constants/margin_top = 60
+custom_constants/margin_left = 11
+custom_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Change_Dron_ColorRect/MarginContainer2"]
+margin_left = 11.0
+margin_top = 60.0
+margin_right = 415.0
+margin_bottom = 700.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Change_Dron_ColorRect/MarginContainer2/VBoxContainer"]
+margin_right = 404.0
+margin_bottom = 576.0
+size_flags_horizontal = 3
+size_flags_vertical = 11
+scroll_horizontal_enabled = false
+
+[node name="GridContainer" type="GridContainer" parent="Change_Dron_ColorRect/MarginContainer2/VBoxContainer/ScrollContainer"]
+margin_right = 404.0
+margin_bottom = 576.0
+size_flags_horizontal = 3
+size_flags_vertical = 11
+columns = 2
+
+[node name="Button1" type="Button" parent="Change_Dron_ColorRect/MarginContainer2/VBoxContainer/ScrollContainer/GridContainer"]
+editor/display_folded = true
+margin_right = 200.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 200, 200 )
+size_flags_horizontal = 3
+custom_styles/normal = SubResource( 15 )
+
+[node name="TextureRect_Button1" type="TextureRect" parent="Change_Dron_ColorRect/MarginContainer2/VBoxContainer/ScrollContainer/GridContainer/Button1"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -54.5
+margin_top = -76.0
+margin_right = 54.5
+margin_bottom = 76.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource( 12 )
+expand = true
+
+[node name="Button1_NotEnoughMoney" type="Label" parent="Change_Dron_ColorRect/MarginContainer2/VBoxContainer/ScrollContainer/GridContainer/Button1"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -55.5
+margin_top = -12.0
+margin_right = 55.5
+margin_bottom = 12.0
+custom_fonts/font = SubResource( 16 )
+custom_colors/font_color = Color( 0.792157, 0.00784314, 0.00784314, 1 )
+text = "Нет денег !!!"
+align = 1
+
+[node name="Button1_name" type="Label" parent="Change_Dron_ColorRect/MarginContainer2/VBoxContainer/ScrollContainer/GridContainer/Button1"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -26.0
+custom_fonts/font = SubResource( 17 )
+text = "Миг 57"
+align = 1
+valign = 1
+
+[node name="Button1_speed" type="Label" parent="Change_Dron_ColorRect/MarginContainer2/VBoxContainer/ScrollContainer/GridContainer/Button1"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 4.0
+margin_top = -95.0
+margin_right = 26.0
+margin_bottom = -66.0
+custom_fonts/font = SubResource( 18 )
+text = "40"
+align = 1
+valign = 1
+
+[node name="Button1_speed2" type="Label" parent="Change_Dron_ColorRect/MarginContainer2/VBoxContainer/ScrollContainer/GridContainer/Button1"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 28.6405
+margin_top = -95.5133
+margin_right = 50.6405
+margin_bottom = -66.5133
+custom_fonts/font = SubResource( 18 )
+text = "speed"
+align = 1
+valign = 1
+
+[node name="Button1_damage" type="Label" parent="Change_Dron_ColorRect/MarginContainer2/VBoxContainer/ScrollContainer/GridContainer/Button1"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 2.40993
+margin_top = -69.9322
+margin_right = 35.4099
+margin_bottom = -40.9322
+custom_fonts/font = SubResource( 18 )
+text = "190"
+align = 1
+valign = 1
+
+[node name="Button1_damage2" type="Label" parent="Change_Dron_ColorRect/MarginContainer2/VBoxContainer/ScrollContainer/GridContainer/Button1"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 26.0237
+margin_top = -70.4455
+margin_right = 91.0237
+margin_bottom = -41.4455
+custom_fonts/font = SubResource( 18 )
+text = "damage"
+align = 1
+valign = 1
+
+[node name="Button1_price_dron" type="Label" parent="Change_Dron_ColorRect/MarginContainer2/VBoxContainer/ScrollContainer/GridContainer/Button1"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 127.21
+margin_top = -93.1975
+margin_right = 192.21
+margin_bottom = -64.1975
+custom_fonts/font = SubResource( 18 )
+align = 1
+valign = 1
+
+[node name="Button2" type="Button" parent="Change_Dron_ColorRect/MarginContainer2/VBoxContainer/ScrollContainer/GridContainer"]
+editor/display_folded = true
+margin_left = 204.0
+margin_right = 404.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 200, 200 )
+size_flags_horizontal = 3
+custom_styles/normal = SubResource( 15 )
+
+[node name="TextureRect_Button1" type="TextureRect" parent="Change_Dron_ColorRect/MarginContainer2/VBoxContainer/ScrollContainer/GridContainer/Button2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -55.5
+margin_top = -63.0
+margin_right = 55.5
+margin_bottom = 63.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource( 13 )
+expand = true
+
+[node name="Button2_NotEnoughMoney" type="Label" parent="Change_Dron_ColorRect/MarginContainer2/VBoxContainer/ScrollContainer/GridContainer/Button2"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -55.5
+margin_top = -12.0
+margin_right = 55.5
+margin_bottom = 12.0
+custom_fonts/font = SubResource( 16 )
+custom_colors/font_color = Color( 0.792157, 0.00784314, 0.00784314, 1 )
+text = "Нет денег !!!"
+align = 1
+
+[node name="Button2_name" type="Label" parent="Change_Dron_ColorRect/MarginContainer2/VBoxContainer/ScrollContainer/GridContainer/Button2"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -26.0
+custom_fonts/font = SubResource( 17 )
+text = "Миг 57"
+align = 1
+valign = 1
+
+[node name="Button2_speed" type="Label" parent="Change_Dron_ColorRect/MarginContainer2/VBoxContainer/ScrollContainer/GridContainer/Button2"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 4.0
+margin_top = -95.0
+margin_right = 26.0
+margin_bottom = -66.0
+custom_fonts/font = SubResource( 18 )
+text = "60"
+align = 1
+valign = 1
+
+[node name="Button2_speed2" type="Label" parent="Change_Dron_ColorRect/MarginContainer2/VBoxContainer/ScrollContainer/GridContainer/Button2"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 28.6405
+margin_top = -95.5133
+margin_right = 50.6405
+margin_bottom = -66.5133
+custom_fonts/font = SubResource( 18 )
+text = "speed"
+align = 1
+valign = 1
+
+[node name="Button2_damage" type="Label" parent="Change_Dron_ColorRect/MarginContainer2/VBoxContainer/ScrollContainer/GridContainer/Button2"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 2.40993
+margin_top = -70.5624
+margin_right = 35.4099
+margin_bottom = -41.5624
+custom_fonts/font = SubResource( 18 )
+text = "250"
+align = 1
+valign = 1
+
+[node name="Button2_damage2" type="Label" parent="Change_Dron_ColorRect/MarginContainer2/VBoxContainer/ScrollContainer/GridContainer/Button2"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 26.0237
+margin_top = -70.4455
+margin_right = 91.0237
+margin_bottom = -41.4455
+custom_fonts/font = SubResource( 18 )
+text = "damage"
+align = 1
+valign = 1
+
+[node name="Button2_price_dron" type="Label" parent="Change_Dron_ColorRect/MarginContainer2/VBoxContainer/ScrollContainer/GridContainer/Button2"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -69.7899
+margin_top = -92.9346
+margin_right = -4.78992
+margin_bottom = -63.9346
+custom_fonts/font = SubResource( 18 )
+text = "10000"
+align = 1
+valign = 1
+
+[node name="Button3" type="Button" parent="Change_Dron_ColorRect/MarginContainer2/VBoxContainer/ScrollContainer/GridContainer"]
+editor/display_folded = true
+margin_top = 204.0
+margin_right = 200.0
+margin_bottom = 404.0
+rect_min_size = Vector2( 200, 200 )
+size_flags_horizontal = 3
+custom_styles/normal = SubResource( 15 )
+
+[node name="TextureRect_Button1" type="TextureRect" parent="Change_Dron_ColorRect/MarginContainer2/VBoxContainer/ScrollContainer/GridContainer/Button3"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -65.533
+margin_top = 75.197
+margin_right = 93.467
+margin_bottom = 201.197
+rect_rotation = -90.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource( 14 )
+expand = true
+
+[node name="Button2_NotEnoughMoney" type="Label" parent="Change_Dron_ColorRect/MarginContainer2/VBoxContainer/ScrollContainer/GridContainer/Button3"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -55.5
+margin_top = -12.0
+margin_right = 55.5
+margin_bottom = 12.0
+custom_fonts/font = SubResource( 16 )
+custom_colors/font_color = Color( 0.792157, 0.00784314, 0.00784314, 1 )
+text = "Нет денег !!!"
+align = 1
+
+[node name="Button3_name" type="Label" parent="Change_Dron_ColorRect/MarginContainer2/VBoxContainer/ScrollContainer/GridContainer/Button3"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -26.0
+custom_fonts/font = SubResource( 17 )
+text = "Миг 57"
+align = 1
+valign = 1
+
+[node name="Button2_speed" type="Label" parent="Change_Dron_ColorRect/MarginContainer2/VBoxContainer/ScrollContainer/GridContainer/Button3"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 4.0
+margin_top = -95.0
+margin_right = 26.0
+margin_bottom = -66.0
+custom_fonts/font = SubResource( 18 )
+text = "60"
+align = 1
+valign = 1
+
+[node name="Button2_speed2" type="Label" parent="Change_Dron_ColorRect/MarginContainer2/VBoxContainer/ScrollContainer/GridContainer/Button3"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 28.6405
+margin_top = -95.5133
+margin_right = 50.6405
+margin_bottom = -66.5133
+custom_fonts/font = SubResource( 18 )
+text = "speed"
+align = 1
+valign = 1
+
+[node name="Button2_damage" type="Label" parent="Change_Dron_ColorRect/MarginContainer2/VBoxContainer/ScrollContainer/GridContainer/Button3"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 2.40993
+margin_top = -70.5624
+margin_right = 35.4099
+margin_bottom = -41.5624
+custom_fonts/font = SubResource( 18 )
+text = "250"
+align = 1
+valign = 1
+
+[node name="Button2_damage2" type="Label" parent="Change_Dron_ColorRect/MarginContainer2/VBoxContainer/ScrollContainer/GridContainer/Button3"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 26.0237
+margin_top = -70.4455
+margin_right = 91.0237
+margin_bottom = -41.4455
+custom_fonts/font = SubResource( 18 )
+text = "damage"
+align = 1
+valign = 1
+
+[node name="Button3_price_dron" type="Label" parent="Change_Dron_ColorRect/MarginContainer2/VBoxContainer/ScrollContainer/GridContainer/Button3"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -69.7899
+margin_top = -92.9346
+margin_right = -4.78992
+margin_bottom = -63.9346
+custom_fonts/font = SubResource( 18 )
+text = "10000"
+align = 1
+valign = 1
+
+[node name="Button4" type="Button" parent="Change_Dron_ColorRect/MarginContainer2/VBoxContainer/ScrollContainer/GridContainer"]
+editor/display_folded = true
+margin_left = 204.0
+margin_top = 204.0
+margin_right = 404.0
+margin_bottom = 404.0
+rect_min_size = Vector2( 200, 200 )
+size_flags_horizontal = 3
+custom_styles/normal = SubResource( 15 )
+
+[node name="TextureRect_Button1" type="TextureRect" parent="Change_Dron_ColorRect/MarginContainer2/VBoxContainer/ScrollContainer/GridContainer/Button4"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -79.5
+margin_top = -62.9998
+margin_right = 79.5
+margin_bottom = 62.9998
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource( 15 )
+expand = true
+
+[node name="Button2_NotEnoughMoney" type="Label" parent="Change_Dron_ColorRect/MarginContainer2/VBoxContainer/ScrollContainer/GridContainer/Button4"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -55.5
+margin_top = -12.0
+margin_right = 55.5
+margin_bottom = 12.0
+custom_fonts/font = SubResource( 16 )
+custom_colors/font_color = Color( 0.792157, 0.00784314, 0.00784314, 1 )
+text = "Нет денег !!!"
+align = 1
+
+[node name="Button4_name" type="Label" parent="Change_Dron_ColorRect/MarginContainer2/VBoxContainer/ScrollContainer/GridContainer/Button4"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -26.0
+custom_fonts/font = SubResource( 17 )
+text = "Миг 57"
+align = 1
+valign = 1
+
+[node name="Button2_speed" type="Label" parent="Change_Dron_ColorRect/MarginContainer2/VBoxContainer/ScrollContainer/GridContainer/Button4"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 4.0
+margin_top = -95.0
+margin_right = 26.0
+margin_bottom = -66.0
+custom_fonts/font = SubResource( 18 )
+text = "60"
+align = 1
+valign = 1
+
+[node name="Button2_speed2" type="Label" parent="Change_Dron_ColorRect/MarginContainer2/VBoxContainer/ScrollContainer/GridContainer/Button4"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 28.6405
+margin_top = -95.5133
+margin_right = 50.6405
+margin_bottom = -66.5133
+custom_fonts/font = SubResource( 18 )
+text = "speed"
+align = 1
+valign = 1
+
+[node name="Button2_damage" type="Label" parent="Change_Dron_ColorRect/MarginContainer2/VBoxContainer/ScrollContainer/GridContainer/Button4"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 2.40993
+margin_top = -70.5624
+margin_right = 35.4099
+margin_bottom = -41.5624
+custom_fonts/font = SubResource( 18 )
+text = "250"
+align = 1
+valign = 1
+
+[node name="Button2_damage2" type="Label" parent="Change_Dron_ColorRect/MarginContainer2/VBoxContainer/ScrollContainer/GridContainer/Button4"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 26.0237
+margin_top = -70.4455
+margin_right = 91.0237
+margin_bottom = -41.4455
+custom_fonts/font = SubResource( 18 )
+text = "damage"
+align = 1
+valign = 1
+
+[node name="Button4_price_dron" type="Label" parent="Change_Dron_ColorRect/MarginContainer2/VBoxContainer/ScrollContainer/GridContainer/Button4"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -69.7899
+margin_top = -92.9346
+margin_right = -4.78992
+margin_bottom = -63.9346
+custom_fonts/font = SubResource( 18 )
+text = "10000"
+align = 1
+valign = 1
+
+[node name="ChangeDron" type="Button" parent="Change_Dron_ColorRect/MarginContainer2/VBoxContainer"]
+margin_top = 580.0
+margin_right = 404.0
+margin_bottom = 640.0
+rect_min_size = Vector2( 0, 60 )
+size_flags_vertical = 9
+custom_fonts/font = SubResource( 19 )
+text = "ОК"
+
+[node name="HUD_elem" parent="." instance=ExtResource( 16 )]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer/Button_Air" to="." method="_on_Button_Air_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/Button_Dron_1" to="." method="Change_dron" binds= [ 1 ]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/Button_Dron_2" to="." method="Change_dron" binds= [ 2 ]]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer2/Button_Armor" to="." method="modifications" binds= [ "1" ]]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer2/Button_Weapon" to="." method="modifications" binds= [ "2" ]]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer2/Button_Two_Weapon" to="." method="modifications" binds= [ "3" ]]
@@ -1002,3 +1490,8 @@ text = "ОК"
 [connection signal="pressed" from="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button3" to="." method="buyAir" binds= [ "3" ]]
 [connection signal="pressed" from="Change_Air_ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer/Button4" to="." method="buyAir" binds= [ "4" ]]
 [connection signal="pressed" from="Change_Air_ColorRect/MarginContainer/VBoxContainer/ChangeAir" to="." method="_on_ChangeAir_pressed"]
+[connection signal="pressed" from="Change_Dron_ColorRect/MarginContainer2/VBoxContainer/ScrollContainer/GridContainer/Button1" to="." method="buyDron" binds= [ "1" ]]
+[connection signal="pressed" from="Change_Dron_ColorRect/MarginContainer2/VBoxContainer/ScrollContainer/GridContainer/Button2" to="." method="buyDron" binds= [ "2" ]]
+[connection signal="pressed" from="Change_Dron_ColorRect/MarginContainer2/VBoxContainer/ScrollContainer/GridContainer/Button3" to="." method="buyDron" binds= [ "3" ]]
+[connection signal="pressed" from="Change_Dron_ColorRect/MarginContainer2/VBoxContainer/ScrollContainer/GridContainer/Button4" to="." method="buyDron" binds= [ "4" ]]
+[connection signal="pressed" from="Change_Dron_ColorRect/MarginContainer2/VBoxContainer/ChangeDron" to="." method="_on_ChangeDron_pressed"]
