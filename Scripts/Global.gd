@@ -1,6 +1,12 @@
 extends Control
 
 func _ready():
+	var audio_file = "res://Music/Other/MainMenuTheme.wav"
+	
+	if File.new().file_exists(audio_file) and get_node("/root/SoundHandler").get_child(0).playing==false:
+		var sfx = load(audio_file)
+		get_node("/root/SoundHandler").get_child(0).stream = sfx
+	
 	if(get_node("/root/SoundHandler").get_child(0).playing==false):
 		get_node("/root/SoundHandler").get_child(0).play()
 	pass

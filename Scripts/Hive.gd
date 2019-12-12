@@ -18,10 +18,17 @@ func _ready():
 	$AnimationPlayer.play("Hive")
 	$AnimationPlayer.queue("HiveMoving")
 	get_parent().get_node("BossEvent").queue_free()
-	#$AnimationPlayer.play("AnimationEnemyHive")
+	
+	var audio_file = "res://Music/Other/boss.wav"
+	
+	if File.new().file_exists(audio_file):
+		var sfx = load(audio_file)
+		#sfx.set_loop(false)
+		get_node("/root/SoundHandler").get_child(0).stream = sfx
+		get_node("/root/SoundHandler").get_child(0).play()
 	
 	set_process(false)
-	yield(get_tree().create_timer(4), "timeout")
+	yield(get_tree().create_timer(3), "timeout")
 	set_process(true)
 	
 	var fireTimer = Timer.new()
@@ -92,7 +99,11 @@ func _on_HealthBarEnemy_death():
 	#cash.initialize(dictionary_cash, dic_chance_cash, "cash")
 	#cash.global_position = $DeathPos.global_position
 	#get_parent().get_parent().add_child(cash)
-	
+	#get_parent().get_parent().get_node("EnemySpawnTimer").set_wait_timer(get_parent().get_parent().get_node("EnemySpawnTimer").get_wait_time() - 0.5)
+	var delay = get_parent().get_parent().get_node("EnemySpawnTimer").get_wait_time()
+	if delay > 0.5:
+		delay -= 0.5
+		get_parent().get_parent().get_node("EnemySpawnTimer").set_wait_time(delay)
 	queue_free()
 	pass
 
@@ -123,7 +134,7 @@ func set_health(new_health):
 func _on_Trigger_area_entered(someone):
 	if someone.is_in_group("player"):
 		#set_damage(100)
-		someone.health -= 50
+		someone.get_damaged(50)
 	pass
 
 func _on_VisibilityNotifier2D_screen_exited():

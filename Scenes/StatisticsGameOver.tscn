@@ -19,7 +19,6 @@ anchor_bottom = 1.0
 color = Color( 1, 1, 1, 0 )
 
 [node name="Panel" type="Panel" parent="ColorRect"]
-editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -44,7 +43,7 @@ margin_bottom = 140.172
 rect_min_size = Vector2( 200, 60 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
-text = "Continue"
+text = "Try it again"
 
 [node name="Button_Ok" type="Button" parent="ColorRect/Panel"]
 anchor_left = 0.5
@@ -58,7 +57,7 @@ margin_bottom = 222.193
 rect_min_size = Vector2( 200, 60 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
-text = "OK"
+text = "Return to menu"
 
 [node name="Label_Static" type="Label" parent="ColorRect/Panel"]
 anchor_left = 0.5
@@ -68,10 +67,9 @@ margin_top = 20.168
 margin_right = 41.5
 margin_bottom = 51.168
 custom_fonts/font = SubResource( 1 )
-text = "STATIC"
+text = "Statistics"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/Panel"]
-editor/display_folded = true
 margin_left = 39.8655
 margin_top = 79.8071
 margin_right = 265.865
@@ -79,21 +77,20 @@ margin_bottom = 110.807
 
 [node name="Label_Path" type="Label" parent="ColorRect/Panel/HBoxContainer"]
 margin_top = 5.0
-margin_right = 120.0
+margin_right = 149.0
 margin_bottom = 24.0
 custom_fonts/font = SubResource( 2 )
-text = "Пройденно пути:"
+text = "Пройденно пути/км:"
 
 [node name="Label_Path_count" type="Label" parent="ColorRect/Panel/HBoxContainer"]
-margin_left = 124.0
+margin_left = 153.0
 margin_top = 5.0
-margin_right = 142.0
+margin_right = 162.0
 margin_bottom = 24.0
 custom_fonts/font = SubResource( 2 )
-text = "44"
+text = "0"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect/Panel"]
-editor/display_folded = true
 margin_left = 38.605
 margin_top = 134.009
 margin_right = 264.605
@@ -104,18 +101,17 @@ margin_top = 6.0
 margin_right = 137.0
 margin_bottom = 25.0
 custom_fonts/font = SubResource( 2 )
-text = "Денег зароботано:"
+text = "Денег заработано:"
 
 [node name="Label_Money_count" type="Label" parent="ColorRect/Panel/HBoxContainer2"]
 margin_left = 141.0
 margin_top = 6.0
-margin_right = 181.0
+margin_right = 163.0
 margin_bottom = 25.0
 custom_fonts/font = SubResource( 2 )
-text = "+ 312"
+text = "+ 0"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="ColorRect/Panel"]
-editor/display_folded = true
 margin_left = 38.605
 margin_top = 182.022
 margin_right = 264.605
@@ -126,12 +122,14 @@ margin_top = 6.0
 margin_right = 174.0
 margin_bottom = 25.0
 custom_fonts/font = SubResource( 2 )
-text = "Изумрудов зароботано:"
+text = "Изумрудов заработано:"
 
 [node name="Label_Emerald_count" type="Label" parent="ColorRect/Panel/HBoxContainer3"]
 margin_left = 178.0
 margin_top = 6.0
-margin_right = 209.0
+margin_right = 200.0
 margin_bottom = 25.0
 custom_fonts/font = SubResource( 2 )
-text = "+ 32"
+text = "+ 0"
+[connection signal="pressed" from="ColorRect/Panel/Button_continue" to="." method="_on_Button_continue_pressed"]
+[connection signal="pressed" from="ColorRect/Panel/Button_Ok" to="." method="_on_Button_Ok_pressed"]

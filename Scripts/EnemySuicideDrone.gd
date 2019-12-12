@@ -7,7 +7,9 @@ export var health = 200 setget set_health
 export var shoot_speed = 1
 export var speed = 200
 export var atack_type = 1
+var velocity = Vector2(0,0)
 var target
+var vec
 
 func _ready():
 	add_to_group("enemy")
@@ -45,10 +47,15 @@ func _process(delta):
 		queue_free()
 		#move_and_collide(Vector2 (0,speed * delta))
 		return
-	target = get_parent().get_parent().get_node("Player")
-	motion = (target.position - position).normalized()
+	target = get_parent().get_parent().get_node("Player").global_position
+	vec = (target - position).normalized()
 	
-	move_and_collide(motion)
+	velocity.y = speed * delta * vec.normalized().y
+	velocity.x = speed * delta * vec.normalized().x
+	#translate(velocity)
+	#motion = (target.position - position).normalized()
+	
+	move_and_collide(velocity)
 	#move_and_collide(Vector2 (0,speed * delta))
 	pass
 
@@ -65,7 +72,7 @@ func set_health(new_health):
 
 func _on_Trigger_area_entered(someone):
 	if someone.is_in_group("player"):
-		someone.health = 0
+		someone.get_parent().self_destruct()
 		queue_free()
 	pass
 

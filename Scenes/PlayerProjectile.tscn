@@ -2,8 +2,6 @@
 
 [ext_resource path="res://Scripts/PlayerProjectile.gd" type="Script" id=1]
 
-
-
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 10.1864
 height = 19.6126
