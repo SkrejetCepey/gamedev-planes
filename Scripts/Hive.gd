@@ -2,7 +2,6 @@ extends KinematicBody2D
 
 const BossAtack = preload("res://Scenes/BossAtack.tscn")
 const DeathHandler = preload("res://Scenes/EnemyDeathHandler.tscn")
-#const Explosion = preload("res://Scenes/TestParticles.tscn")
 
 export var health = 1000 setget set_health
 export var shoot_speed = 5
@@ -46,6 +45,7 @@ func _ready():
 		#atack_suicide.initialize(5, shoot_speed, null)
 		#get_node(str(i)+"cannon").add_child(atack_suicide)
 	#$DeathPos.add_child(atack)
+	$HealthBarEnemy.health_setup(health)
 	pass 
 
 func shoot():
@@ -100,6 +100,9 @@ func _on_HealthBarEnemy_death():
 	#cash.global_position = $DeathPos.global_position
 	#get_parent().get_parent().add_child(cash)
 	#get_parent().get_parent().get_node("EnemySpawnTimer").set_wait_timer(get_parent().get_parent().get_node("EnemySpawnTimer").get_wait_time() - 0.5)
+	
+	$Trigger.get_node("CollisionShape2D2").set_deferred("disabled", true)
+	
 	var delay = get_parent().get_parent().get_node("EnemySpawnTimer").get_wait_time()
 	if delay > 0.5:
 		delay -= 0.5

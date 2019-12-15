@@ -47,6 +47,8 @@ func _on_HealthBarEnemy_death():
 	#cash.global_position = $DeathPos.global_position
 	#get_parent().get_parent().add_child(cash)
 	
+	$Trigger.get_node("CollisionShape2D2").set_deferred("disabled", true)
+	
 	queue_free()
 	pass
 

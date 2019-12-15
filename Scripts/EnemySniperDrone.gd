@@ -3,7 +3,7 @@ extends KinematicBody2D
 const EnemyAtack = preload("res://Scenes/EnemyAtack.tscn")
 const DeathHandler = preload("res://Scenes/EnemyDeathHandler.tscn")
 
-export var health = 800 setget set_health
+export var health = 400 setget set_health
 export var shoot_speed = 1
 export var speed = 50
 export var atack_type = 3
@@ -15,6 +15,7 @@ func _ready():
 	var atack = EnemyAtack.instance()
 	atack.initialize(atack_type, shoot_speed, null)
 	$DeathPos.add_child(atack)
+	$HealthBarEnemy.health_setup(health)
 	pass 
 
 func _on_Visible_screen_exited():

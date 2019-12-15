@@ -17,6 +17,7 @@ func _ready():
 	#var atack = EnemyAtack.instance()
 	#atack.initialize(atack_type, shoot_speed, null)
 	#$DeathPos.add_child(atack)
+	$HealthBarEnemy.health_setup(health)
 	pass 
 
 func _on_Visible_screen_exited():

@@ -14,6 +14,8 @@ func _ready():
 	var atack = EnemyAtack.instance()
 	atack.initialize(atack_type, shoot_speed, null)
 	$DeathPos.add_child(atack)
+	
+	$HealthBarEnemy.health_setup(health)
 	pass 
 
 func _on_Visible_screen_exited():
@@ -39,6 +41,8 @@ func _on_HealthBarEnemy_death():
 	#cash.initialize(dictionary_cash, dic_chance_cash, "cash")
 	#cash.global_position = $DeathPos.global_position
 	#get_parent().get_parent().add_child(cash)
+	
+	$Trigger.get_node("CollisionShape2D2").set_deferred("disabled", true)
 	
 	queue_free()
 	pass
