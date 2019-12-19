@@ -158,6 +158,7 @@ expand = true
 stretch_mode = 7
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+editor/display_folded = true
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
@@ -169,6 +170,7 @@ custom_constants/margin_left = 11
 custom_constants/margin_bottom = 11
 
 [node name="AnimatedСartoon_&_Button" type="VBoxContainer" parent="MarginContainer"]
+editor/display_folded = true
 margin_left = 11.0
 margin_top = 70.0
 margin_right = 438.0

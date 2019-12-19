@@ -3,6 +3,8 @@ extends Node2D
 const EnemyInitializer = preload("res://Scenes/EnemyInitializer.tscn")
 const BossInitializer = preload("res://Scenes/BossInitializer.tscn")
 
+onready var health = 150
+
 var EnemyPath = Path2D.new()
 var EnemySpawnLocation = PathFollow2D.new()
 
@@ -16,6 +18,9 @@ var boss = BossInitializer.instance()
 func _ready():
 	#Не удалять в этом месте будет подгрузка Json
 	#Save.load_data()
+	
+	get_node("Health_bar").health_setup(health)
+	
 	$Background_move.play("Background_move")
 	
 	get_node("/root/SoundHandler").get_child(0).stop()

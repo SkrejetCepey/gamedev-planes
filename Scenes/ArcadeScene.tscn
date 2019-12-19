@@ -22,7 +22,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 20 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 227.688, -501.761 ), Vector2( 227.688, 1411.97 ) ]
+"values": [ Vector2( 227.688, -501.761 ), Vector2( 227.688, 1755 ) ]
 }
 
 [node name="ArcadeScene" type="Node2D"]
@@ -34,6 +34,7 @@ wait_time = 3.0
 [node name="EnemySpawner" type="Node2D" parent="."]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+editor/display_folded = true
 collision_layer = 12
 collision_mask = 12
 
@@ -45,16 +46,17 @@ shape = SubResource( 1 )
 position = Vector2( 480, 365.459 )
 shape = SubResource( 1 )
 
-[node name="DebugConrol" parent="." instance=ExtResource( 2 )]
-
 [node name="Health_bar" parent="." instance=ExtResource( 2 )]
+scale = Vector2( 0.8, 1 )
+transform = Transform2D( 0.8, 0, 0, 1, 0, 0 )
+
 [node name="DebugConrol" parent="." instance=ExtResource( 3 )]
 
 [node name="Background_move" type="AnimationPlayer" parent="."]
 anims/Background_move = SubResource( 2 )
 
 [node name="Background" type="Sprite" parent="Background_move"]
-position = Vector2( 227.688, 1411.97 )
+position = Vector2( 227.688, 1755 )
 z_index = -3
 texture = ExtResource( 4 )
 [connection signal="timeout" from="EnemySpawnTimer" to="." method="_on_EnemySpawnTimer_timeout"]

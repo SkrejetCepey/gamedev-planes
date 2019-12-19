@@ -43,6 +43,8 @@ func initialize(_ability_type, _ability_group):
 
 func _on_Trigger_area_entered(someone):
 	if (someone.is_in_group("player")==true):
-		if (ability_type=="repairkit"): someone.health+=50
+		print(ability_type)
+		if (ability_type=="Repairkit"): 
+			someone.update_health(50)
 		get_parent().destroy()
 	pass
