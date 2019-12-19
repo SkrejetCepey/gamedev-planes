@@ -122,6 +122,7 @@ position = Vector2( 39.0918, 71.6043 )
 position = Vector2( -137.094, -147.839 )
 frames = SubResource( 4 )
 animation = "Shield"
+frame = 4
 playing = true
 centered = false
 
