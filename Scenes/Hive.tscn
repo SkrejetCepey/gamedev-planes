@@ -1,13 +1,14 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/Hive.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Enemys/Bosses/hive.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/Enemys/Shield/2.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/Enemys/Shield/3.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/Enemys/Shield/4.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/Enemys/Shield/5.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/Enemys/Shield/1.png" type="Texture" id=7]
-[ext_resource path="res://Scenes/HealthBarEnemy.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Sprites/Enemys/Shield/newShield/Shield1.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Enemys/Shield/newShield/Shield2.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Enemys/Shield/newShield/Shield3.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Enemys/Shield/newShield/Shield4.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Enemys/Shield/newShield/Shield5.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Enemys/Shield/newShield/Shield6.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/HealthBarEnemy.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Hive"
@@ -46,11 +47,12 @@ tracks/0/keys = {
 points = PoolVector2Array( 0, 0, 0, 86.97, -41.64, 43.9, -74, 0, -70.75, -41.63, -42.32, -85.39, 0, -69.98, 45.93, -85.83, 70.39, -40.59, 73.94, 0, 36.07, 46.05, 0, 86.28 )
 
 [sub_resource type="SpriteFrames" id=4]
+resource_local_to_scene = true
 animations = [ {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
-"name": "default",
-"speed": 10.0
+"name": "Shield",
+"speed": 15.0
 } ]
 
 [node name="Hive" type="KinematicBody2D"]
@@ -117,11 +119,13 @@ position = Vector2( 39.1817, 53.9086 )
 position = Vector2( 39.0918, 71.6043 )
 
 [node name="Shield" type="AnimatedSprite" parent="."]
+position = Vector2( -137.094, -147.839 )
 frames = SubResource( 4 )
-frame = 1
+animation = "Shield"
 playing = true
+centered = false
 
-[node name="HealthBarEnemy" parent="." instance=ExtResource( 8 )]
+[node name="HealthBarEnemy" parent="." instance=ExtResource( 9 )]
 margin_left = -47.9404
 margin_top = 29.7738
 margin_right = -47.9404
