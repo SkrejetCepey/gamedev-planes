@@ -9,6 +9,7 @@ export var speed = 10
 export var atack_type = 4
 
 var stage = 0
+var fireTimer
 
 var typical_counter=5
 
@@ -30,7 +31,7 @@ func _ready():
 	yield(get_tree().create_timer(3), "timeout")
 	set_process(true)
 	
-	var fireTimer = Timer.new()
+	fireTimer = Timer.new()
 	fireTimer.set_wait_time(shoot_speed)
 	fireTimer.connect("timeout", self, "shoot")
 	add_child(fireTimer)
@@ -71,6 +72,7 @@ func shoot():
 	#if(typical_counter>0): typical_counter-=1
 	if(typical_counter==0): 
 		$Shield.queue_free()
+		fireTimer.set_wait_time(2)
 		typical_counter-=1
 		return
 	#if(get_parent().get_node_or_null("EnemySuicideDrone")==null):
@@ -125,7 +127,7 @@ func _process(delta):
 func set_damage(damage):
 	if (get_node_or_null("Shield")==null):
 		health -= damage
-		$HealthBarEnemy/HealthBar.value = health
+		#$HealthBarEnemy/HealthBar.value = health
 		$HealthBarEnemy.health_damaged(damage)
 	pass
 

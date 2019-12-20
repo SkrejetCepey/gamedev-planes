@@ -70,5 +70,5 @@ func set_health(new_health):
 func _on_Trigger_area_entered(someone):
 	if someone.is_in_group("player"):
 		set_damage(300)
-		someone.health -= 100
+		someone.get_damaged(100)
 	pass

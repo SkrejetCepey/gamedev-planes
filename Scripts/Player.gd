@@ -85,6 +85,7 @@ func moving():
 
 func self_destruct():
 	var gameover_screen = GameOver.instance()
+	get_parent().get_node("Health_bar").health_setup(0)
 	get_parent().add_child(gameover_screen)
 	get_parent().get_node("Background_move").stop()
 	
